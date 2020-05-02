@@ -1,0 +1,1519 @@
+---
+title: "Lost in Wilderness"
+output: html_document
+---
+
+
+--------------------Google form
+
+
+Library
+
+
+```{r}
+library(lubridate)
+library(dplyr)
+library(ggplot2)
+```
+
+Recuperer les fichier des googleform
+
+Download files from googleform
+
+
+```{r}
+gform_fr=read.csv(file=choose.files(),header = T, sep=";")  
+gform_de=read.csv(file=choose.files(),header = T, sep=";")  
+gform_es=read.csv(file=choose.files(),header = T, sep=";")  
+gform_en=read.csv(file=choose.files(),header = T, sep=";")  
+
+```
+
+changer le nom des colonnes
+
+Change the names of colomns
+						
+```{r}
+names(gform_fr)=c("Date","Sex","Hand","Age","Geo","GeoP","GeoM","Academic","Naturalist","Hobby","Film","Animal","Fear","Death","Eaten","Injured","Encounter","Phobia","Mail","judge_id")
+
+names(gform_de)=c("Date","Sex","Hand","Age","Geo","GeoP","GeoM","Academic","Naturalist","Hobby","Film","Animal","Fear","Death","Eaten","Injured","Encounter","Phobia","Mail","judge_id")
+
+names(gform_es)=c("Date","Sex","Hand","Age","Geo","GeoP","GeoM","Academic","Naturalist","Hobby","Film","Animal","Fear","Death","Eaten","Injured","Encounter","Phobia","Mail","judge_id")
+
+names(gform_en)=c("Date","Sex","Hand","Age","Geo","GeoP","GeoM","Academic","Naturalist","Hobby","Film","Animal","Fear","Death","Eaten","Injured","Encounter","Phobia","Mail","judge_id")
+```
+
+
+Suppression des colonnes en trop
+
+Get rid of others colomns
+
+```{r}
+gform_fr = gform_fr [ , c("Date","Sex","Hand","Age","Geo","GeoP","GeoM","Academic","Naturalist","Hobby","Film","Animal","Fear","Death","Eaten","Injured","Encounter","Phobia","Mail","judge_id")]
+
+gform_de = gform_de [ , c("Date","Sex","Hand","Age","Geo","GeoP","GeoM","Academic","Naturalist","Hobby","Film","Animal","Fear","Death","Eaten","Injured","Encounter","Phobia","Mail","judge_id")]
+
+gform_es = gform_es [ , c("Date","Sex","Hand","Age","Geo","GeoP","GeoM","Academic","Naturalist","Hobby","Film","Animal","Fear","Death","Eaten","Injured","Encounter","Phobia","Mail","judge_id")]
+
+gform_en = gform_en [ , c("Date","Sex","Hand","Age","Geo","GeoP","GeoM","Academic","Naturalist","Hobby","Film","Animal","Fear","Death","Eaten","Injured","Encounter","Phobia","Mail","judge_id")]
+
+```
+
+
+Changer la Date
+
+Transformation de la colonne Date dans le bon format d'analyse avec fonction lubridate
+
+On peut voir que les donnees de Date sont ordonnees en mois/jour/annees  heure/minutes/secondes
+
+il faut donc utiliser la fonction mdy_hms
+
+
+Change Date ==> Transform colomn Date in the proper writing
+
+Our data are in month / day / year  hour/minute/second
+
+We have to use fonction mdy_hms
+
+```{r}
+gform_fr$Date = mdy_hms(gform_fr$Date)
+gform_de$Date = mdy_hms(gform_de$Date)
+gform_es$Date = mdy_hms(gform_es$Date)
+gform_en$Date = mdy_hms(gform_en$Date)
+```
+
+
+Convertir Les colonnes dans le format voulu
+
+
+Convert each colomn in proper format
+
+
+```{r}
+gform_de$Age = as.numeric(gform_de$Age)
+gform_fr$Age = as.numeric(gform_fr$Age)
+gform_es$Age = as.numeric(gform_es$Age)
+gform_en$Age = as.numeric(gform_en$Age)
+
+gform_de$Geo = as.factor(gform_de$Geo)
+gform_fr$Geo = as.factor(gform_fr$Geo)
+gform_es$Geo = as.factor(gform_es$Geo)
+gform_en$Geo = as.factor(gform_en$Geo)
+
+gform_de$GeoM = as.factor(gform_de$GeoM)
+gform_fr$GeoM = as.factor(gform_fr$GeoM)
+gform_es$GeoM = as.factor(gform_es$GeoM)
+gform_en$GeoM = as.factor(gform_en$GeoM)
+
+gform_de$GeoP = as.factor(gform_de$GeoP)
+gform_fr$GeoP = as.factor(gform_fr$GeoP)
+gform_es$GeoP = as.factor(gform_es$GeoP)
+gform_en$GeoP = as.factor(gform_en$GeoP)
+
+
+gform_de$judge_id = as.factor(gform_de$judge_id)
+gform_fr$judge_id = as.factor(gform_fr$judge_id)
+gform_es$judge_id = as.factor(gform_es$judge_id)
+gform_en$judge_id = as.factor(gform_en$judge_id)
+```
+
+
+Fusion des 4 tableaux
+Rajout d'une colonne Langue pour avoir l'information
+
+Addition of dataframe
+Add a colomn Langue to know in wich language the participant fill the questionnaire
+
+```{r}
+gform_tot=bind_rows(Fr=gform_fr,De=gform_de,Es=gform_es,En=gform_en, .id = "Language")
+```
+
+
+
+```{r}
+gform_tot
+
+```
+
+
+
+Supression des judge_id en double
+=> la fonction supprime les numero d'anonymat en double et ceux qui n'ont pas de numero d'anonymat
+
+```{r}
+gform_tot = gform_tot %>% distinct(judge_id,.keep_all = TRUE)
+```
+
+
+Rajout d'une colonne Day pour avoir juste la date du jour
+
+Add a colomn Day to only have the day 
+
+```{r}
+gform_tot$Day =  lubridate :: date(gform_tot$Date)
+```
+
+
+
+Convertir les donnees de chaque langue pour homogeneiser les reponses 
+
+Convert data of each language in order to homogenize the answers
+
+
+
+```{r}
+gform_tot = mutate(gform_tot,
+                   Sex = case_when(
+                     Sex == "Homme" | Sex == "Mann " | Sex == "Man" | Sex == "Hombre" ~ "M",
+                     Sex == "Femme" | Sex == "Frau" | Sex == "Woman" | Sex == "Mujer" ~ "F",
+                     T ~ "Not mentioned" ))
+
+gform_tot = mutate(gform_tot,
+                   Hand = case_when(
+                     Hand == "Droitier.e" | Hand == "Rechtshänder" | Hand == "Diestro" | Hand == "Right-handed" ~ "Right",
+                     Hand == "Gaucher.e" | Hand == "Linkshänder" | Hand == "Zurdo.a" | Hand == "Left-handed" ~ "Left",
+                     T ~ "Ambidextrous"))
+
+gform_tot = mutate(gform_tot,
+                   Geo = case_when(
+                     Geo == "1"~ "Northern America",
+                     Geo == "2"~ "Central America",
+                     Geo == "3"~ "South America",
+                     Geo == "4"~ "Caribbean",
+                     Geo == "5"~ "Northern Europe",
+                     Geo == "6"~ "Western Europe",
+                     Geo == "7"~ "Southern Europe",
+                     Geo == "8"~ "Eastern Europe",
+                     Geo == "9"~ "Northern Africa",
+                     Geo == "10"~ "Western Africa",
+                     Geo == "11"~ "central Africa",
+                     Geo == "12"~ "Eastern Africa",
+                     Geo == "13"~ "Southern Africa",
+                     Geo == "14"~ "Madagascar",
+                     Geo == "15"~ "Western Asia",
+                     Geo == "16"~ "Central Asia",
+                     Geo == "17"~ "Southern Asia",
+                     Geo == "18"~ "Eastern Asia",
+                     Geo == "19"~ "Southeastern Asia",
+                     Geo == "20"~ "Micronesia",
+                     Geo == "21"~ "Polynesia",
+                     Geo == "22"~ "Melanesia",
+                     Geo == "23"~ "Australia and New Zealand",
+                     T ~ "Na"))
+
+gform_tot = mutate(gform_tot,
+                   GeoM = case_when(
+                     GeoM == "1"~ "Northern America",
+                     GeoM == "2"~ "Central America",
+                     GeoM == "3"~ "South America",
+                     GeoM == "4"~ "Caribbean",
+                     GeoM == "5"~ "Northern Europe",
+                     GeoM == "6"~ "Western Europe",
+                     GeoM == "7"~ "Southern Europe",
+                     GeoM == "8"~ "Eastern Europe",
+                     GeoM == "9"~ "Northern Africa",
+                     GeoM == "10"~ "Western Africa",
+                     GeoM == "11"~ "central Africa",
+                     GeoM == "12"~ "Eastern Africa",
+                     GeoM == "13"~ "Southern Africa",
+                     GeoM == "14"~ "Madagascar",
+                     GeoM == "15"~ "Western Asia",
+                     GeoM == "16"~ "Central Asia",
+                     GeoM == "17"~ "Southern Asia",
+                     GeoM == "18"~ "Eastern Asia",
+                     GeoM == "19"~ "Southeastern Asia",
+                     GeoM == "20"~ "Micronesia",
+                     GeoM == "21"~ "Polynesia",
+                     GeoM == "22"~ "Melanesia",
+                     GeoM == "23"~ "Australia and New Zealand",
+                     T ~ "Na"))
+
+gform_tot = mutate(gform_tot,
+                  GeoP = case_when(
+                    GeoP == "1"~ "Northern America",
+                     GeoP == "2"~ "Central America",
+                     GeoP == "3"~ "South America",
+                     GeoP == "4"~ "Caribbean",
+                     GeoP == "5"~ "Northern Europe",
+                     GeoP == "6"~ "Western Europe",
+                     GeoP == "7"~ "Southern Europe",
+                     GeoP == "8"~ "Eastern Europe",
+                     GeoP == "9"~ "Northern Africa",
+                     GeoP == "10"~ "Western Africa",
+                     GeoP == "11"~ "central Africa",
+                     GeoP == "12"~ "Eastern Africa",
+                     GeoP == "13"~ "Southern Africa",
+                     GeoP == "14"~ "Madagascar",
+                     GeoP == "15"~ "Western Asia",
+                     GeoP == "16"~ "Central Asia",
+                     GeoP == "17"~ "Southern Asia",
+                     GeoP == "18"~ "Eastern Asia",
+                     GeoP == "19"~ "Southeastern Asia",
+                     GeoP == "20"~ "Micronesia",
+                     GeoP == "21"~ "Polynesia",
+                     GeoP == "22"~ "Melanesia",
+                     GeoP == "23"~ "Australia and New Zealand",
+                     T ~ "Na"))
+
+gform_tot = mutate(gform_tot,
+                   Academic = case_when(
+                     Academic == "Je ne suis pas encore à l'école / Je suis à la Maternelle" | Academic == "Ich bin noch nicht in der Schule / Ich bin im Kindergarten" | Academic == "Todavía no estoy en la escuela / Estoy en kindergarten" | Academic == "I'm not yet in school / I'm in Kindergarten" ~ "Kindergarten",
+                     
+                     Academic == "Je suis à l'école primaire" | Academic == "Ich bin in der Grundschule" | Academic == "Estoy en primaria" | Academic == "I'm in primary school" ~ "Primary school",
+                     
+                     Academic == "Je suis au collège" | Academic == "Ich bin in der Mittelschule" | Academic == "Estoy en la secundaria" | Academic == "I'm in middle school" ~ "Middle school",
+                     
+                     Academic == "Je suis au lycée" | Academic == "Ich bin im Gymnasium" | Academic == "Estoy en el instituto" | Academic == "I'm in high school" ~ "High school",
+                     
+                     Academic == "Baccalauréat" | Academic == "Abitur" | Academic == "Bachillerato" | Academic == "High school diploma" ~ "High school diploma",
+                     
+                     Academic == "Bac +1 / Bac +2 / Bac +3 (Licence, etc...)" | Academic == "Ein / zwei / dreijähriger technischer / universitärer Abschluss" | Academic == "Título técnico / universitario de uno / dos / tres años (Diplomatura o equivalente)" | Academic == "One/two/three-year technical/university degree" ~ "One/two/three-year technical/university degree",
+                     
+                     Academic == "Bac +4 / Bac +5 (Master, etc...)" | Academic == "Master-Abschluss" | Academic == "Licenciatura" | Academic == "Master's degree" ~ "Master's degree",
+                     
+                     Academic == "Doctorat et plus" | Academic == "PhD und mehr" | Academic == "PhD and more" | Academic == "Doctorado y más" ~ "PhD and more",
+                     
+                     T ~ "Other"))
+
+gform_tot = mutate(gform_tot,
+                   Naturalist = case_when(
+                     Naturalist == "Très faibles" | Naturalist == "Sehr schlecht" | Naturalist == "Muy débiles" | Naturalist == "Very weak" ~ "Very weak",
+                     
+                     Naturalist == "Faibles" | Naturalist == "Schlecht" | Naturalist == "Débiles" | Naturalist == "Weak" ~ "Weak",
+                     
+                     Naturalist == "Moyennes" | Naturalist == "Durchschnitt" | Naturalist == "Promedias" | Naturalist == "Average" ~ "Average",
+                     
+                     Naturalist == "Bonnes" | Naturalist == "Gut" | Naturalist == "Buenas" | Naturalist == "Good" ~ "Good",
+                     
+                     T ~ "Very good"))
+
+
+gform_tot = mutate(gform_tot,
+                   Hobby = case_when(
+                     Hobby == "Littérature/Histoire/Musique/Danse/Théatre" | Hobby == "Literatur / Geschichte / Musik / Tanz / Schauspiel" | Hobby == "Literatura/Historia/Música/Danza/Teatro" | Hobby == "Literature/History/Music/Dance/Acting" ~ "Literature/History/Music/Dance/Acting",
+                     
+                     Hobby == "Sport/Fitness/Auto/Moto" | Hobby == "Sport / Fitness / Auto / Motorrad" | Hobby == "Deporte/Fitness/Auto/Moto" | Hobby == "Sport/Fitness/Auto/Moto" ~ "Sport/Fitness/Auto/Moto",
+                     
+                     Hobby == "Nature/Ecologie/Animaux" | Hobby == "Natur / Ökologie / Tiere" | Hobby == "Naturaleza/Ecología/Animales" | Hobby == "Nature/Ecology/Animals" ~ "Nature/Ecology/Animals",
+                     
+                     Hobby == "Cuisine/Bricolage/Maison" | Hobby == "Kochen / Basteln / Heim" | Hobby == "Cocina / Bricolaje / Hogar" | Hobby == "Cooking/Crafting/Home" ~ "Cooking/Crafting/Home",
+                     
+                     Hobby == "Informatique/Jeux-video/Média/Sciences/Technologies" | Hobby == "Informatik / Videospiele / Medien / Wissenschaften / Technologien" | Hobby == "Informática/Videojuegos/Medios/Ciencias/Tecnologías" | Hobby == "Computer science/Video games/Media/Sciences/Technologies" ~ "Computer science/Video games/Media/Sciences/Technologies",
+                     
+                     T ~ "Others"))
+
+
+gform_tot = mutate(gform_tot,
+                   Film = case_when(
+                     Film == "Dessin animé" | Film == "Trickfilm" | Film == "Película animada" | Film == "Cartoon" ~ "Cartoon",
+                     
+                     Film == "Film d'angoisse-épouvante avec des animaux" | Film == "Horrorfilm mit Tieren" | Film == "Película de terror y ansiedad con animales" | Film == "Anxiety-horror movie with animals" ~ "Anxiety-horror movie with animals",
+                     
+                     Film == "Documentaire animalier" | Film == "Natur-Dokumentarfilm" | Film == "Documental animal" | Film == "Wildlife documentary" ~ "Wildlife documentary",
+                     
+                     T ~ "Do something else"))
+
+
+ gform_tot = mutate(gform_tot,
+                  Animal = case_when(
+                    Animal == "Animal 1" | Animal == "Tier 1" ~ "Panthera_tigris",
+                    Animal == "Animal 2"| Animal == "Tier 2" ~ "Pithecophaga_jefferyi",
+                    Animal == "Animal 3"| Animal == "Tier 3" ~ "Bitis_gabonica",
+                    Animal == "Animal 4"| Animal == "Tier 4" ~ "Mandrillus_leucophaeus",
+                    Animal == "Animal 5"| Animal == "Tier 5" ~ "Hipposideros_speoris",
+                    Animal == "Animal 6"| Animal == "Tier 6" ~ "Desert_Wolf_Spider",
+                    Animal == "Animal 7"| Animal == "Tier 7" ~ "Canis_Rufus",
+          
+                     T ~ "Ursus_americanus"))
+
+ 
+ 
+gform_tot = mutate(gform_tot,
+                  Death = case_when(
+                    Death == "Yes" | Death == "Oui" | Death == "Ja" | Death == "Si" ~ "Yes",
+                    Death == "No" | Death == "Nein" | Death == "Non" ~ "No",
+                  
+                     T ~ "Do not know"))
+
+
+
+gform_tot = mutate(gform_tot,
+                  Eaten = case_when(
+                    Eaten == "Yes" | Eaten == "Oui" | Eaten == "Ja" | Eaten == "Si" ~ "Yes",
+                    Eaten == "No" | Eaten == "Nein" | Eaten == "Non" ~ "No",
+                  
+                     T ~ "Do not know"))
+
+
+
+gform_tot = mutate(gform_tot,
+                  Injured = case_when(
+                    Injured == "Yes" | Injured == "Oui" | Injured == "Ja" | Injured == "Si" ~ "Yes",
+                    Injured == "No" | Injured == "Nein" | Injured == "Non" ~ "No",
+                  
+                     T ~ "Do not know"))
+
+
+
+gform_tot = mutate(gform_tot,
+                  Encounter = case_when(
+                    Encounter == "Oui, dans la nature" | Encounter == "Ja, in freier Wildbahn" | Encounter == "Yes, in the wild" | Encounter == "Si, en la naturaleza" ~ "In the wild",
+                    Encounter == "Oui, en captivité" | Encounter == "Ja, in Gefangenschaft" | Encounter == "Si, en cautiverio" | Encounter == "Yes, in captivity" ~ "In captivity",
+                  
+                     T ~ "No"))
+
+
+
+gform_tot = mutate(gform_tot,
+                  Phobia = case_when(
+                    Phobia == "Des serpents" | Phobia == "Vor Schlangen" | Phobia == "A los serpientes" | Phobia == "For snakes" ~ "Snakes",
+                    Phobia == "Des araignées" | Phobia == "Vor Spinnen" | Phobia == "A las arañas" | Phobia == "For spiders" ~ "Spiders",
+                    Phobia == "Des serpents et des araignées" | Phobia == "Vor Schlangen und Spinnen" | Phobia == "A los serpientes y las arañas" | Phobia == "For snakes and spiders" ~ "Snakes and Spiders",
+                    
+                  Phobia == "D'un autre animal" | Phobia == "Vor anderen Tieren" | Phobia == "A otro aimal" | Phobia == "For another animal" ~ "Another animal",
+
+                     T ~ "Don't have an animal phobia"))
+```
+
+
+Toutes les colonnes sont des chaines de caracteres sauf l'age et la reaction de peur
+Nous voulons des Facteurs
+
+
+```{r}
+gform_tot$Language = factor(gform_tot$Language)
+gform_tot$Sex = factor(gform_tot$Sex)
+gform_tot$Hand = factor(gform_tot$Hand)
+gform_tot$Geo = factor(gform_tot$Geo)
+gform_tot$GeoP =  factor(gform_tot$GeoP)
+gform_tot$GeoM = factor(gform_tot$GeoM)
+gform_tot$Academic =  factor(gform_tot$Academic)
+gform_tot$Naturalist =  factor(gform_tot$Naturalist)
+gform_tot$Hobby =  factor(gform_tot$Hobby)
+gform_tot$Film =  factor(gform_tot$Film)
+gform_tot$Animal =  factor(gform_tot$Animal)
+gform_tot$Death =  factor(gform_tot$Death)
+gform_tot$Fear =  factor(gform_tot$Fear)
+gform_tot$Eaten =  factor(gform_tot$Eaten)
+gform_tot$Injured =  factor(gform_tot$Injured)
+gform_tot$Encounter =  factor(gform_tot$Encounter)
+gform_tot$Phobia =  factor(gform_tot$Phobia)
+gform_tot$judge_id =  factor(gform_tot$judge_id)
+
+
+```
+
+
+
+
+
+
+Comptabiliser le nombre de reponses pour un critere dans le tableau
+
+Creation d'un dataframe identique a gform_tot qui compte le nombre d'individus appartenant a un critere
+
+comme par exemple Western Africa de la colonne Geo
+
+```{r}
+gform_tot_count = gform_tot
+
+gform_tot_count$Count = 0  # remplir la colonne Count avec que des 0
+
+gform_tot_count$Count= as.numeric(gform_tot_count$Count)
+
+for (i in 1:length(gform_tot_count[,1])) {
+  if (gform_tot_count[i,6] == "Western Africa"){               # 6 car 6eme colonne est Geo
+    gform_tot_count[i+1,23] = gform_tot_count[i,23] + 1   # 23 car 23eme colonne est Count
+  } 
+  else (gform_tot_count[i+1,23] = gform_tot_count[i,23])
+}
+
+```
+
+
+Supprimer les valeurs en doubles selon la colonne count ==> ne garde que la premiere occurence
+Ne garde que les lignes dont le nombre de participation (colonne Count) change
+
+```{r}
+gform_tot_count = gform_tot_count %>% distinct(Count,.keep_all = TRUE)
+```
+
+
+```{r}
+Graph_Geo_Western_Africa=ggplot(gform_tot_count, aes(x=Day ,y=Count)) + 
+  geom_point()+
+
+  ylab("Number of participants")  + 
+  xlab("Day") + 
+  ggtitle("Western Africa") + 
+  
+  theme( axis.line = element_line(colour = "black", size = 1.1, linetype = "solid")) +
+  theme(axis.text.x = element_text(color="black", size=14),axis.text.y = element_text(color="black", size=14)) +
+  theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))+
+  theme(legend.title = element_text(color = "black", size = 15), legend.text = element_text(color = "black",size=12))
+ 
+  
+ 
+Graph_Geo_Western_Africa
+```
+
+
+
+
+Graphique de participation en fonction de l'age
+
+```{r}
+Graph_Age=ggplot(data  = gform_tot,aes(x=Age))+
+  geom_bar()+
+  
+   ylab("Number of participants")  + 
+   xlab("Age") + 
+  
+  theme( axis.line = element_line(colour = "black", size = 1.1, linetype = "solid")) +
+  theme(axis.text.x = element_text(color="black", size=14),axis.text.y = element_text(color="black", size=14)) +
+  theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))+
+  theme(legend.title = element_text(color = "black", size = 15), legend.text = element_text(color = "black",size=12))
+ 
+  
+   
+
+Graph_Age
+
+```
+
+Graphique de participation en fonction du niveau academique
+
+
+```{r}
+Graph_Academie=ggplot(data=gform_tot,aes(x=Academic,fill=Academic))+
+  geom_bar(stat="count")+
+  
+  
+  ylab("Number of participants")  + 
+  xlab("") + 
+  ggtitle("") + 
+  
+  scale_fill_discrete(name = "Academic Level")+
+  
+  theme( axis.line = element_line(colour = "black", size = 1.1, linetype = "solid")) +
+  theme(axis.text.x = element_text(color="black", size=14),axis.text.y = element_text(color="black", size=14)) +
+  theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))+
+  theme(legend.title = element_text(color = "black", size = 15), legend.text = element_text(color = "black",size=12))+
+  
+  theme(axis.text.x = element_blank())
+
+
+Graph_Academie
+
+```
+
+Graphique de participation en fonction de la zone geographique
+
+```{r}
+Graph_Geo=ggplot(data=gform_tot,aes(x=Geo,fill=Geo))+
+  geom_bar(stat="count")+
+  
+  
+  ylab("Number of participants")  + 
+  xlab("") + 
+  ggtitle("") + 
+  
+  scale_fill_discrete(name = "Geographical area")+
+  
+  theme( axis.line = element_line(colour = "black", size = 1.1, linetype = "solid")) +
+  theme(axis.text.x = element_text(color="black", size=14),axis.text.y = element_text(color="black", size=14)) +
+  theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))+
+  theme(legend.title = element_text(color = "black", size = 15), legend.text = element_text(color = "black",size=12))+
+  
+  theme(axis.text.x = element_blank())
+
+
+Graph_Geo
+```
+
+Graphique de participation en fonction du Hobby
+
+
+```{r}
+Graph_Hobby=ggplot(data=gform_tot,aes(x=Hobby,fill=Hobby))+
+  geom_bar(stat="count")+
+  
+  
+  ylab("Number of participants")  + 
+  xlab("") + 
+  ggtitle("") + 
+  
+  scale_fill_discrete(name = "Hobby")+
+  
+  theme( axis.line = element_line(colour = "black", size = 1.1, linetype = "solid")) +
+  theme(axis.text.x = element_text(color="black", size=14),axis.text.y = element_text(color="black", size=14)) +
+  theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))+
+  theme(legend.title = element_text(color = "black", size = 15), legend.text = element_text(color = "black",size=12))+
+  
+  theme(axis.text.x = element_blank())
+
+
+Graph_Hobby
+
+```
+
+
+
+
+
+---------------------------------------ELO Score
+
+
+
+Library
+Bibliotheque
+
+```{r}
+library(EloChoice)
+library(dplyr)
+```
+
+Choisir les tabeaux de resultats selon les 4 traductions
+
+```{r}
+Elo_fr=read.csv(file=choose.files(),header = T, sep=",")  
+Elo_es=read.csv(file=choose.files(),header = T, sep=",")  
+Elo_de=read.csv(file=choose.files(),header = T, sep=",")  
+Elo_en=read.csv(file=choose.files(),header = T, sep=",")  
+```
+
+
+Regroupement des 4 tableaux en ajoutant une colonne (source) qui indique l'origine de la ligne
+
+
+```{r}
+Elo_tot=bind_rows(Fr=Elo_fr, Es =Elo_es, En =Elo_en, De =Elo_de ,.id = "Language")
+```
+
+
+-------------------------------CALCUL DU ELO SCORE
+
+
+
+Utilisation de la fonction format_data.
+La fonction rajoute une colonne pour le perdant de chaque duel. La Colonne est nommee loser.
+
+data doit etre un tableau avec au moins 3 colonnes : vainqueur (winner), challenger 1 et challenger 2.
+Vainqueur (winner) correspond a l'image qui a gagne le duel entre challenger 1 et challenger 2.
+
+
+
+```{r}
+
+format_data <- function(data) {
+  # Creation colonne avec le vainqueur
+  # column with IDs of the winners
+  data$winner = as.character(data$winner) 
+  #Creation colonne avec le perdant
+  # column with IDs of the losers 
+  data <- data %>% # utilisation d'un pipeline : data est utilise dans mutate
+    dplyr::mutate(loser = ifelse(data$winner == data$challenger_1
+                                 , as.character(challenger_2)
+                                 , as.character(challenger_1)))
+  
+  #mutate : creation d'une colone dans data a partir des deux colonnes challenger1 et challenger2
+  #Colone loser est challenger1 si winner est challenger2 et inversement (utilisation fonction ifelse pour condition)
+  return(data)
+}
+
+```
+
+
+
+
+```{r}
+Elo_tot=format_data(Elo_tot)
+
+Elo_tot
+```
+
+
+
+Utilisation de la fonction elochoice du package EloChoice
+
+```{r}
+res <- elochoice(winner = Elo_tot$winner, loser = Elo_tot$loser, startvalue = 1500, runs = 100)
+```
+
+
+Stockages des scores. Classement des especes par ordre croissant de score Elo.
+
+
+```{r}
+
+scores<- ratings(res, drawplot=F) 
+
+scores<- scores[sort(names(scores))]
+
+species <- sort(unique(c(as.character(Elo_tot$challenger_1), as.character(Elo_tot$challenger_2))),decreasing = F)
+
+scores<- data.frame(Name=species, EloScore=scores, row.names = NULL)
+
+scores<- scores[order(scores$EloScore, decreasing =F),]
+
+scores$Rank <- order(scores$EloScore, decreasing=F) 
+
+scores
+
+```
+
+
+
+```{r}
+classement=ggplot(scores, aes(x=Rank , y = EloScore)) + 
+  geom_point() +
+  ylab("Elo Score")  + 
+  xlab("RanK") + 
+  ggtitle("Pictures ranking") +
+  theme( axis.line = element_line(colour = "black", size = 1.1, linetype = "solid")) +
+  theme(axis.text.x = element_text(color="black", size=14),axis.text.y = element_text(color="black", size=14)) +
+  theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))
+  
+  
+classement
+
+```
+
+
+
+Distinction des groupes d'animaux.
+
+Ajout de colonnes avec indication de groupes
+(predateur, dangeureux etc...)
+
+Fichier "Goups"
+
+```{r}
+Groups = read.csv(file=choose.files(),header = T, sep=";") 
+Groups
+```
+
+=========> Comment associer les deux tableaux selon la colonne name ?
+La fonction left_join ne s'applique pas aux tableaux....
+
+
+Association des deux tableaux
+
+Pour cela il faut que le tableau scores soit ordonne de la meme maniere que le tableau groups c'est a dire par ordre alphanumerique de la colonne Name
+
+```{r}
+scores<- scores[order(scores$Name, decreasing =F),]
+
+scores
+```
+
+
+Test avec fonction left_join ou fonction merge ou fonction full_join
+
+```{r}
+scores_Groups = left_join(scores,Groups,by= c(Name="Name_2"))
+
+scores_Groups
+```
+
+=======> Une erreur que je ne comprends pas==========<
+
+
+Utilisons cbind
+
+la colonne Name_2 permet de verifier que la liaision est correcte
+
+```{r}
+scores_Groups <- cbind(scores,Groups)
+
+scores_Groups
+```
+
+
+Test pour verifier que l'on obtient le meme graphique de classement
+
+
+
+```{r}
+classement_test=ggplot(scores_Groups, aes(x=Rank , y =EloScore)) + 
+  geom_point()  +
+  ylab("Elo Score")  + 
+  xlab("RanK") + 
+  ggtitle("Pictures ranking") +
+  theme( axis.line = element_line(colour = "black", size = 1.1, linetype = "solid")) +
+  theme(axis.text.x = element_text(color="black", size=14),axis.text.y = element_text(color="black", size=14)) +
+  theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))
+  
+  
+classement_test
+
+```
+
+
+
+
+Classement selon sous groupe
+
+```{r}
+classement_subgroup=ggplot(scores_Groups, aes(x=Rank , y =EloScore, color=Subgroup )) + 
+  geom_point() +
+  
+  scale_color_discrete(name = "Group")+
+  theme(legend.title = element_text(color = "black", size = 15), legend.text = element_text(color = "black",size=12))+
+  ylab("Elo Score")  + 
+  xlab("Rank") + 
+  ggtitle("Pictures ranking") +
+  
+  theme( axis.line = element_line(colour = "black", size = 1.1, linetype = "solid")) +
+  theme(axis.text.x = element_text(color="black", size=14),axis.text.y = element_text(color="black", size=14)) +
+  theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))
+ 
+classement_subgroup
+```
+
+
+Beaucoup de Sous groupes ==> difficultes de lecture
+
+Mise en evidence de groupes d'interets : Felin Rapace Primate Serpent Araignee Canin Croc Ours Hyene Autres
+
+Creation nouveau tableau avec nouvelle colonne interet qui repertorie les groupes que l'on souhaite mettre en evidence dans le graphique
+
+
+```{r}
+scores_Groups_Interet =scores_Groups
+scores_Groups_Interet =  mutate(scores_Groups_Interet,
+                    Interet = case_when(
+                    Subgroup == "Felidae" ~ "Felidae",
+                    Subgroup == "Spider"~ "Spider",
+                    Subgroup == "Raptor"~ "Raptor",
+                    Subgroup == "Snake"~ "Snake",
+                    Subgroup == "Crocodile"~ "Crocodile",
+                    Subgroup == "Canidae"~ "Canidae",
+                    Subgroup == "Ursus"~ "Ursus",
+                    Subgroup == "Hyenidae"~"Hyenidae",
+                    Subgroup == "Primate"~ "Primate",
+                     T ~ "Others"))
+```
+
+Choix des groupes a mettre en evidence par couleur et forme
+ggplot classe par ordre alphanumerique
+
+
+
+```{r}
+classement_Interet=ggplot(scores_Groups_Interet, aes(x=Rank , y =EloScore , col=Interet, shape = Interet,size=Interet)) + 
+  geom_point() +
+  
+  
+  scale_color_manual(name = "Group",values=c("grey","green","red","grey","grey","grey","blue","purple","yellow","brown"))+
+  scale_shape_manual(name = "Group",values=c(17,17,17,17,17,17,17,17,17,17))+
+  scale_size_manual(name = "Group",values=c(1,4,4,1,1,1,4,4,4,4))+
+  
+  theme(legend.title = element_text(color = "black", size = 15), legend.text = element_text(color = "black",size=12))+
+  
+  
+  ylab("Elo Score")  + 
+  xlab("Rank") + 
+  
+  ggtitle("Pictures ranking") +
+  theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))+
+  
+  theme(axis.line = element_line(colour = "black", size = 1.1, linetype = "solid")) +
+  theme(axis.text.x = element_text(color="black", size=14),axis.text.y = element_text(color="black", size=14)) 
+  
+  
+  
+classement_Interet
+```
+
+
+
+
+Classement selon predation sur primates
+
+```{r}
+classement_5=ggplot(scores_Groups_Interet, aes(x=Rank , y =EloScore , col=Predator.of.primates, shape=Predator.of.primates, size=Predator.of.primates)) + 
+  geom_point() +
+  
+  scale_color_manual(name="Predator\nof primates",values=c("#0000FF","#FF0000"),labels=c("No","Yes"))+
+  scale_shape_manual(name="Predator\nof primates",values=c(16, 17),labels=c("No","Yes"))+
+  scale_size_manual(name="Predator\nof primates",values=c(4,5),labels=c("No","Yes"))+
+  
+  
+  theme(legend.title = element_text(color = "black", size = 15), legend.text = element_text(color = "black",size=15))+
+  
+  
+  ylab("Elo Score")  + 
+  xlab("Rank") + 
+  ggtitle("Pictures ranking") +
+  
+  theme( axis.line = element_line(colour = "black", size = 1.1, linetype = "solid")) +
+  theme(axis.text.x = element_text(color="black", size=14),axis.text.y = element_text(color="black", size=14)) +
+  theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))
+  
+  
+classement_5
+```
+
+
+
+
+Classement selon dangerosite pour l'humain
+
+```{r}
+classement_6=ggplot(scores_Groups_Interet, aes(x=Rank , y =EloScore , col=Dangerous, shape=Dangerous, size=Dangerous)) + 
+  geom_point() +
+
+  scale_color_manual(name="Dangerous\nanimal\nfor humans",values=c("#0000FF","#FF0000"),labels=c("No","Yes"))+
+  scale_shape_manual(name="Dangerous\nanimal\nfor humans",values=c(16, 17),labels=c("No","Yes"))+
+  scale_size_manual(name="Dangerous\nanimal\nfor humans",values=c(4,5),labels=c("No","Yes"))+
+  
+  
+  theme(legend.title = element_text(color = "black", size = 15), legend.text = element_text(color = "black",size=15))+
+  
+  
+  ylab("Elo Score")  + 
+  xlab("Rank") + 
+  ggtitle("Pictures ranking") +
+  
+  theme( axis.line = element_line(colour = "black", size = 1.1, linetype = "solid")) +
+  theme(axis.text.x = element_text(color="black", size=14),axis.text.y = element_text(color="black", size=14)) +
+  theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))
+  
+  
+classement_6
+```
+
+
+
+
+--------Stabilisation des scores
+
+
+
+
+
+Utilisation de la fonction booting_elo
+
+Fonction qui calcule le score ELO chaque etape des x duels
+Le tableau de donnees data doit etre un data frame avec 4 colonnes, challenger1, challenger2, vainqueur (winner), perdant (loser)
+La variable startvalue est la valeur pour laquelle chaque challenger commence a calculer le score ELO
+la variable runs est le nombre de fois a faire un bootstrap 
+La variable stepelo est l'etape a laquelle le score ELO est calcule
+
+
+sort() permet de trier les elements d'un vecteur
+
+
+
+
+
+```{r}
+
+booting_elo <- function(data, startvalue = 1500, runs = 1, stepelo = 100) {
+
+  
+  # initialization of the dataframe to record the elo scores
+  #matrice vide avec 1 ligne et autant de colonne que de challenger + 1 => matrice devient dataframe
+elo_match_nb <- as.data.frame(matrix(NA, nrow=1, 
+                                     ncol=length(unique(c(as.character(data$challenger_1),as.character(data$challenger_2))))+1))
+
+#tri dans l'ordre croissant de tous les challenger
+species <- sort(unique(c(as.character(data$challenger_1), 
+                         as.character(data$challenger_2))),decreasing = FALSE)
+
+#Titre des colonnes : colonne 1 : numero du duel, le reste des colonnes : espece (challenger)
+colnames(elo_match_nb) <- c('match_nb', species)
+
+
+  
+  # match=1
+  elo_match_nb[1,]=startvalue
+  elo_match_nb$match_nb[1]=1
+  
+  # checking how many matches min 
+  minmatch = opti_minmatch(data)  
+  cat("min nb match:",minmatch,"\n")  #affichage par la fonction cat du nombre de duel minimal (\n => saute une ligne)
+  
+  
+  
+  
+  res <- elochoice(winner = data$winner[1:minmatch], 
+                   loser = data$loser[1:minmatch], 
+                   startvalue = startvalue, runs = runs)
+  
+  elo <- ratings(res, drawplot=F)
+  
+  elo_match_nb <- bind_rows(elo_match_nb, elo[sort(names(elo))])
+  
+  elo_match_nb$match_nb[2] = minmatch
+  
+  match_current = minmatch
+  
+  maxmatch = opti_maxmatch(data, minmatch, stepelo)[1]
+  extra = opti_maxmatch(data, minmatch, stepelo)[2]
+  
+  # loop for the rest of the matchs
+  pos=3
+  
+  while(match_current < maxmatch + extra) {
+    match_current = match_current + stepelo
+    res <- elochoice(winner = data$winner[1:match_current], loser = data$loser[1:match_current], startvalue = startvalue, runs = runs)
+    elo <- ratings(res, drawplot=F)
+    elo_match_nb <- bind_rows(elo_match_nb, elo[sort(names(elo))])
+    elo_match_nb$match_nb[pos] = match_current
+    cat("match:",match_current,"\n")
+    pos = pos + 1
+    stepelo = ifelse(match_current < maxmatch, stepelo, extra)
+  }
+  return(elo_match_nb)
+  
+}
+
+```
+
+Utilisation de la fonction opti_minmatch
+
+
+Fonction permettant de calculer le nombre de duel a faire pour que chaque challenger rencontre tous les autres challengers.
+Le tableau de donnees (data) doit etre un dataframe avec deux colonnes au minimum : vainqueur(winner) et perdant (loser).
+la variable match_base est le nombre minimum de duel attendu pour avoir au moins un duel par challenger
+Fonction unique(x) : si x est un vecteur ou un tableau de donnees, retourne un objet similaire, mais avec les elements dupliques supprimes
+
+
+```{r}
+
+opti_minmatch <- function(data, match_base = 500) {
+# vecteur avec tous les vainqueurs et les perdants, les duplicats sont supprimes
+  liste_id = unique(c(data$winner, data$loser))
+
+#taille du vecteur sur 500 lignes (match_base) pour lesquelles il y a les vainqueurs et les perdant qu'une seul fois
+  match = length(unique(c((data[1:match_base, c("winner")]), (data[1:match_base, c("loser")]))))
+
+#Boucle tant que : tant que la taille de liste_id et differente de la taille optimal pour avoir au moins tous les vainqueurs et perdant au moins une fois (challenger soit vainqueur soit loser au moins une fois), alors on augmente de 100 lignes match_base et on recalcule match
+  while (length(liste_id) != match) {
+    match_base = match_base + 100
+    match = length(unique(c(data[1:match_base, c("winner")], data[1:match_base, c("loser")])))
+    
+  }
+  return(match_base)
+}
+
+```
+
+
+Utilisation de la fonction opti_maxmatch
+
+Fonction pour trouver Maxmatch  Nombre de duel maximal
+Le tableau de donnees doit etre un datafram avec deux colones, vainqueur et perdant
+la variable minmatch est le nombre de duels necessaires pour avoir au moins un duel par challenger
+stepelo est l’etape a laquelle chercher la reponse 
+
+floor() arrondit a l'entier le plus petit
+
+
+```{r}
+
+opti_maxmatch <- function(data, minmatch, stepelo = 100) {
+  
+  length_id = length(data$winner) #taille correspondant au nombre total de vainqueurs
+  
+  maxmatch = floor((length_id - minmatch)/stepelo) * stepelo + minmatch 
+  extra = length_id - maxmatch
+  return(c(maxmatch, extra))
+}
+
+```
+
+
+-----------------Stabilisation
+
+
+Stabilisation des scores en fonction du nombre de duels
+
+
+```{r}
+stab=booting_elo(Elo_tot,startvalue=1500,runs=10,stepelo=2000)
+
+stab
+```
+
+
+
+Stabilisation Score de la photo qui fait le plus peur = Crocodylus porosus
+
+
+```{r}
+stabgraph_1=ggplot(stab, aes (x=match_nb, y= Crocodylus_porosus)) + 
+  ylim(800,2200)  + 
+  ylab("Elo Score")  + 
+  xlab("Number of duels") + 
+  ggtitle("Stabilization of the Elo Score of Crocodylus porosus") +
+  
+  theme( axis.line = element_line(colour = "black", size = 1.1, linetype = "solid")) +
+  theme(axis.text.x = element_text(color="black", size=14),axis.text.y = element_text(color="black", size=14)) +
+  theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))+
+  
+  geom_line(linetype = "solid", color="black", lwd=2) +
+  geom_hline(yintercept=max(scores$EloScore), linetype="dashed", color = "red", size=1) + 
+  geom_hline(yintercept=min(scores$EloScore), linetype="dashed", color = "blue", size=1) + 
+  geom_hline(yintercept=mean(scores$EloScore), linetype="dashed", color = "green", size=1) 
+
+
+stabgraph_1
+```
+
+
+
+
+Stabilisation Score de la photo qui fait le moins peur = Oryctolagus cuniculus 2
+
+
+```{r}
+stabgraph_2=ggplot(stab, aes (x=match_nb, y= Oryctolagus_cuniculus2)) + 
+  
+  ylim(700,2200)  + 
+  ylab("Elo Score")  + 
+  xlab("Number of duels") + 
+  ggtitle("Stabilization of the Elo Score of Oryctolagus cuniculus ") +
+  
+  theme( axis.line = element_line(colour = "black", size = 1.1, linetype = "solid")) +
+  theme(axis.text.x = element_text(color="black", size=14),axis.text.y = element_text(color="black", size=14)) +
+  theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))+
+  
+  geom_line(linetype = "solid", color="black", lwd=2) +
+  geom_hline(yintercept=max(scores$EloScore), linetype="dashed", color = "red", size=1) + 
+  geom_hline(yintercept=min(scores$EloScore), linetype="dashed", color = "blue", size=1) + 
+  geom_hline(yintercept=mean(scores$EloScore), linetype="dashed", color = "green", size=1) 
+
+
+stabgraph_2
+```
+
+
+
+
+
+
+
+----------Couplage du tableau Elo Score et du tableau Questionnaire
+
+Calculer des Scores Elo selon des criteres de distinction entre participants comme l'age, la zone geographique (du participant, du pere, de la mere), le niveau academique, les conaissances naturalistes, le principal centre d'interet, les phobies.
+
+
+
+
+Library 
+
+```{r}
+library(irr)
+library(dplyr)
+library(tidyr)
+library(GGally)
+```
+
+
+Fonction qui obtient le Elo Score d'une image avec n runs pour un niveau d'un facteur (critere du questionnaire)
+
+dataset_photo = data_all
+dataset_answer = answer
+factor = "Sexe"
+level = "A1"
+Startvalue = 1500
+runs = 10
+type= "score" or "rank"
+
+
+
+
+```{r}
+get_BDD_elo <- function(dataset_photo, dataset_answers, factor, level, type="score", startvalue = 1500, runs = 10) {
+  
+  col_temp <- dataset_answers[,colnames(dataset_answers)==factor]
+  id <- dataset_answers$judge_id[col_temp==level]
+  BDD <- dataset_photo[dataset_photo$judge_id %in% id,]
+  res <- elochoice(winner = BDD$winner, loser = BDD$loser, startvalue = startvalue, runs = runs)
+  temp <- ratings(res, drawplot=F)
+  temp2 <- data_frame(name = names(temp), EloScore = temp)
+  if (type=="rank") {
+    temp2$Rank <- order(temp2$EloScore, decreasing=T)
+    temp2$EloScore <- NULL
+  }
+  temp3 <- temp2[order(temp2$name), ]
+  return(temp3)
+}
+
+```
+
+
+
+
+Fonction qui recupere les scores Elo pour chaque niveau d'un facteur
+
+type = "score" or "rank"
+dataset_photo <- data
+dataset_answers <- answers
+factor <- "sexe"
+startvalue = 1500
+runs = 10
+
+
+```{r}
+
+past_BDD_elo <- function(dataset_photo, dataset_answers, factor, type= "score", startvalue = 1500, runs = 10) {
+
+  
+  levels_factor <- levels(dataset_answers[,colnames(dataset_answers)==factor])
+  n <- length(levels_factor)
+  species <- sort(unique(c(as.character(dataset_photo$challenger_1), as.character(dataset_photo$challenger_2))),decreasing = FALSE)
+  BDD <- data_frame(name = species)
+  for (i in 1:n) {
+    BDD_temp <- get_BDD_elo(dataset_photo, dataset_answers, factor, levels_factor[i], type, startvalue = 1500, runs = 10)
+    BDD <- left_join(BDD, BDD_temp, by="name")
+  }
+  colnames(BDD) <-c("name", levels_factor)
+  return(BDD)
+}
+
+
+```
+
+
+
+-----------Critere SEXE
+
+
+```{r}
+table(gform_tot$Sex)
+```
+
+
+Convertir les colonnes en facteur
+
+```{r}
+gform_tot$Language= as.factor(gform_tot$Language)
+gform_tot$Date= as.factor(gform_tot$Date)
+gform_tot$Sex= as.factor(gform_tot$Sex)
+gform_tot$Hand= as.factor(gform_tot$Hand)
+gform_tot$Geo= as.factor(gform_tot$Geo)
+gform_tot$GeoP= as.factor(gform_tot$GeoP)
+gform_tot$GeoM= as.factor(gform_tot$GeoM)
+gform_tot$Academic= as.factor(gform_tot$Academic)
+gform_tot$Naturalist= as.factor(gform_tot$Naturalist)
+gform_tot$Hobby= as.factor(gform_tot$Hobby)
+gform_tot$Fear= as.factor(gform_tot$Fear)
+gform_tot$Film= as.factor(gform_tot$Film)
+gform_tot$Animal= as.factor(gform_tot$Animal)
+gform_tot$Death= as.factor(gform_tot$Death)
+gform_tot$Eaten= as.factor(gform_tot$Eaten)
+gform_tot$Injured= as.factor(gform_tot$Injured)
+gform_tot$Encounter= as.factor(gform_tot$Encounter)
+gform_tot$Phobia= as.factor(gform_tot$Phobia)
+gform_tot$Mail= as.factor(gform_tot$Mail)
+gform_tot$judge_id= as.factor(gform_tot$judge_id)
+```
+
+
+
+
+Tableaux avec les rangs
+
+```{r}
+BDD_sexe_rang <- past_BDD_elo(Elo_tot, gform_tot, "Sex", type="rank", runs = 100)
+
+#BDD_sexe_rang<-rang_BDD_sexe[, c("A1", "A2", "A3")] ==> enlever colonne des especes
+
+write.csv(BDD_sexe_rang, file = file.path("F:/Stage M2/Questionnaire/Resultats/Donnees/BDD/BDD_Sexe_rang.csv"), row.names=T)
+
+```
+
+Tableaux avec les scores
+
+```{r}
+BDD_sexe_score <- past_BDD_elo(Elo_tot, gform_tot, "Sex", type="Score", runs = 100) 
+
+#BDD_sexe_score <- BDD_sexe[, c("A1","A2","A3")]  ==> enlever colonne des especes
+
+write.csv(BDD_sexe_score, file = file.path("F:/Stage M2/Questionnaire/Resultats/Donnees/BDD/BDD_Sexe_score.csv"), row.names=F)
+```
+
+
+Combiner Tableaux rang et score
+
+```{r}
+BDD_sexe_complet <- left_join(BDD_sexe_score, BDD_sexe_rang, by="name")
+
+names(BDD_sexe_complet)=c("name","EloScoreF","EloScoreM","EloScoreNM","RankF","RankM","RankNM")
+
+write.csv(BDD_sexe_complet, file = file.path("F:/Stage M2/Questionnaire/Resultats/Donnees/BDD/BDD_Sexe_complet.csv"), row.names=F)
+```
+
+=========> Comment faire pour avoir tableau Name - Score - Rang - Sexe ?? =========<
+
+Bidouillage sous Excel ==> Trop long et source d'erreurs
+
+
+Ranger le tableaux selon les rang
+
+```{r}
+BDD_sexe_complet<- BDD_sexe_complet[order(BDD_sexe_complet$RankF, decreasing =F),]
+```
+
+Graphique des Scores selon les Sexes
+
+```{r}
+classement_sexe=ggplot(BDD_sexe_complet, aes(x=RankF , y =EloScoreF)) + 
+  geom_point() +
+  scale_color_discrete(name = "Sexe")+
+  theme(legend.title = element_text(color = "black", size = 15), legend.text = element_text(color = "black",size=12))+
+  ylab("Elo Score")  + 
+  xlab("Rank") + 
+  ggtitle("Pictures Ranking for Females") +
+  theme( axis.line = element_line(colour = "black", size = 1.1, linetype = "solid")) +
+  theme(axis.text.x = element_text(color="black", size=14),axis.text.y = element_text(color="black", size=14)) +
+  theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))
+ 
+  
+  
+classement_sexe
+```
+
+
+
+
+Coefficient de Kendall
+
+```{r}
+kendall(BDD_sexe_score[, c("F", "M","Not mentioned")])
+```
+
+
+
+
+Coefficient de Correlation Intra-classe
+
+Modele a deux facteurs a effets aleatoires (two-way random). Un ensemble de k evaluateurs sont choisis au hasard, puis chaque individu est mesure par le même ensemble de k evaluateurs ayant des caracteristiques similaires. Dans ce modele, les individus et les evaluateurs sont consideres comme des effets aleatoires. Le modele a deux facteurs aleatoires est choisi si nous prevoyons de generaliser nos resultats de fiabilite a tout evaluateur qui possede les mêmes caracteristiques que les evaluateurs selectionnes dans l’etude de fiabilite. Ce modele convient a l’evaluation des methodes d’evaluation clinique fondees qui sont conçues pour être utilise en routine.
+
+Si l’unite d’analyse est une moyenne de plusieurs evaluations, l’unite doit être remplacee par “average”.
+
+
+
+```{r}
+icc(BDD_sexe_score[, c("F", "M","Not mentioned")], model="twoway", type="consistency", unit="average")
+```
+
+
+```{r}
+ggplot(BDD_sexe_score, aes(F,M)) +
+  
+  xlim(800,2000)+
+  ylim(800,2000)+
+  
+  geom_point() +
+  geom_smooth()+
+  
+  
+  ylab("Female")  + 
+  xlab("Male") + 
+    ggtitle("Elo Score correlation between gender") +
+  
+  theme( axis.line = element_line(colour = "black", size = 1.1, linetype = "solid")) +
+  theme(axis.text.x = element_text(color="black", size=14),axis.text.y = element_text(color="black", size=14)) +
+  theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))
+  
+
+  
+```
+
+Fonction des correlations croisees entre A1 A2 et A3
+
+```{r}
+library(PerformanceAnalytics)
+chart.Correlation(BDD_sexe_score[, c("F", "M","Not mentioned")],histogram=TRUE,pch=19)
+```
+
+
+
+-----------Critere ACADEMIE
+
+G1:Maternelle
+G2:Primaire
+G3:College
+G4:Lycee
+G5:Bac
+G6:Bac+1 +2 +3
+G7:Bac+4 +5
+G8:Doctorat et plus
+G9:Autre parcours
+
+
+```{r}
+table(gform$Academie)
+```
+
+Regroupons des categories G1 et G2 ainsi que G3 et G4
+
+Nouveaux groupes
+
+G2:Maternelle + Primaire
+G4:College + Lycee
+
+```{r}
+gform$cat_academie <- ifelse(gform$Academie=="G1","G2", as.character(gform$Academie))
+gform$cat_academie <- ifelse(gform$cat_academie=="G3","G4", as.character(gform$cat_academie))
+gform$cat_academie <- factor(gform$cat_academie)
+table(gform$cat_academie)
+```
+
+
+Calcul ICC
+
+```{r}
+BDD_academie <- past_BDD_elo(data, gform, "cat_academie", 
+                           type="score", runs = 100)
+
+BDD_academie <- BDD_academie[, c("G2",   "G4"   ,"G5" ,  "G6" ,  "G7",   "G8",   "G9")] 
+
+icc(BDD_academie, model="twoway", type="consistency", unit="average")
+
+```
+
+Calcul Kendall
+
+```{r}
+
+rang_BDD_academie <- past_BDD_elo(data, gform, "cat_academie", 
+                                type="rank", runs = 100)
+kendall(rang_BDD_academie[, c("G2",   "G4"   ,"G5" ,  "G6" ,  "G7",   "G8",   "G9")])
+```
+
+```{r}
+library(PerformanceAnalytics)
+chart.Correlation(BDD_academie,histogram=TRUE,method = "kendall")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------Test Fonctions pour resoudre Bug
+
+
+```{r}
+
+type = "rank" 
+dataset_photo <- Elo_tot
+dataset_answers <- gform_tot
+factor <- "Sex"
+level = "M"
+startvalue = 1500
+runs = 10
+
+
+get_BDD_elo <- function(dataset_photo, dataset_answers, factor, level, type="score", startvalue = 1500, runs = 10) {
+  
+  
+  col_temp <- dataset_answers[,colnames(dataset_answers)==factor]
+  
+  id <- dataset_answers$judge_id[col_temp==level]
+  
+  BDD <- dataset_photo[dataset_photo$judge_id %in% id,]
+  
+  res <- elochoice(winner = BDD$winner, loser = BDD$loser, startvalue = startvalue, runs = runs)
+  
+  temp <- ratings(res, drawplot=F)
+  
+  temp2 <- data_frame(name = names(temp), EloScore = temp)
+  
+  if (type=="rank") {
+    temp2$Rank <- order(temp2$EloScore, decreasing=T)
+    temp2$EloScore <- NULL
+  }
+  
+  temp3 <- temp2[order(temp2$name), ]
+  
+  return(temp3)
+}
+
+
+
+
+
+past_BDD_elo <- function(dataset_photo, dataset_answers, factor, type= "rank", startvalue = 1500, runs = 10) {
+
+  levels_factor <- levels(dataset_answers[,colnames(dataset_answers)==factor])
+
+    n <- length(levels_factor)
+  
+    species <- sort(unique(c(as.character(dataset_photo$challenger_1), as.character(dataset_photo$challenger_2))),decreasing = FALSE)
+  
+    BDD <- data_frame(name = species)
+  
+    for (i in 1:n) {
+    BDD_temp <- get_BDD_elo(dataset_photo, dataset_answers, factor, levels_factor[i], type, startvalue = 1500, runs = 10)
+    BDD <- left_join(BDD, BDD_temp, by="name")
+    }
+    
+  
+  colnames(BDD) <-c("name", levels_factor)
+  
+  return(BDD)
+}
+
+
+
+```
+
+
+
+
+
+
+Le tableaux ne contient que des chaines de caracteres
+Nous voulons des facteurs
+
+```{r}
+Elo_tot$Language = factor(Elo_tot$Language)
+Elo_tot$judge_id = factor(Elo_tot$judge_id)
+Elo_tot$challenger_1 = factor(Elo_tot$challenger_1)
+Elo_tot$challenger_2 = factor(Elo_tot$challenger_2)
+Elo_tot$winner = factor(Elo_tot$winner)
+
+```
+
+
+
+
+
+
+
+
