@@ -1250,6 +1250,11 @@ BDD_sexe_score <- past_BDD_elo(Elo_tot, gform_tot, "Sex", type="Score", runs = 1
 write.csv(BDD_sexe_score, file = file.path("F:/Stage M2/Questionnaire/Resultats/Donnees/BDD/BDD_Sexe_score.csv"), row.names=F)
 ```
 
+```{r}
+BDD_sexe_score <- read.csv("BDD_Sexe_score.csv",header=TRUE,sep=",")
+BDD_sexe_rang <- read.csv("BDD_sexe_rang.csv",header=TRUE,sep=",")
+
+```
 
 Combiner Tableaux rang et score
 
