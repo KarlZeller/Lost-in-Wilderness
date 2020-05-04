@@ -14,6 +14,7 @@ Library
 library(lubridate)
 library(dplyr)
 library(ggplot2)
+library(utils)
 ```
 
 Recuperer les fichier des googleform
@@ -22,7 +23,8 @@ Download files from googleform
 
 
 ```{r}
-gform_fr=read.csv(file=choose.files(),header = T, sep=";")  
+file.path(paste0"/","ggform_FR.csv"))
+gform_fr=read.csv(file="choose.files()",header = T, sep=";")  
 gform_de=read.csv(file=choose.files(),header = T, sep=";")  
 gform_es=read.csv(file=choose.files(),header = T, sep=";")  
 gform_en=read.csv(file=choose.files(),header = T, sep=";")  
