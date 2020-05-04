@@ -23,11 +23,11 @@ Download files from googleform
 
 
 ```{r}
-file.path(paste0"/","ggform_FR.csv"))
-gform_fr=read.csv(file="choose.files()",header = T, sep=";")  
-gform_de=read.csv(file=choose.files(),header = T, sep=";")  
-gform_es=read.csv(file=choose.files(),header = T, sep=";")  
-gform_en=read.csv(file=choose.files(),header = T, sep=";")  
+
+gform_fr=read.csv(file=file.path("ggform_FR.csv"),header = F,sep=";")  
+gform_de=read.csv(file=file.path("ggform_DE.csv"),header = F, sep=";")  
+gform_es=read.csv(file=file.path("ggform_ES.csv"),header = F, sep=";")  
+gform_en=read.csv(file=file.path("ggform_EN.csv"),header = F, sep=";")  
 
 ```
 
