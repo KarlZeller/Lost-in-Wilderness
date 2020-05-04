@@ -1,0 +1,246 @@
+Functions
+
+==========format_data
+
+
+La fonction rajoute une colonne pour le perdant de chaque duel. La Colonne est nommee loser.
+
+data doit etre un tableau avec au moins 3 colonnes : vainqueur (winner), challenger 1 et challenger 2.
+Vainqueur (winner) correspond a l'image qui a gagne le duel entre challenger 1 et challenger 2.
+
+
+
+```{r}
+
+format_data <- function(data) {
+  # Creation colonne avec le vainqueur
+  # column with IDs of the winners
+  data$winner = as.character(data$winner) 
+  #Creation colonne avec le perdant
+  # column with IDs of the losers 
+  data <- data %>% # utilisation d'un pipeline : data est utilise dans mutate
+    dplyr::mutate(loser = ifelse(data$winner == data$challenger_1
+                                 , as.character(challenger_2)
+                                 , as.character(challenger_1)))
+  
+  #mutate : creation d'une colone dans data a partir des deux colonnes challenger1 et challenger2
+  #Colone loser est challenger1 si winner est challenger2 et inversement (utilisation fonction ifelse pour condition)
+  return(data)
+}
+
+```
+
+
+
+================== booting_elo
+
+Fonction qui calcule le score ELO chaque etape des x duels
+Le tableau de donnees data doit etre un data frame avec 4 colonnes, challenger1, challenger2, vainqueur (winner), perdant (loser)
+La variable startvalue est la valeur pour laquelle chaque challenger commence a calculer le score ELO
+la variable runs est le nombre de fois a faire un bootstrap 
+La variable stepelo est l'etape a laquelle le score ELO est calcule
+
+
+sort() permet de trier les elements d'un vecteur
+
+
+
+
+
+```{r}
+
+booting_elo <- function(data, startvalue = 1500, runs = 1, stepelo = 100) {
+
+  
+  # initialization of the dataframe to record the elo scores
+  #matrice vide avec 1 ligne et autant de colonne que de challenger + 1 => matrice devient dataframe
+elo_match_nb <- as.data.frame(matrix(NA, nrow=1, 
+                                     ncol=length(unique(c(as.character(data$challenger_1),as.character(data$challenger_2))))+1))
+
+#tri dans l'ordre croissant de tous les challenger
+species <- sort(unique(c(as.character(data$challenger_1), 
+                         as.character(data$challenger_2))),decreasing = FALSE)
+
+#Titre des colonnes : colonne 1 : numero du duel, le reste des colonnes : espece (challenger)
+colnames(elo_match_nb) <- c('match_nb', species)
+
+
+  
+  # match=1
+  elo_match_nb[1,]=startvalue
+  elo_match_nb$match_nb[1]=1
+  
+  # checking how many matches min 
+  minmatch = opti_minmatch(data)  
+  cat("min nb match:",minmatch,"\n")  #affichage par la fonction cat du nombre de duel minimal (\n => saute une ligne)
+  
+  
+  
+  
+  res <- elochoice(winner = data$winner[1:minmatch], 
+                   loser = data$loser[1:minmatch], 
+                   startvalue = startvalue, runs = runs)
+  
+  elo <- ratings(res, drawplot=F)
+  
+  elo_match_nb <- bind_rows(elo_match_nb, elo[sort(names(elo))])
+  
+  elo_match_nb$match_nb[2] = minmatch
+  
+  match_current = minmatch
+  
+  maxmatch = opti_maxmatch(data, minmatch, stepelo)[1]
+  extra = opti_maxmatch(data, minmatch, stepelo)[2]
+  
+  # loop for the rest of the matchs
+  pos=3
+  
+  while(match_current < maxmatch + extra) {
+    match_current = match_current + stepelo
+    res <- elochoice(winner = data$winner[1:match_current], loser = data$loser[1:match_current], startvalue = startvalue, runs = runs)
+    elo <- ratings(res, drawplot=F)
+    elo_match_nb <- bind_rows(elo_match_nb, elo[sort(names(elo))])
+    elo_match_nb$match_nb[pos] = match_current
+    cat("match:",match_current,"\n")
+    pos = pos + 1
+    stepelo = ifelse(match_current < maxmatch, stepelo, extra)
+  }
+  return(elo_match_nb)
+  
+}
+
+```
+
+
+=============== opti_minmatch
+
+Fonction permettant de calculer le nombre de duel a faire pour que chaque challenger rencontre tous les autres challengers.
+Le tableau de donnees (data) doit etre un dataframe avec deux colonnes au minimum : vainqueur(winner) et perdant (loser).
+la variable match_base est le nombre minimum de duel attendu pour avoir au moins un duel par challenger
+Fonction unique(x) : si x est un vecteur ou un tableau de donnees, retourne un objet similaire, mais avec les elements dupliques supprimes
+
+
+```{r}
+
+opti_minmatch <- function(data, match_base = 500) {
+# vecteur avec tous les vainqueurs et les perdants, les duplicats sont supprimes
+  liste_id = unique(c(data$winner, data$loser))
+
+#taille du vecteur sur 500 lignes (match_base) pour lesquelles il y a les vainqueurs et les perdant qu'une seul fois
+  match = length(unique(c((data[1:match_base, c("winner")]), (data[1:match_base, c("loser")]))))
+
+#Boucle tant que : tant que la taille de liste_id et differente de la taille optimal pour avoir au moins tous les vainqueurs et perdant au moins une fois (challenger soit vainqueur soit loser au moins une fois), alors on augmente de 100 lignes match_base et on recalcule match
+  while (length(liste_id) != match) {
+    match_base = match_base + 100
+    match = length(unique(c(data[1:match_base, c("winner")], data[1:match_base, c("loser")])))
+    
+  }
+  return(match_base)
+}
+
+```
+
+
+
+
+==================== opti_maxmatch
+
+Fonction pour trouver Maxmatch  Nombre de duel maximal
+Le tableau de donnees doit etre un datafram avec deux colones, vainqueur et perdant
+la variable minmatch est le nombre de duels necessaires pour avoir au moins un duel par challenger
+stepelo est l’etape a laquelle chercher la reponse 
+
+floor() arrondit a l'entier le plus petit
+
+
+```{r}
+
+opti_maxmatch <- function(data, minmatch, stepelo = 100) {
+  
+  length_id = length(data$winner) #taille correspondant au nombre total de vainqueurs
+  
+  maxmatch = floor((length_id - minmatch)/stepelo) * stepelo + minmatch 
+  extra = length_id - maxmatch
+  return(c(maxmatch, extra))
+}
+
+```
+
+
+
+
+
+
+=================== get_BDD_elo
+
+Fonction qui obtient le Elo Score d'une image avec n runs pour un niveau d'un facteur (critere du questionnaire)
+
+dataset_photo = data_all
+dataset_answer = answer
+factor = "Sexe"
+level = "A1"
+Startvalue = 1500
+runs = 10
+type= "score" or "rank"
+
+
+
+
+```{r}
+get_BDD_elo <- function(dataset_photo, dataset_answers, factor, level, type="score", startvalue = 1500, runs = 10) {
+  
+  col_temp <- dataset_answers[,colnames(dataset_answers)==factor]
+  id <- dataset_answers$judge_id[col_temp==level]
+  BDD <- dataset_photo[dataset_photo$judge_id %in% id,]
+  res <- elochoice(winner = BDD$winner, loser = BDD$loser, startvalue = startvalue, runs = runs)
+  temp <- ratings(res, drawplot=F)
+  temp2 <- data_frame(name = names(temp), EloScore = temp)
+  if (type=="rank") {
+    temp2$Rank <- order(temp2$EloScore, decreasing=F)
+    temp2$EloScore <- NULL
+  }
+  temp3 <- temp2[order(temp2$name), ]
+  return(temp3)
+}
+
+```
+
+
+
+
+============= past_BDD_elo
+
+
+
+Fonction qui recupere les scores Elo pour chaque niveau d'un facteur
+
+type = "score" or "rank"
+dataset_photo <- data
+dataset_answers <- answers
+factor <- "sexe"
+startvalue = 1500
+runs = 10
+
+
+```{r}
+
+past_BDD_elo <- function(dataset_photo, dataset_answers, factor, type= "score", startvalue = 1500, runs = 10) {
+
+  
+  levels_factor <- levels(dataset_answers[,colnames(dataset_answers)==factor])
+  n <- length(levels_factor)
+  species <- sort(unique(c(as.character(dataset_photo$challenger_1), as.character(dataset_photo$challenger_2))),decreasing = FALSE)
+  BDD <- data_frame(name = species)
+  for (i in 1:n) {
+    BDD_temp <- get_BDD_elo(dataset_photo, dataset_answers, factor, levels_factor[i], type, startvalue = 1500, runs = 10)
+    BDD <- left_join(BDD, BDD_temp, by="name")
+  }
+  colnames(BDD) <-c("name", levels_factor)
+  return(BDD)
+}
+
+
+```
+
+
+
