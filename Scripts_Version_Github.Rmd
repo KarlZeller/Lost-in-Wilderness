@@ -24,7 +24,7 @@ Download files from googleform
 
 ```{r}
 
-gform_fr=read.csv(file=file.path("ggform_FR.csv"),header = F,sep=";")  
+gform_fr=read.csv(file=file.path("ggform_FR.csv"),header = F,sep=";")  #TEST
 gform_de=read.csv(file=file.path("ggform_DE.csv"),header = F, sep=";")  
 gform_es=read.csv(file=file.path("ggform_ES.csv"),header = F, sep=";")  
 gform_en=read.csv(file=file.path("ggform_EN.csv"),header = F, sep=";")  
