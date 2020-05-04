@@ -24,10 +24,10 @@ Download files from googleform
 
 ```{r}
 
-gform_fr=read.csv(file=file.path("ggform_FR.csv"),header = F,sep=";")  #TEST
-gform_de=read.csv(file=file.path("ggform_DE.csv"),header = F, sep=";")  
-gform_es=read.csv(file=file.path("ggform_ES.csv"),header = F, sep=";")  
-gform_en=read.csv(file=file.path("ggform_EN.csv"),header = F, sep=";")  
+gform_fr=read.csv(file=file.path("ggform_FR.csv"),header = F,skip=1,sep=";")  
+gform_de=read.csv(file=file.path("ggform_DE.csv"),header = F,skip=1, sep=";")  
+gform_es=read.csv(file=file.path("ggform_ES.csv"),header = F,skip=1, sep=";")  
+gform_en=read.csv(file=file.path("ggform_EN.csv"),header = F,skip=1, sep=";")  
 
 ```
 
@@ -128,6 +128,8 @@ Add a colomn Langue to know in wich language the participant fill the questionna
 
 ```{r}
 gform_tot=bind_rows(Fr=gform_fr,De=gform_de,Es=gform_es,En=gform_en, .id = "Language")
+gform_tot=bind_rows(Fr=gform_fr,De=gform_de,En=gform_en, .id = "Language")
+
 ```
 
 
@@ -578,10 +580,10 @@ library(dplyr)
 Choisir les tabeaux de resultats selon les 4 traductions
 
 ```{r}
-Elo_fr=read.csv(file=choose.files(),header = T, sep=",")  
-Elo_es=read.csv(file=choose.files(),header = T, sep=",")  
-Elo_de=read.csv(file=choose.files(),header = T, sep=",")  
-Elo_en=read.csv(file=choose.files(),header = T, sep=",")  
+Elo_fr=read.csv(file=file.path("Elo_fr.csv"),header = T, sep=",")  
+Elo_es=read.csv(file=file.path("Elo_es.csv"),header = T, sep=",")  
+Elo_de=read.csv(file=file.path("Elo_de.csv"),header = T, sep=",")  
+Elo_en=read.csv(file=file.path("Elo_en.csv"),header = T, sep=",")  
 ```
 
 
@@ -590,6 +592,7 @@ Regroupement des 4 tableaux en ajoutant une colonne (source) qui indique l'origi
 
 ```{r}
 Elo_tot=bind_rows(Fr=Elo_fr, Es =Elo_es, En =Elo_en, De =Elo_de ,.id = "Language")
+Elo_tot <- Elo_en
 ```
 
 
@@ -691,7 +694,7 @@ Ajout de colonnes avec indication de groupes
 Fichier "Goups"
 
 ```{r}
-Groups = read.csv(file=choose.files(),header = T, sep=";") 
+Groups = read.csv(file=file.path("Groups.csv"),header = T, sep=";") 
 Groups
 ```
 
@@ -704,6 +707,7 @@ Association des deux tableaux
 Pour cela il faut que le tableau scores soit ordonne de la meme maniere que le tableau groups c'est a dire par ordre alphanumerique de la colonne Name
 
 ```{r}
+
 scores<- scores[order(scores$Name, decreasing =F),]
 
 scores
@@ -713,6 +717,13 @@ scores
 Test avec fonction left_join ou fonction merge ou fonction full_join
 
 ```{r}
+
+rownames(scores) <- scores$Name
+rownames(Groups) <- as.character(Groups$Name_2)
+
+#TODO passer toutes les colones de Groups en character
+scores_Groups <- merge(scores,Groups,by="row.names",all.x=TRUE)
+
 scores_Groups = left_join(scores,Groups,by= c(Name="Name_2"))
 
 scores_Groups
