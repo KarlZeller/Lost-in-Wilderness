@@ -1,664 +1,664 @@
 "name","variable","value"
-"Acinonyx_jubatus","F",160
-"Acinonyx_jubatus2","F",171
-"Acryllium_vulturinum","F",131
-"Aepyceros_melampus","F",82
-"Aepyceros_melampus2","F",33
-"Agalychnis_callidryas","F",52
-"Ailuropoda_melanoleuca","F",36
-"Ailurops_ursinus","F",62
-"Ailurus_fulgens","F",10
+"Acinonyx_jubatus","F",164
+"Acinonyx_jubatus2","F",165
+"Acryllium_vulturinum","F",162
+"Aepyceros_melampus","F",35
+"Aepyceros_melampus2","F",11
+"Agalychnis_callidryas","F",57
+"Ailuropoda_melanoleuca","F",45
+"Ailurops_ursinus","F",49
+"Ailurus_fulgens","F",21
 "Alligator_mississippiensis","F",218
-"Amblyrhynchus_cristatus","F",191
-"Aonyx_cinereus","F",23
-"Aonyx_cinereus2","F",14
-"Aquila_chrysaetos","F",97
-"Ara_ararauna","F",8
-"Ara_chloropterus","F",30
-"Arctocephalus forsteri","F",103
-"Arctocephalus_forsteri2","F",44
-"Artibeus_planirostris","F",127
-"Asio_flammeus","F",32
-"Ateles_hybridus","F",135
-"Ateles_paniscus","F",41
-"Athene_noctua","F",19
-"Athene_noctua2","F",56
-"Athene_noctua3","F",55
-"Balaeniceps_rex","F",144
-"Bison_bonasus","F",206
-"Bison_bonasus2","F",173
-"Boa_constrictor","F",214
-"Bubo_bubo","F",24
-"Bubo_bubo2","F",20
-"Bubo_scandiacus","F",51
-"Bufonidae","F",100
-"Buprestidae","F",168
-"Buteo_galapagoensis","F",143
-"Cairina_moschata","F",120
-"Calliphora_vomitoria","F",151
-"Callithrix_argentata","F",57
-"Callithrix_penicillata","F",78
-"Calloselasma rhodostoma","F",213
-"Canis_lupus","F",101
-"Canis_lupus_familiaris","F",76
-"Canis_lupus_familiaris2","F",7
-"Carlito_syrichta","F",86
-"Centurio_senex","F",195
-"Cerdocyon_thous","F",60
-"Chelonoidis_porteri","F",18
-"Choloepus_didactylus","F",43
-"Choloepus_didactylus2","F",15
-"Choloepus_didactylus3","F",28
-"Chroicocephalus_scopulinus","F",84
-"Columba_livia","F",21
-"Conolophus_pallidus","F",181
-"Corvus","F",95
-"Corvus2","F",94
-"Crocodylus_porosus","F",221
-"Crocuta_crocuta","F",205
-"Crotalus_atrox","F",199
-"Crotalus2","F",217
-"Cryptoprocto _ferox","F",129
-"Cynictis_penicillata","F",85
+"Amblyrhynchus_cristatus","F",161
+"Aonyx_cinereus","F",10
+"Aonyx_cinereus2","F",17
+"Aquila_chrysaetos","F",119
+"Ara_ararauna","F",22
+"Ara_chloropterus","F",19
+"Arctocephalus forsteri","F",108
+"Arctocephalus_forsteri2","F",77
+"Artibeus_planirostris","F",130
+"Asio_flammeus","F",13
+"Ateles_hybridus","F",99
+"Ateles_paniscus","F",54
+"Athene_noctua","F",39
+"Athene_noctua2","F",34
+"Athene_noctua3","F",50
+"Balaeniceps_rex","F",113
+"Bison_bonasus","F",195
+"Bison_bonasus2","F",202
+"Boa_constrictor","F",208
+"Bubo_bubo","F",51
+"Bubo_bubo2","F",71
+"Bubo_scandiacus","F",29
+"Bufonidae","F",102
+"Buprestidae","F",172
+"Buteo_galapagoensis","F",129
+"Cairina_moschata","F",148
+"Calliphora_vomitoria","F",132
+"Callithrix_argentata","F",63
+"Callithrix_penicillata","F",75
+"Calloselasma rhodostoma","F",217
+"Canis_lupus","F",139
+"Canis_lupus_familiaris","F",106
+"Canis_lupus_familiaris2","F",26
+"Carlito_syrichta","F",66
+"Centurio_senex","F",192
+"Cerdocyon_thous","F",70
+"Chelonoidis_porteri","F",44
+"Choloepus_didactylus","F",31
+"Choloepus_didactylus2","F",38
+"Choloepus_didactylus3","F",25
+"Chroicocephalus_scopulinus","F",65
+"Columba_livia","F",36
+"Conolophus_pallidus","F",186
+"Corvus","F",88
+"Corvus2","F",42
+"Crocodylus_porosus","F",220
+"Crocuta_crocuta","F",183
+"Crotalus_atrox","F",204
+"Crotalus2","F",221
+"Cryptoprocto _ferox","F",133
+"Cynictis_penicillata","F",68
 "Dasypus_novemcinctus","F",61
-"Daubentonia_madagascariensis","F",150
-"Dendroaspis_angusticeps","F",180
-"Desmodus_rotondus","F",140
-"Didelphis_virginiana","F",96
-"Equus_caballus","F",13
-"Eudyptes chrysolophus","F",26
-"Eudyptes_chrysocome","F",54
-"Eulemur _coronatus","F",79
-"Eulemur _coronatus2","F",64
-"Euphractus _sexcinctus","F",75
-"Evarcha_arcuata","F",178
-"Felis_catus","F",66
-"Felis_silvestris","F",5
-"Geronticus_eremita","F",175
-"Giraffa_camelopardalis_reticulata","F",35
-"Gorilla_Gorilla_Beringei","F",156
-"Gorilla_gorilla_gorilla","F",166
-"Gulo_gulo","F",99
-"Gulo_gulo2","F",132
-"Gymnogyps_californianus","F",163
-"Gypaetus_barbatus","F",83
-"Gypaetus_barbatus2","F",138
-"Gyps_rueppelli","F",158
-"Haematopus_ater","F",67
-"Harpia_Harpyja","F",115
-"Helarctos_malayanus","F",169
-"Hemicentetes_semispinosus","F",107
-"Heterocephalus_glaber","F",196
-"Hippopotamus_amphibius","F",174
-"Hyaena_hyaena","F",204
-"Hyles_euphorbiae","F",137
-"Hylobates_agilis","F",53
-"Hypsignathus_monstrosus","F",167
-"Iguana_iguana","F",170
-"Iguana_iguana2","F",119
-"Incilius_alvarius","F",110
-"Incilius_alvarius2","F",71
-"Intellagama_lesueurii","F",113
-"Laticauda_laticaudata","F",202
-"Laticauda_saintgironsi","F",216
-"Lemur_catta","F",25
-"Lemur_catta2","F",69
-"Leopardus_wiedii","F",104
-"Leptailurus_serval","F",68
-"Leptoptilos_crumenifer","F",121
-"Libellula_quadrimaculata","F",117
-"Litoria_infrafrenata","F",31
-"Loris_tardigradus","F",17
-"Loxodonta_africana","F",70
-"Lycaon_pictus","F",162
-"Lycaon_pictus2","F",165
-"Lynx_rufus","F",155
-"Lynx_rufus2","F",159
-"Macaca_fuscata","F",114
-"Macaca_silenus","F",111
-"Macronectes_halli","F",108
-"Macropus_rufogriseus","F",48
-"Malayopython_reticulatus","F",212
-"Malpolon_monspessulanus","F",192
-"Mandrillus_sphinx","F",183
-"Mandrillus_sphinx2","F",148
-"Miopithecus_ogouensis","F",77
-"Morelia_spilota","F",203
-"Mungos_mungo","F",112
+"Daubentonia_madagascariensis","F",151
+"Dendroaspis_angusticeps","F",200
+"Desmodus_rotondus","F",158
+"Didelphis_virginiana","F",85
+"Equus_caballus","F",12
+"Eudyptes chrysolophus","F",16
+"Eudyptes_chrysocome","F",48
+"Eulemur _coronatus","F",86
+"Eulemur _coronatus2","F",58
+"Euphractus _sexcinctus","F",67
+"Evarcha_arcuata","F",209
+"Felis_catus","F",90
+"Felis_silvestris","F",8
+"Geronticus_eremita","F",135
+"Giraffa_camelopardalis_reticulata","F",7
+"Gorilla_Gorilla_Beringei","F",176
+"Gorilla_gorilla_gorilla","F",160
+"Gulo_gulo","F",136
+"Gulo_gulo2","F",120
+"Gymnogyps_californianus","F",157
+"Gypaetus_barbatus","F",116
+"Gypaetus_barbatus2","F",123
+"Gyps_rueppelli","F",137
+"Haematopus_ater","F",30
+"Harpia_Harpyja","F",73
+"Helarctos_malayanus","F",193
+"Hemicentetes_semispinosus","F",111
+"Heterocephalus_glaber","F",168
+"Hippopotamus_amphibius","F",170
+"Hyaena_hyaena","F",173
+"Hyles_euphorbiae","F",131
+"Hylobates_agilis","F",82
+"Hypsignathus_monstrosus","F",147
+"Iguana_iguana","F",143
+"Iguana_iguana2","F",140
+"Incilius_alvarius","F",107
+"Incilius_alvarius2","F",84
+"Intellagama_lesueurii","F",154
+"Laticauda_laticaudata","F",205
+"Laticauda_saintgironsi","F",211
+"Lemur_catta","F",23
+"Lemur_catta2","F",32
+"Leopardus_wiedii","F",87
+"Leptailurus_serval","F",81
+"Leptoptilos_crumenifer","F",144
+"Libellula_quadrimaculata","F",142
+"Litoria_infrafrenata","F",24
+"Loris_tardigradus","F",20
+"Loxodonta_africana","F",112
+"Lycaon_pictus","F",177
+"Lycaon_pictus2","F",153
+"Lynx_rufus","F",159
+"Lynx_rufus2","F",146
+"Macaca_fuscata","F",128
+"Macaca_silenus","F",114
+"Macronectes_halli","F",138
+"Macropus_rufogriseus","F",46
+"Malayopython_reticulatus","F",215
+"Malpolon_monspessulanus","F",197
+"Mandrillus_sphinx","F",167
+"Mandrillus_sphinx2","F",141
+"Miopithecus_ogouensis","F",80
+"Morelia_spilota","F",213
+"Mungos_mungo","F",95
 "Muscardinus_avellanarius","F",9
-"Mygale","F",209
-"Myocastor_coypus","F",12
-"Naja_naja","F",220
-"Nasua_narica","F",98
-"Nasua_nasua","F",58
-"Necrosyrtes_monachus","F",118
-"Neofelis_nebulosa","F",157
-"Nestor_meridionalis","F",49
-"Notechis_scutatus","F",208
-"Numida_meleagris","F",105
-"Nyctereutes_procyonoides","F",81
-"Odonata","F",152
-"Odonata2","F",142
-"Oryctolagus_cuniculus","F",2
+"Mygale","F",214
+"Myocastor_coypus","F",37
+"Naja_naja","F",212
+"Nasua_narica","F",76
+"Nasua_nasua","F",59
+"Necrosyrtes_monachus","F",115
+"Neofelis_nebulosa","F",152
+"Nestor_meridionalis","F",41
+"Notechis_scutatus","F",216
+"Numida_meleagris","F",122
+"Nyctereutes_procyonoides","F",64
+"Odonata","F",127
+"Odonata2","F",110
+"Oryctolagus_cuniculus","F",3
 "Oryctolagus_cuniculus2","F",1
-"Otocolobus_manul","F",92
-"Pamphagidae","F",134
-"Pan_paniscus","F",87
+"Otocolobus_manul","F",101
+"Pamphagidae","F",121
+"Pan_paniscus","F",97
 "Pan_paniscus2","F",89
 "Pan_paniscus3","F",91
-"Pan_paniscus4","F",72
-"Pan_troglodytes","F",125
-"Pan_troglodytes2","F",34
-"Panthera_leo","F",190
-"Panthera_leo2","F",172
-"Panthera_leo3","F",179
-"Panthera_onca","F",189
-"Panthera_onca_2","F",194
-"Panthera_onca3","F",197
-"Panthera_pardus","F",200
-"Panthera_pardus_3","F",188
-"Panthera_pardus2","F",145
-"Panthera_tigris2","F",185
-"Panthera_uncia","F",182
-"Papillon","F",154
-"Papio_hamadryas","F",146
-"Pardofelis_temminckii","F",133
-"Petroica_macrocephala","F",6
-"Phacochoerus_africanus","F",211
+"Pan_paniscus4","F",79
+"Pan_troglodytes","F",145
+"Pan_troglodytes2","F",60
+"Panthera_leo","F",171
+"Panthera_leo2","F",174
+"Panthera_leo3","F",187
+"Panthera_onca","F",190
+"Panthera_onca_2","F",182
+"Panthera_onca3","F",191
+"Panthera_pardus","F",198
+"Panthera_pardus_3","F",196
+"Panthera_pardus2","F",179
+"Panthera_tigris2","F",181
+"Panthera_uncia","F",184
+"Papillon","F",125
+"Papio_hamadryas","F",175
+"Pardofelis_temminckii","F",150
+"Petroica_macrocephala","F",2
+"Phacochoerus_africanus","F",207
 "Phascolarctos_cinereus","F",4
-"Phascolarctos_cinereus2","F",3
-"Pholcus_phalangioides","F",219
-"Pithecia pithecia","F",149
-"Pithecia pithecia2","F",130
-"Plathyrrhinus_fusciventris","F",126
-"Podarcis_muralis","F",161
-"Pogona_vitticeps","F",106
-"Porphyrio_hochstetteri","F",116
-"Procyon_lotor","F",59
-"Propithecus_coquereli","F",38
-"Propithecus_verreauxi","F",50
-"Psittacus_erithacus","F",22
-"Pteropus_conspicillatus","F",42
-"Puma_concolor","F",186
-"Python_bivittatus","F",215
-"Python_regius","F",198
-"Rattus_norvegicus","F",45
-"Rhinopithecus_roxellana","F",27
-"Rhyticeros_cassidix","F",80
-"Romalea_microptera","F",122
-"Saiga_tatarica","F",102
-"Sarcophilus_harrisii","F",141
-"Spalax","F",123
-"Spheniscus_humboldti","F",37
-"Stephanoaetus_coronatus","F",124
-"Strophurus","F",139
-"Struthio_camelus","F",153
-"Sula_nebouxii","F",93
-"Sula_sula","F",63
-"Suricata_suricatta","F",46
-"Sus_scrofa","F",128
-"Tapirus_indicus","F",73
-"Taricha_torosa","F",65
-"Tauraco_leucotis","F",16
-"Testudo_hermanni","F",11
-"Thalassarche_cauta","F",109
-"Theropithecus_gelada","F",177
-"Thomisus_onustus","F",201
-"Tockus_flavirostris","F",136
-"Trichosurus_vulpecula","F",90
-"Ursus_arctos_horribilis","F",176
-"Ursus_maritimus","F",147
-"Ursus_thibetanus","F",187
-"Varecia_rubra","F",74
-"Varecia_variegata","F",88
-"Vespula_germanica","F",164
-"Vicugna_pacos","F",39
-"Vicugna_pacos2","F",40
-"Vicugna_vicugna","F",29
-"Vipera_ammodytes","F",210
-"Vipera_aspis","F",207
-"Vulpes_zerda","F",47
-"Zamenis_longissimus","F",193
-"Zoropsis_spinimana","F",184
-"Acinonyx_jubatus","M",148
+"Phascolarctos_cinereus2","F",5
+"Pholcus_phalangioides","F",210
+"Pithecia pithecia","F",98
+"Pithecia pithecia2","F",126
+"Plathyrrhinus_fusciventris","F",118
+"Podarcis_muralis","F",166
+"Pogona_vitticeps","F",117
+"Porphyrio_hochstetteri","F",94
+"Procyon_lotor","F",28
+"Propithecus_coquereli","F",27
+"Propithecus_verreauxi","F",52
+"Psittacus_erithacus","F",43
+"Pteropus_conspicillatus","F",83
+"Puma_concolor","F",180
+"Python_bivittatus","F",199
+"Python_regius","F",201
+"Rattus_norvegicus","F",69
+"Rhinopithecus_roxellana","F",55
+"Rhyticeros_cassidix","F",93
+"Romalea_microptera","F",100
+"Saiga_tatarica","F",72
+"Sarcophilus_harrisii","F",149
+"Spalax","F",134
+"Spheniscus_humboldti","F",14
+"Stephanoaetus_coronatus","F",96
+"Strophurus","F",109
+"Struthio_camelus","F",155
+"Sula_nebouxii","F",103
+"Sula_sula","F",105
+"Suricata_suricatta","F",47
+"Sus_scrofa","F",156
+"Tapirus_indicus","F",56
+"Taricha_torosa","F",92
+"Tauraco_leucotis","F",6
+"Testudo_hermanni","F",15
+"Thalassarche_cauta","F",104
+"Theropithecus_gelada","F",189
+"Thomisus_onustus","F",178
+"Tockus_flavirostris","F",124
+"Trichosurus_vulpecula","F",74
+"Ursus_arctos_horribilis","F",185
+"Ursus_maritimus","F",169
+"Ursus_thibetanus","F",188
+"Varecia_rubra","F",78
+"Varecia_variegata","F",62
+"Vespula_germanica","F",163
+"Vicugna_pacos","F",40
+"Vicugna_pacos2","F",53
+"Vicugna_vicugna","F",18
+"Vipera_ammodytes","F",219
+"Vipera_aspis","F",206
+"Vulpes_zerda","F",33
+"Zamenis_longissimus","F",203
+"Zoropsis_spinimana","F",194
+"Acinonyx_jubatus","M",177
 "Acinonyx_jubatus2","M",179
-"Acryllium_vulturinum","M",118
-"Aepyceros_melampus","M",47
-"Aepyceros_melampus2","M",12
-"Agalychnis_callidryas","M",104
-"Ailuropoda_melanoleuca","M",65
-"Ailurops_ursinus","M",61
-"Ailurus_fulgens","M",10
-"Alligator_mississippiensis","M",221
-"Amblyrhynchus_cristatus","M",149
-"Aonyx_cinereus","M",32
-"Aonyx_cinereus2","M",11
-"Aquila_chrysaetos","M",130
-"Ara_ararauna","M",30
-"Ara_chloropterus","M",4
-"Arctocephalus forsteri","M",121
-"Arctocephalus_forsteri2","M",60
-"Artibeus_planirostris","M",108
-"Asio_flammeus","M",14
-"Ateles_hybridus","M",138
-"Ateles_paniscus","M",57
-"Athene_noctua","M",22
-"Athene_noctua2","M",39
-"Athene_noctua3","M",71
-"Balaeniceps_rex","M",135
-"Bison_bonasus","M",171
-"Bison_bonasus2","M",178
-"Boa_constrictor","M",187
-"Bubo_bubo","M",18
-"Bubo_bubo2","M",67
-"Bubo_scandiacus","M",13
-"Bufonidae","M",136
-"Buprestidae","M",166
-"Buteo_galapagoensis","M",98
-"Cairina_moschata","M",119
-"Calliphora_vomitoria","M",132
-"Callithrix_argentata","M",55
-"Callithrix_penicillata","M",74
-"Calloselasma rhodostoma","M",208
-"Canis_lupus","M",163
-"Canis_lupus_familiaris","M",152
-"Canis_lupus_familiaris2","M",16
-"Carlito_syrichta","M",29
-"Centurio_senex","M",177
-"Cerdocyon_thous","M",42
-"Chelonoidis_porteri","M",19
-"Choloepus_didactylus","M",54
-"Choloepus_didactylus2","M",15
-"Choloepus_didactylus3","M",28
-"Chroicocephalus_scopulinus","M",38
-"Columba_livia","M",27
-"Conolophus_pallidus","M",176
-"Corvus","M",129
-"Corvus2","M",73
-"Crocodylus_porosus","M",220
-"Crocuta_crocuta","M",216
-"Crotalus_atrox","M",202
-"Crotalus2","M",199
-"Cryptoprocto _ferox","M",127
-"Cynictis_penicillata","M",139
-"Dasypus_novemcinctus","M",52
-"Daubentonia_madagascariensis","M",131
-"Dendroaspis_angusticeps","M",209
-"Desmodus_rotondus","M",157
-"Didelphis_virginiana","M",63
-"Equus_caballus","M",41
-"Eudyptes chrysolophus","M",37
-"Eudyptes_chrysocome","M",53
-"Eulemur _coronatus","M",43
-"Eulemur _coronatus2","M",31
-"Euphractus _sexcinctus","M",94
-"Evarcha_arcuata","M",207
-"Felis_catus","M",68
-"Felis_silvestris","M",20
-"Geronticus_eremita","M",128
-"Giraffa_camelopardalis_reticulata","M",48
-"Gorilla_Gorilla_Beringei","M",151
-"Gorilla_gorilla_gorilla","M",173
-"Gulo_gulo","M",142
-"Gulo_gulo2","M",153
-"Gymnogyps_californianus","M",146
-"Gypaetus_barbatus","M",90
-"Gypaetus_barbatus2","M",133
-"Gyps_rueppelli","M",112
-"Haematopus_ater","M",45
-"Harpia_Harpyja","M",103
-"Helarctos_malayanus","M",184
-"Hemicentetes_semispinosus","M",113
-"Heterocephalus_glaber","M",156
-"Hippopotamus_amphibius","M",181
-"Hyaena_hyaena","M",183
-"Hyles_euphorbiae","M",123
-"Hylobates_agilis","M",56
-"Hypsignathus_monstrosus","M",161
-"Iguana_iguana","M",160
-"Iguana_iguana2","M",115
-"Incilius_alvarius","M",58
-"Incilius_alvarius2","M",84
-"Intellagama_lesueurii","M",116
-"Laticauda_laticaudata","M",203
-"Laticauda_saintgironsi","M",217
-"Lemur_catta","M",21
-"Lemur_catta2","M",23
-"Leopardus_wiedii","M",76
-"Leptailurus_serval","M",92
-"Leptoptilos_crumenifer","M",145
-"Libellula_quadrimaculata","M",100
-"Litoria_infrafrenata","M",44
+"Acryllium_vulturinum","M",127
+"Aepyceros_melampus","M",48
+"Aepyceros_melampus2","M",43
+"Agalychnis_callidryas","M",96
+"Ailuropoda_melanoleuca","M",62
+"Ailurops_ursinus","M",78
+"Ailurus_fulgens","M",22
+"Alligator_mississippiensis","M",220
+"Amblyrhynchus_cristatus","M",154
+"Aonyx_cinereus","M",11
+"Aonyx_cinereus2","M",19
+"Aquila_chrysaetos","M",85
+"Ara_ararauna","M",21
+"Ara_chloropterus","M",14
+"Arctocephalus forsteri","M",141
+"Arctocephalus_forsteri2","M",77
+"Artibeus_planirostris","M",142
+"Asio_flammeus","M",16
+"Ateles_hybridus","M",137
+"Ateles_paniscus","M",33
+"Athene_noctua","M",31
+"Athene_noctua2","M",26
+"Athene_noctua3","M",39
+"Balaeniceps_rex","M",163
+"Bison_bonasus","M",199
+"Bison_bonasus2","M",190
+"Boa_constrictor","M",209
+"Bubo_bubo","M",51
+"Bubo_bubo2","M",53
+"Bubo_scandiacus","M",42
+"Bufonidae","M",125
+"Buprestidae","M",151
+"Buteo_galapagoensis","M",112
+"Cairina_moschata","M",144
+"Calliphora_vomitoria","M",118
+"Callithrix_argentata","M",60
+"Callithrix_penicillata","M",69
+"Calloselasma rhodostoma","M",218
+"Canis_lupus","M",149
+"Canis_lupus_familiaris","M",161
+"Canis_lupus_familiaris2","M",40
+"Carlito_syrichta","M",59
+"Centurio_senex","M",167
+"Cerdocyon_thous","M",71
+"Chelonoidis_porteri","M",34
+"Choloepus_didactylus","M",17
+"Choloepus_didactylus2","M",23
+"Choloepus_didactylus3","M",13
+"Chroicocephalus_scopulinus","M",55
+"Columba_livia","M",18
+"Conolophus_pallidus","M",160
+"Corvus","M",107
+"Corvus2","M",79
+"Crocodylus_porosus","M",221
+"Crocuta_crocuta","M",195
+"Crotalus_atrox","M",212
+"Crotalus2","M",214
+"Cryptoprocto _ferox","M",139
+"Cynictis_penicillata","M",106
+"Dasypus_novemcinctus","M",54
+"Daubentonia_madagascariensis","M",135
+"Dendroaspis_angusticeps","M",215
+"Desmodus_rotondus","M",121
+"Didelphis_virginiana","M",98
+"Equus_caballus","M",36
+"Eudyptes chrysolophus","M",24
+"Eudyptes_chrysocome","M",52
+"Eulemur _coronatus","M",49
+"Eulemur _coronatus2","M",67
+"Euphractus _sexcinctus","M",58
+"Evarcha_arcuata","M",165
+"Felis_catus","M",66
+"Felis_silvestris","M",10
+"Geronticus_eremita","M",132
+"Giraffa_camelopardalis_reticulata","M",41
+"Gorilla_Gorilla_Beringei","M",173
+"Gorilla_gorilla_gorilla","M",175
+"Gulo_gulo","M",147
+"Gulo_gulo2","M",171
+"Gymnogyps_californianus","M",150
+"Gypaetus_barbatus","M",72
+"Gypaetus_barbatus2","M",74
+"Gyps_rueppelli","M",128
+"Haematopus_ater","M",20
+"Harpia_Harpyja","M",108
+"Helarctos_malayanus","M",164
+"Hemicentetes_semispinosus","M",92
+"Heterocephalus_glaber","M",155
+"Hippopotamus_amphibius","M",184
+"Hyaena_hyaena","M",185
+"Hyles_euphorbiae","M",86
+"Hylobates_agilis","M",45
+"Hypsignathus_monstrosus","M",157
+"Iguana_iguana","M",156
+"Iguana_iguana2","M",136
+"Incilius_alvarius","M",73
+"Incilius_alvarius2","M",101
+"Intellagama_lesueurii","M",117
+"Laticauda_laticaudata","M",202
+"Laticauda_saintgironsi","M",211
+"Lemur_catta","M",27
+"Lemur_catta2","M",29
+"Leopardus_wiedii","M",68
+"Leptailurus_serval","M",88
+"Leptoptilos_crumenifer","M",109
+"Libellula_quadrimaculata","M",94
+"Litoria_infrafrenata","M",38
 "Loris_tardigradus","M",8
-"Loxodonta_africana","M",126
-"Lycaon_pictus","M",193
-"Lycaon_pictus2","M",185
-"Lynx_rufus","M",162
-"Lynx_rufus2","M",141
-"Macaca_fuscata","M",147
-"Macaca_silenus","M",134
-"Macronectes_halli","M",144
-"Macropus_rufogriseus","M",110
-"Malayopython_reticulatus","M",215
-"Malpolon_monspessulanus","M",164
-"Mandrillus_sphinx","M",172
-"Mandrillus_sphinx2","M",143
-"Miopithecus_ogouensis","M",72
-"Morelia_spilota","M",169
-"Mungos_mungo","M",125
-"Muscardinus_avellanarius","M",24
-"Mygale","M",174
-"Myocastor_coypus","M",46
+"Loxodonta_africana","M",146
+"Lycaon_pictus","M",180
+"Lycaon_pictus2","M",176
+"Lynx_rufus","M",159
+"Lynx_rufus2","M",140
+"Macaca_fuscata","M",134
+"Macaca_silenus","M",119
+"Macronectes_halli","M",123
+"Macropus_rufogriseus","M",70
+"Malayopython_reticulatus","M",213
+"Malpolon_monspessulanus","M",188
+"Mandrillus_sphinx","M",169
+"Mandrillus_sphinx2","M",158
+"Miopithecus_ogouensis","M",81
+"Morelia_spilota","M",191
+"Mungos_mungo","M",130
+"Muscardinus_avellanarius","M",7
+"Mygale","M",204
+"Myocastor_coypus","M",37
 "Naja_naja","M",219
-"Nasua_narica","M",62
-"Nasua_nasua","M",51
-"Necrosyrtes_monachus","M",124
-"Neofelis_nebulosa","M",170
-"Nestor_meridionalis","M",59
-"Notechis_scutatus","M",165
-"Numida_meleagris","M",81
-"Nyctereutes_procyonoides","M",87
-"Odonata","M",137
-"Odonata2","M",150
-"Oryctolagus_cuniculus","M",17
-"Oryctolagus_cuniculus2","M",1
-"Otocolobus_manul","M",89
-"Pamphagidae","M",95
-"Pan_paniscus","M",106
-"Pan_paniscus2","M",78
+"Nasua_narica","M",95
+"Nasua_nasua","M",57
+"Necrosyrtes_monachus","M",153
+"Neofelis_nebulosa","M",162
+"Nestor_meridionalis","M",63
+"Notechis_scutatus","M",193
+"Numida_meleagris","M",131
+"Nyctereutes_procyonoides","M",75
+"Odonata","M",120
+"Odonata2","M",114
+"Oryctolagus_cuniculus","M",6
+"Oryctolagus_cuniculus2","M",2
+"Otocolobus_manul","M",110
+"Pamphagidae","M",91
+"Pan_paniscus","M",99
+"Pan_paniscus2","M",122
 "Pan_paniscus3","M",102
-"Pan_paniscus4","M",85
-"Pan_troglodytes","M",158
-"Pan_troglodytes2","M",75
-"Panthera_leo","M",213
+"Pan_paniscus4","M",84
+"Pan_troglodytes","M",152
+"Pan_troglodytes2","M",56
+"Panthera_leo","M",192
 "Panthera_leo2","M",189
-"Panthera_leo3","M",218
-"Panthera_onca","M",211
-"Panthera_onca_2","M",192
-"Panthera_onca3","M",210
-"Panthera_pardus","M",194
-"Panthera_pardus_3","M",191
-"Panthera_pardus2","M",180
-"Panthera_tigris2","M",188
-"Panthera_uncia","M",186
-"Papillon","M",122
-"Papio_hamadryas","M",167
-"Pardofelis_temminckii","M",140
-"Petroica_macrocephala","M",2
-"Phacochoerus_africanus","M",182
-"Phascolarctos_cinereus","M",6
-"Phascolarctos_cinereus2","M",3
-"Pholcus_phalangioides","M",212
-"Pithecia pithecia","M",109
-"Pithecia pithecia2","M",93
-"Plathyrrhinus_fusciventris","M",155
-"Podarcis_muralis","M",114
-"Pogona_vitticeps","M",79
-"Porphyrio_hochstetteri","M",99
-"Procyon_lotor","M",107
-"Propithecus_coquereli","M",40
-"Propithecus_verreauxi","M",49
-"Psittacus_erithacus","M",26
-"Pteropus_conspicillatus","M",70
-"Puma_concolor","M",200
-"Python_bivittatus","M",190
-"Python_regius","M",195
-"Rattus_norvegicus","M",64
-"Rhinopithecus_roxellana","M",34
-"Rhyticeros_cassidix","M",105
-"Romalea_microptera","M",96
-"Saiga_tatarica","M",120
-"Sarcophilus_harrisii","M",101
-"Spalax","M",117
-"Spheniscus_humboldti","M",9
-"Stephanoaetus_coronatus","M",111
-"Strophurus","M",91
-"Struthio_camelus","M",154
-"Sula_nebouxii","M",88
-"Sula_sula","M",83
-"Suricata_suricatta","M",33
-"Sus_scrofa","M",159
-"Tapirus_indicus","M",50
-"Taricha_torosa","M",97
-"Tauraco_leucotis","M",7
-"Testudo_hermanni","M",5
-"Thalassarche_cauta","M",86
-"Theropithecus_gelada","M",214
-"Thomisus_onustus","M",168
-"Tockus_flavirostris","M",77
-"Trichosurus_vulpecula","M",82
-"Ursus_arctos_horribilis","M",204
-"Ursus_maritimus","M",197
-"Ursus_thibetanus","M",205
-"Varecia_rubra","M",66
-"Varecia_variegata","M",80
-"Vespula_germanica","M",175
-"Vicugna_pacos","M",69
-"Vicugna_pacos2","M",36
-"Vicugna_vicugna","M",25
-"Vipera_ammodytes","M",206
-"Vipera_aspis","M",201
-"Vulpes_zerda","M",35
-"Zamenis_longissimus","M",198
-"Zoropsis_spinimana","M",196
-"Acinonyx_jubatus","Not mentioned",160
-"Acinonyx_jubatus2","Not mentioned",138
-"Acryllium_vulturinum","Not mentioned",132
-"Aepyceros_melampus","Not mentioned",94
-"Aepyceros_melampus2","Not mentioned",58
-"Agalychnis_callidryas","Not mentioned",66
-"Ailuropoda_melanoleuca","Not mentioned",128
-"Ailurops_ursinus","Not mentioned",85
-"Ailurus_fulgens","Not mentioned",43
-"Alligator_mississippiensis","Not mentioned",170
-"Amblyrhynchus_cristatus","Not mentioned",71
-"Aonyx_cinereus","Not mentioned",7
-"Aonyx_cinereus2","Not mentioned",9
-"Aquila_chrysaetos","Not mentioned",21
-"Ara_ararauna","Not mentioned",134
-"Ara_chloropterus","Not mentioned",3
-"Arctocephalus forsteri","Not mentioned",57
-"Arctocephalus_forsteri2","Not mentioned",31
-"Artibeus_planirostris","Not mentioned",147
-"Asio_flammeus","Not mentioned",74
-"Ateles_hybridus","Not mentioned",209
-"Ateles_paniscus","Not mentioned",8
-"Athene_noctua","Not mentioned",77
-"Athene_noctua2","Not mentioned",20
-"Athene_noctua3","Not mentioned",40
-"Balaeniceps_rex","Not mentioned",153
-"Bison_bonasus","Not mentioned",192
-"Bison_bonasus2","Not mentioned",183
-"Boa_constrictor","Not mentioned",15
-"Bubo_bubo","Not mentioned",110
-"Bubo_bubo2","Not mentioned",26
-"Bubo_scandiacus","Not mentioned",72
-"Bufonidae","Not mentioned",196
-"Buprestidae","Not mentioned",155
-"Buteo_galapagoensis","Not mentioned",127
-"Cairina_moschata","Not mentioned",145
-"Calliphora_vomitoria","Not mentioned",123
-"Callithrix_argentata","Not mentioned",95
-"Callithrix_penicillata","Not mentioned",81
-"Calloselasma rhodostoma","Not mentioned",186
-"Canis_lupus","Not mentioned",173
-"Canis_lupus_familiaris","Not mentioned",NA
-"Canis_lupus_familiaris2","Not mentioned",83
-"Carlito_syrichta","Not mentioned",163
-"Centurio_senex","Not mentioned",97
-"Cerdocyon_thous","Not mentioned",129
-"Chelonoidis_porteri","Not mentioned",80
-"Choloepus_didactylus","Not mentioned",84
-"Choloepus_didactylus2","Not mentioned",30
-"Choloepus_didactylus3","Not mentioned",38
-"Chroicocephalus_scopulinus","Not mentioned",193
-"Columba_livia","Not mentioned",144
-"Conolophus_pallidus","Not mentioned",39
-"Corvus","Not mentioned",78
-"Corvus2","Not mentioned",166
-"Crocodylus_porosus","Not mentioned",179
-"Crocuta_crocuta","Not mentioned",131
-"Crotalus_atrox","Not mentioned",176
-"Crotalus2","Not mentioned",91
-"Cryptoprocto _ferox","Not mentioned",181
-"Cynictis_penicillata","Not mentioned",60
-"Dasypus_novemcinctus","Not mentioned",92
-"Daubentonia_madagascariensis","Not mentioned",59
-"Dendroaspis_angusticeps","Not mentioned",218
-"Desmodus_rotondus","Not mentioned",24
-"Didelphis_virginiana","Not mentioned",NA
-"Equus_caballus","Not mentioned",98
-"Eudyptes chrysolophus","Not mentioned",44
-"Eudyptes_chrysocome","Not mentioned",161
-"Eulemur _coronatus","Not mentioned",17
-"Eulemur _coronatus2","Not mentioned",12
-"Euphractus _sexcinctus","Not mentioned",184
-"Evarcha_arcuata","Not mentioned",51
-"Felis_catus","Not mentioned",54
-"Felis_silvestris","Not mentioned",33
-"Geronticus_eremita","Not mentioned",90
-"Giraffa_camelopardalis_reticulata","Not mentioned",114
-"Gorilla_Gorilla_Beringei","Not mentioned",121
-"Gorilla_gorilla_gorilla","Not mentioned",152
-"Gulo_gulo","Not mentioned",105
-"Gulo_gulo2","Not mentioned",67
-"Gymnogyps_californianus","Not mentioned",63
-"Gypaetus_barbatus","Not mentioned",53
-"Gypaetus_barbatus2","Not mentioned",150
-"Gyps_rueppelli","Not mentioned",211
-"Haematopus_ater","Not mentioned",48
-"Harpia_Harpyja","Not mentioned",2
-"Helarctos_malayanus","Not mentioned",107
-"Hemicentetes_semispinosus","Not mentioned",56
-"Heterocephalus_glaber","Not mentioned",82
-"Hippopotamus_amphibius","Not mentioned",70
-"Hyaena_hyaena","Not mentioned",175
-"Hyles_euphorbiae","Not mentioned",87
-"Hylobates_agilis","Not mentioned",76
-"Hypsignathus_monstrosus","Not mentioned",61
-"Iguana_iguana","Not mentioned",104
-"Iguana_iguana2","Not mentioned",28
-"Incilius_alvarius","Not mentioned",168
-"Incilius_alvarius2","Not mentioned",198
-"Intellagama_lesueurii","Not mentioned",194
-"Laticauda_laticaudata","Not mentioned",126
-"Laticauda_saintgironsi","Not mentioned",133
-"Lemur_catta","Not mentioned",14
-"Lemur_catta2","Not mentioned",64
-"Leopardus_wiedii","Not mentioned",37
-"Leptailurus_serval","Not mentioned",88
-"Leptoptilos_crumenifer","Not mentioned",130
-"Libellula_quadrimaculata","Not mentioned",207
-"Litoria_infrafrenata","Not mentioned",101
-"Loris_tardigradus","Not mentioned",50
-"Loxodonta_africana","Not mentioned",180
-"Lycaon_pictus","Not mentioned",169
-"Lycaon_pictus2","Not mentioned",215
-"Lynx_rufus","Not mentioned",154
-"Lynx_rufus2","Not mentioned",178
-"Macaca_fuscata","Not mentioned",172
-"Macaca_silenus","Not mentioned",65
-"Macronectes_halli","Not mentioned",189
-"Macropus_rufogriseus","Not mentioned",49
-"Malayopython_reticulatus","Not mentioned",165
-"Malpolon_monspessulanus","Not mentioned",115
-"Mandrillus_sphinx","Not mentioned",149
-"Mandrillus_sphinx2","Not mentioned",162
-"Miopithecus_ogouensis","Not mentioned",120
-"Morelia_spilota","Not mentioned",136
-"Mungos_mungo","Not mentioned",190
-"Muscardinus_avellanarius","Not mentioned",27
-"Mygale","Not mentioned",174
-"Myocastor_coypus","Not mentioned",96
-"Naja_naja","Not mentioned",75
-"Nasua_narica","Not mentioned",200
-"Nasua_nasua","Not mentioned",6
-"Necrosyrtes_monachus","Not mentioned",16
-"Neofelis_nebulosa","Not mentioned",182
-"Nestor_meridionalis","Not mentioned",185
-"Notechis_scutatus","Not mentioned",219
-"Numida_meleagris","Not mentioned",195
-"Nyctereutes_procyonoides","Not mentioned",118
-"Odonata","Not mentioned",102
-"Odonata2","Not mentioned",122
-"Oryctolagus_cuniculus","Not mentioned",42
-"Oryctolagus_cuniculus2","Not mentioned",111
-"Otocolobus_manul","Not mentioned",164
-"Pamphagidae","Not mentioned",18
+"Panthera_leo3","M",198
+"Panthera_onca","M",206
+"Panthera_onca_2","M",201
+"Panthera_onca3","M",203
+"Panthera_pardus","M",200
+"Panthera_pardus_3","M",210
+"Panthera_pardus2","M",174
+"Panthera_tigris2","M",216
+"Panthera_uncia","M",166
+"Papillon","M",111
+"Papio_hamadryas","M",170
+"Pardofelis_temminckii","M",129
+"Petroica_macrocephala","M",1
+"Phacochoerus_africanus","M",194
+"Phascolarctos_cinereus","M",3
+"Phascolarctos_cinereus2","M",5
+"Pholcus_phalangioides","M",207
+"Pithecia pithecia","M",133
+"Pithecia pithecia2","M",113
+"Plathyrrhinus_fusciventris","M",124
+"Podarcis_muralis","M",138
+"Pogona_vitticeps","M",80
+"Porphyrio_hochstetteri","M",89
+"Procyon_lotor","M",47
+"Propithecus_coquereli","M",44
+"Propithecus_verreauxi","M",32
+"Psittacus_erithacus","M",28
+"Pteropus_conspicillatus","M",104
+"Puma_concolor","M",182
+"Python_bivittatus","M",208
+"Python_regius","M",187
+"Rattus_norvegicus","M",30
+"Rhinopithecus_roxellana","M",35
+"Rhyticeros_cassidix","M",82
+"Romalea_microptera","M",105
+"Saiga_tatarica","M",83
+"Sarcophilus_harrisii","M",143
+"Spalax","M",115
+"Spheniscus_humboldti","M",12
+"Stephanoaetus_coronatus","M",116
+"Strophurus","M",100
+"Struthio_camelus","M",145
+"Sula_nebouxii","M",64
+"Sula_sula","M",103
+"Suricata_suricatta","M",50
+"Sus_scrofa","M",148
+"Tapirus_indicus","M",76
+"Taricha_torosa","M",93
+"Tauraco_leucotis","M",4
+"Testudo_hermanni","M",9
+"Thalassarche_cauta","M",97
+"Theropithecus_gelada","M",197
+"Thomisus_onustus","M",172
+"Tockus_flavirostris","M",90
+"Trichosurus_vulpecula","M",126
+"Ursus_arctos_horribilis","M",186
+"Ursus_maritimus","M",181
+"Ursus_thibetanus","M",183
+"Varecia_rubra","M",87
+"Varecia_variegata","M",46
+"Vespula_germanica","M",168
+"Vicugna_pacos","M",25
+"Vicugna_pacos2","M",61
+"Vicugna_vicugna","M",15
+"Vipera_ammodytes","M",217
+"Vipera_aspis","M",196
+"Vulpes_zerda","M",65
+"Zamenis_longissimus","M",178
+"Zoropsis_spinimana","M",205
+"Acinonyx_jubatus","Not mentioned",178
+"Acinonyx_jubatus2","Not mentioned",168
+"Acryllium_vulturinum","Not mentioned",91
+"Aepyceros_melampus","Not mentioned",59
+"Aepyceros_melampus2","Not mentioned",62
+"Agalychnis_callidryas","Not mentioned",113
+"Ailuropoda_melanoleuca","Not mentioned",27
+"Ailurops_ursinus","Not mentioned",41
+"Ailurus_fulgens","Not mentioned",21
+"Alligator_mississippiensis","Not mentioned",218
+"Amblyrhynchus_cristatus","Not mentioned",184
+"Aonyx_cinereus","Not mentioned",26
+"Aonyx_cinereus2","Not mentioned",25
+"Aquila_chrysaetos","Not mentioned",78
+"Ara_ararauna","Not mentioned",84
+"Ara_chloropterus","Not mentioned",11
+"Arctocephalus forsteri","Not mentioned",133
+"Arctocephalus_forsteri2","Not mentioned",74
+"Artibeus_planirostris","Not mentioned",118
+"Asio_flammeus","Not mentioned",2
+"Ateles_hybridus","Not mentioned",172
+"Ateles_paniscus","Not mentioned",23
+"Athene_noctua","Not mentioned",7
+"Athene_noctua2","Not mentioned",44
+"Athene_noctua3","Not mentioned",6
+"Balaeniceps_rex","Not mentioned",181
+"Bison_bonasus","Not mentioned",193
+"Bison_bonasus2","Not mentioned",156
+"Boa_constrictor","Not mentioned",170
+"Bubo_bubo","Not mentioned",43
+"Bubo_bubo2","Not mentioned",18
+"Bubo_scandiacus","Not mentioned",46
+"Bufonidae","Not mentioned",207
+"Buprestidae","Not mentioned",188
+"Buteo_galapagoensis","Not mentioned",64
+"Cairina_moschata","Not mentioned",104
+"Calliphora_vomitoria","Not mentioned",151
+"Callithrix_argentata","Not mentioned",130
+"Callithrix_penicillata","Not mentioned",50
+"Calloselasma rhodostoma","Not mentioned",204
+"Canis_lupus","Not mentioned",124
+"Canis_lupus_familiaris","Not mentioned",146
+"Canis_lupus_familiaris2","Not mentioned",37
+"Carlito_syrichta","Not mentioned",110
+"Centurio_senex","Not mentioned",119
+"Cerdocyon_thous","Not mentioned",40
+"Chelonoidis_porteri","Not mentioned",45
+"Choloepus_didactylus","Not mentioned",30
+"Choloepus_didactylus2","Not mentioned",17
+"Choloepus_didactylus3","Not mentioned",68
+"Chroicocephalus_scopulinus","Not mentioned",83
+"Columba_livia","Not mentioned",52
+"Conolophus_pallidus","Not mentioned",163
+"Corvus","Not mentioned",54
+"Corvus2","Not mentioned",29
+"Crocodylus_porosus","Not mentioned",198
+"Crocuta_crocuta","Not mentioned",194
+"Crotalus_atrox","Not mentioned",201
+"Crotalus2","Not mentioned",185
+"Cryptoprocto _ferox","Not mentioned",126
+"Cynictis_penicillata","Not mentioned",128
+"Dasypus_novemcinctus","Not mentioned",14
+"Daubentonia_madagascariensis","Not mentioned",109
+"Dendroaspis_angusticeps","Not mentioned",203
+"Desmodus_rotondus","Not mentioned",106
+"Didelphis_virginiana","Not mentioned",152
+"Equus_caballus","Not mentioned",56
+"Eudyptes chrysolophus","Not mentioned",24
+"Eudyptes_chrysocome","Not mentioned",121
+"Eulemur _coronatus","Not mentioned",87
+"Eulemur _coronatus2","Not mentioned",51
+"Euphractus _sexcinctus","Not mentioned",72
+"Evarcha_arcuata","Not mentioned",98
+"Felis_catus","Not mentioned",42
+"Felis_silvestris","Not mentioned",1
+"Geronticus_eremita","Not mentioned",192
+"Giraffa_camelopardalis_reticulata","Not mentioned",55
+"Gorilla_Gorilla_Beringei","Not mentioned",161
+"Gorilla_gorilla_gorilla","Not mentioned",99
+"Gulo_gulo","Not mentioned",145
+"Gulo_gulo2","Not mentioned",89
+"Gymnogyps_californianus","Not mentioned",135
+"Gypaetus_barbatus","Not mentioned",63
+"Gypaetus_barbatus2","Not mentioned",176
+"Gyps_rueppelli","Not mentioned",141
+"Haematopus_ater","Not mentioned",80
+"Harpia_Harpyja","Not mentioned",38
+"Helarctos_malayanus","Not mentioned",183
+"Hemicentetes_semispinosus","Not mentioned",101
+"Heterocephalus_glaber","Not mentioned",143
+"Hippopotamus_amphibius","Not mentioned",159
+"Hyaena_hyaena","Not mentioned",158
+"Hyles_euphorbiae","Not mentioned",67
+"Hylobates_agilis","Not mentioned",60
+"Hypsignathus_monstrosus","Not mentioned",140
+"Iguana_iguana","Not mentioned",69
+"Iguana_iguana2","Not mentioned",105
+"Incilius_alvarius","Not mentioned",47
+"Incilius_alvarius2","Not mentioned",132
+"Intellagama_lesueurii","Not mentioned",148
+"Laticauda_laticaudata","Not mentioned",187
+"Laticauda_saintgironsi","Not mentioned",157
+"Lemur_catta","Not mentioned",34
+"Lemur_catta2","Not mentioned",112
+"Leopardus_wiedii","Not mentioned",134
+"Leptailurus_serval","Not mentioned",61
+"Leptoptilos_crumenifer","Not mentioned",93
+"Libellula_quadrimaculata","Not mentioned",142
+"Litoria_infrafrenata","Not mentioned",71
+"Loris_tardigradus","Not mentioned",15
+"Loxodonta_africana","Not mentioned",131
+"Lycaon_pictus","Not mentioned",177
+"Lycaon_pictus2","Not mentioned",190
+"Lynx_rufus","Not mentioned",206
+"Lynx_rufus2","Not mentioned",144
+"Macaca_fuscata","Not mentioned",123
+"Macaca_silenus","Not mentioned",111
+"Macronectes_halli","Not mentioned",147
+"Macropus_rufogriseus","Not mentioned",75
+"Malayopython_reticulatus","Not mentioned",211
+"Malpolon_monspessulanus","Not mentioned",175
+"Mandrillus_sphinx","Not mentioned",216
+"Mandrillus_sphinx2","Not mentioned",116
+"Miopithecus_ogouensis","Not mentioned",90
+"Morelia_spilota","Not mentioned",186
+"Mungos_mungo","Not mentioned",149
+"Muscardinus_avellanarius","Not mentioned",16
+"Mygale","Not mentioned",212
+"Myocastor_coypus","Not mentioned",13
+"Naja_naja","Not mentioned",202
+"Nasua_narica","Not mentioned",174
+"Nasua_nasua","Not mentioned",86
+"Necrosyrtes_monachus","Not mentioned",58
+"Neofelis_nebulosa","Not mentioned",155
+"Nestor_meridionalis","Not mentioned",48
+"Notechis_scutatus","Not mentioned",209
+"Numida_meleagris","Not mentioned",154
+"Nyctereutes_procyonoides","Not mentioned",92
+"Odonata","Not mentioned",120
+"Odonata2","Not mentioned",53
+"Oryctolagus_cuniculus","Not mentioned",5
+"Oryctolagus_cuniculus2","Not mentioned",20
+"Otocolobus_manul","Not mentioned",102
+"Pamphagidae","Not mentioned",65
 "Pan_paniscus","Not mentioned",103
-"Pan_paniscus2","Not mentioned",167
-"Pan_paniscus3","Not mentioned",216
-"Pan_paniscus4","Not mentioned",69
-"Pan_troglodytes","Not mentioned",99
-"Pan_troglodytes2","Not mentioned",148
-"Panthera_leo","Not mentioned",177
-"Panthera_leo2","Not mentioned",139
-"Panthera_leo3","Not mentioned",135
-"Panthera_onca","Not mentioned",199
-"Panthera_onca_2","Not mentioned",142
-"Panthera_onca3","Not mentioned",208
-"Panthera_pardus","Not mentioned",214
-"Panthera_pardus_3","Not mentioned",146
-"Panthera_pardus2","Not mentioned",89
-"Panthera_tigris2","Not mentioned",106
-"Panthera_uncia","Not mentioned",113
-"Papillon","Not mentioned",5
-"Papio_hamadryas","Not mentioned",151
-"Pardofelis_temminckii","Not mentioned",204
-"Petroica_macrocephala","Not mentioned",47
+"Pan_paniscus2","Not mentioned",179
+"Pan_paniscus3","Not mentioned",117
+"Pan_paniscus4","Not mentioned",79
+"Pan_troglodytes","Not mentioned",153
+"Pan_troglodytes2","Not mentioned",95
+"Panthera_leo","Not mentioned",171
+"Panthera_leo2","Not mentioned",200
+"Panthera_leo3","Not mentioned",160
+"Panthera_onca","Not mentioned",208
+"Panthera_onca_2","Not mentioned",215
+"Panthera_onca3","Not mentioned",219
+"Panthera_pardus","Not mentioned",213
+"Panthera_pardus_3","Not mentioned",173
+"Panthera_pardus2","Not mentioned",165
+"Panthera_tigris2","Not mentioned",189
+"Panthera_uncia","Not mentioned",182
+"Papillon","Not mentioned",73
+"Papio_hamadryas","Not mentioned",167
+"Pardofelis_temminckii","Not mentioned",129
+"Petroica_macrocephala","Not mentioned",8
 "Phacochoerus_africanus","Not mentioned",210
-"Phascolarctos_cinereus","Not mentioned",4
-"Phascolarctos_cinereus2","Not mentioned",1
-"Pholcus_phalangioides","Not mentioned",202
-"Pithecia pithecia","Not mentioned",109
-"Pithecia pithecia2","Not mentioned",73
-"Plathyrrhinus_fusciventris","Not mentioned",45
-"Podarcis_muralis","Not mentioned",108
-"Pogona_vitticeps","Not mentioned",119
-"Porphyrio_hochstetteri","Not mentioned",23
-"Procyon_lotor","Not mentioned",34
-"Propithecus_coquereli","Not mentioned",19
-"Propithecus_verreauxi","Not mentioned",35
-"Psittacus_erithacus","Not mentioned",137
-"Pteropus_conspicillatus","Not mentioned",100
-"Puma_concolor","Not mentioned",197
-"Python_bivittatus","Not mentioned",188
-"Python_regius","Not mentioned",187
-"Rattus_norvegicus","Not mentioned",36
-"Rhinopithecus_roxellana","Not mentioned",62
-"Rhyticeros_cassidix","Not mentioned",10
-"Romalea_microptera","Not mentioned",157
-"Saiga_tatarica","Not mentioned",143
-"Sarcophilus_harrisii","Not mentioned",217
-"Spalax","Not mentioned",11
-"Spheniscus_humboldti","Not mentioned",25
-"Stephanoaetus_coronatus","Not mentioned",117
-"Strophurus","Not mentioned",112
-"Struthio_camelus","Not mentioned",203
-"Sula_nebouxii","Not mentioned",158
-"Sula_sula","Not mentioned",52
-"Suricata_suricatta","Not mentioned",68
-"Sus_scrofa","Not mentioned",213
-"Tapirus_indicus","Not mentioned",86
-"Taricha_torosa","Not mentioned",125
-"Tauraco_leucotis","Not mentioned",55
-"Testudo_hermanni","Not mentioned",29
-"Thalassarche_cauta","Not mentioned",212
-"Theropithecus_gelada","Not mentioned",159
-"Thomisus_onustus","Not mentioned",124
-"Tockus_flavirostris","Not mentioned",141
-"Trichosurus_vulpecula","Not mentioned",22
-"Ursus_arctos_horribilis","Not mentioned",205
-"Ursus_maritimus","Not mentioned",156
+"Phascolarctos_cinereus","Not mentioned",12
+"Phascolarctos_cinereus2","Not mentioned",4
+"Pholcus_phalangioides","Not mentioned",217
+"Pithecia pithecia","Not mentioned",150
+"Pithecia pithecia2","Not mentioned",100
+"Plathyrrhinus_fusciventris","Not mentioned",70
+"Podarcis_muralis","Not mentioned",107
+"Pogona_vitticeps","Not mentioned",137
+"Porphyrio_hochstetteri","Not mentioned",76
+"Procyon_lotor","Not mentioned",35
+"Propithecus_coquereli","Not mentioned",49
+"Propithecus_verreauxi","Not mentioned",33
+"Psittacus_erithacus","Not mentioned",88
+"Pteropus_conspicillatus","Not mentioned",97
+"Puma_concolor","Not mentioned",205
+"Python_bivittatus","Not mentioned",199
+"Python_regius","Not mentioned",180
+"Rattus_norvegicus","Not mentioned",31
+"Rhinopithecus_roxellana","Not mentioned",36
+"Rhyticeros_cassidix","Not mentioned",57
+"Romalea_microptera","Not mentioned",82
+"Saiga_tatarica","Not mentioned",125
+"Sarcophilus_harrisii","Not mentioned",214
+"Spalax","Not mentioned",22
+"Spheniscus_humboldti","Not mentioned",3
+"Stephanoaetus_coronatus","Not mentioned",122
+"Strophurus","Not mentioned",32
+"Struthio_camelus","Not mentioned",162
+"Sula_nebouxii","Not mentioned",94
+"Sula_sula","Not mentioned",114
+"Suricata_suricatta","Not mentioned",39
+"Sus_scrofa","Not mentioned",139
+"Tapirus_indicus","Not mentioned",81
+"Taricha_torosa","Not mentioned",108
+"Tauraco_leucotis","Not mentioned",9
+"Testudo_hermanni","Not mentioned",28
+"Thalassarche_cauta","Not mentioned",138
+"Theropithecus_gelada","Not mentioned",164
+"Thomisus_onustus","Not mentioned",197
+"Tockus_flavirostris","Not mentioned",115
+"Trichosurus_vulpecula","Not mentioned",96
+"Ursus_arctos_horribilis","Not mentioned",196
+"Ursus_maritimus","Not mentioned",195
 "Ursus_thibetanus","Not mentioned",191
-"Varecia_rubra","Not mentioned",79
-"Varecia_variegata","Not mentioned",46
-"Vespula_germanica","Not mentioned",171
-"Vicugna_pacos","Not mentioned",116
-"Vicugna_pacos2","Not mentioned",32
-"Vicugna_vicugna","Not mentioned",93
-"Vipera_ammodytes","Not mentioned",201
-"Vipera_aspis","Not mentioned",206
-"Vulpes_zerda","Not mentioned",13
-"Zamenis_longissimus","Not mentioned",41
-"Zoropsis_spinimana","Not mentioned",140
+"Varecia_rubra","Not mentioned",136
+"Varecia_variegata","Not mentioned",77
+"Vespula_germanica","Not mentioned",166
+"Vicugna_pacos","Not mentioned",10
+"Vicugna_pacos2","Not mentioned",85
+"Vicugna_vicugna","Not mentioned",66
+"Vipera_ammodytes","Not mentioned",221
+"Vipera_aspis","Not mentioned",220
+"Vulpes_zerda","Not mentioned",19
+"Zamenis_longissimus","Not mentioned",169
+"Zoropsis_spinimana","Not mentioned",127

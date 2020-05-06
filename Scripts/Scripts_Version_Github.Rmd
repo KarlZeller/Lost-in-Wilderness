@@ -9,10 +9,21 @@ output: html_document
 
 Library
 
+Library 
+
+
+Library
+Bibliotheque
 
 ```{r}
-library(lubridate)
+library(PerformanceAnalytics)
+library(EloChoice)
 library(dplyr)
+library(irr)
+library(tidyr)
+library(GGally)
+library(reshape2)
+library(lubridate)
 library(ggplot2)
 library(utils)
 ```
@@ -119,6 +130,7 @@ gform_tot=bind_rows(Fr=gform_fr,De=gform_de,Es=gform_es,En=gform_en, .id = "Lang
 
 ```{r}
 gform_tot
+
 
 ```
 
@@ -395,6 +407,9 @@ gform_tot$Phobia =  factor(gform_tot$Phobia)
 gform_tot$judge_id =  factor(gform_tot$judge_id)
 
 
+write.csv(gform_tot, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Clean Data/GoogleForm/gform_tot.csv"), row.names=T)
+
+
 ```
 
 
@@ -449,6 +464,9 @@ Graph_Geo_Western_Africa=ggplot(gform_tot_count, aes(x=Day ,y=Count)) +
   
  
 Graph_Geo_Western_Africa
+
+
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Graph_Geo_Western_Africa.jpg", plot = Graph_Geo_Western_Africa, width = 11, height = 8)
 ```
 
 
@@ -468,11 +486,11 @@ Graph_Age=ggplot(data  = gform_tot,aes(x=Age))+
   theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))+
   theme(legend.title = element_text(color = "black", size = 15), legend.text = element_text(color = "black",size=12))
  
-  
-   
 
 Graph_Age
 
+
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Graph_Age.jpg", plot = Graph_Age, width = 11, height = 8)
 ```
 
 Graphique de participation en fonction du niveau academique
@@ -499,6 +517,8 @@ Graph_Academie=ggplot(data=gform_tot,aes(x=Academic,fill=Academic))+
 
 Graph_Academie
 
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Graph_Academie.jpg", plot = Graph_Academie, width = 11, height = 8)
+
 ```
 
 Graphique de participation en fonction de la zone geographique
@@ -523,6 +543,8 @@ Graph_Geo=ggplot(data=gform_tot,aes(x=Geo,fill=Geo))+
 
 
 Graph_Geo
+
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Graph_Geo.jpg", plot = Graph_Geo, width = 11, height = 8)
 ```
 
 Graphique de participation en fonction du Hobby
@@ -549,6 +571,8 @@ Graph_Hobby=ggplot(data=gform_tot,aes(x=Hobby,fill=Hobby))+
 
 Graph_Hobby
 
+
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Graph_Hobby.jpg", plot = Graph_Hobby, width = 11, height = 8)
 ```
 
 
@@ -558,14 +582,6 @@ Graph_Hobby
 ---------------------------------------ELO Score
 
 
-
-Library
-Bibliotheque
-
-```{r}
-library(EloChoice)
-library(dplyr)
-```
 
 Choisir les tabeaux de resultats selon les 4 traductions
 
@@ -596,6 +612,9 @@ Utilisation de la fonction format_data.
 Elo_tot=format_data(Elo_tot)
 
 Elo_tot
+
+write.csv(Elo_tot, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Clean Data/EloScore/Elo_tot.csv"), row.names=T)
+
 ```
 
 
@@ -649,6 +668,7 @@ classement=ggplot(Elo_all, aes(x=EloRank , y = EloScore)) +
   
 classement
 
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Classement.jpg", plot = classement, width = 11, height = 8)
 ```
 
 
@@ -663,6 +683,8 @@ Fichier "Goups"
 ```{r}
 Groups = read.csv(file=file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Tools/Groups.csv"),header = T, sep=";") 
 Groups
+
+
 ```
 
 Association des deux tableaux
@@ -670,55 +692,14 @@ Association des deux tableaux
 Test avec fonction left_join ou fonction merge ou fonction full_join
 
 ```{r}
-Groups$Name = as.character(Groups$Name)
-Groups$Species = as.character(Groups$Species)
-Groups$Group = as.character(Groups$Group)
-Groups$Subgroup = as.character(Groups$Subgroup)
-Groups$PredatorPrimates = as.character(Groups$PredatorPrimates)
-Groups$Predator = as.character(Groups$Predator)
-Groups$Dangerous = as.character(Groups$Dangerous)
 
-
-rownames(Elo_all) <- Elo_all$Name
-rownames(Groups) <- as.character(Groups$Name)
-
-
-Elo_all_Groups <- merge(Elo_all,Groups,by="row.names",all.x=TRUE)
-
-Elo_all_Groups = left_join(Elo_all,Groups, by=c(Name="Name_2"))
+Elo_all_Groups = left_join(Elo_all,Groups, by=c(Name="Name2"))
 
 Elo_all_Groups
 
 
-write.csv(Elo_all_Groups, file = file.path("Result\EloScore\Elo_all_Groups.csv"), row.names=T)
+write.csv(Elo_all_Groups, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/EloScore/Elo_all_Groups.csv.csv"), row.names=T)
 
-
-```
-
-=======> Une erreur que je ne comprends pas==========<
-
-
-Utilisons cbind
-
-
-Pour cela il faut que le tableau Elo_all soit ordonne de la meme maniere que le tableau groups c'est a dire par ordre alphanumerique de la colonne Name
-
-```{r}
-
-Elo_all<- Elo_all[order(Elo_all$Name, decreasing =F),]
-
-Elo_all
-```
-
-la colonne Name_2 permet de verifier que la liaision est correcte
-
-```{r}
-Elo_all_Groups <- cbind(Elo_all,Groups)
-
-Elo_all_Groups
-
-
-write.csv(Elo_all_Groups, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/EloScore/Elo_all_Groups.csv"), row.names=T)
 
 ```
 
@@ -740,6 +721,7 @@ classement_test=ggplot(Elo_all_Groups, aes(x=EloRank , y =EloScore)) +
   
 classement_test
 
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Classementtest.jpg", plot = classement_test, width = 11, height = 8)
 ```
 
 
@@ -762,6 +744,8 @@ classement_subgroup=ggplot(Elo_all_Groups, aes(x=EloRank , y =EloScore, color=Su
   theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))
  
 classement_subgroup
+
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Classement_Subgroup.jpg", plot = classement_subgroup, width = 11, height = 8)
 ```
 
 
@@ -822,6 +806,9 @@ classement_Interet=ggplot(Elo_all_Groups_Interet, aes(x=EloRank , y =EloScore , 
   
   
 classement_Interet
+
+
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Classement_Interet.jpg", plot = classement_Interet, width = 11, height = 8)
 ```
 
 
@@ -830,7 +817,7 @@ classement_Interet
 Classement selon predation sur primates
 
 ```{r}
-classement_5=ggplot(Elo_all_Groups_Interet, aes(x=EloRank , y =EloScore , col=PredatorPrimates, shape=PredatorPrimates, size=PredatorPrimates)) + 
+classement_primates_predator=ggplot(Elo_all_Groups_Interet, aes(x=EloRank , y =EloScore , col=PredatorPrimates, shape=PredatorPrimates, size=PredatorPrimates)) + 
   geom_point() +
   
   scale_color_manual(name="Predator\nof primates",values=c("#0000FF","#FF0000"),labels=c("No","Yes"))+
@@ -850,7 +837,9 @@ classement_5=ggplot(Elo_all_Groups_Interet, aes(x=EloRank , y =EloScore , col=Pr
   theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))
   
   
-classement_5
+classement_primates_predator
+
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Classement_primates_predator.jpg", plot = classement_primates_predator, width = 11, height = 8)
 ```
 
 
@@ -859,7 +848,7 @@ classement_5
 Classement selon dangerosite pour l'humain
 
 ```{r}
-classement_6=ggplot(Elo_all_Groups_Interet, aes(x=EloRank , y =EloScore , col=Dangerous, shape=Dangerous, size=Dangerous)) + 
+classement_danger=ggplot(Elo_all_Groups_Interet, aes(x=EloRank , y =EloScore , col=Dangerous, shape=Dangerous, size=Dangerous)) + 
   geom_point() +
 
   scale_color_manual(name="Dangerous\nanimal\nfor humans",values=c("#0000FF","#FF0000"),labels=c("No","Yes"))+
@@ -879,7 +868,9 @@ classement_6=ggplot(Elo_all_Groups_Interet, aes(x=EloRank , y =EloScore , col=Da
   theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))
   
   
-classement_6
+classement_danger
+
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Classement_danger.jpg", plot = classement_danger, width = 11, height = 8)
 ```
 
 
@@ -933,6 +924,8 @@ stabgraph_1=ggplot(Elo_stab, aes (x=match_nb, y= Crocodylus_porosus)) +
 
 
 stabgraph_1
+
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Stab_Crocodylus_porosus.jpg", plot = stabgraph_1, width = 11, height = 8)
 ```
 
 
@@ -960,6 +953,8 @@ stabgraph_2=ggplot(Elo_stab, aes (x=match_nb, y= Oryctolagus_cuniculus2)) +
 
 
 stabgraph_2
+
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Stab_Oryctolagus_cuniculus2.jpg", plot = stabgraph_2, width = 11, height = 8)
 ```
 
 
@@ -973,24 +968,14 @@ Calculer des Scores Elo selon des criteres de distinction entre participants com
 
 
 
-
-Library 
-
-```{r}
-library(irr)
-library(dplyr)
-library(tidyr)
-library(GGally)
-library(reshape2)
-```
-
-
 Utilisation de la fonction get_BDD_elo
 
 Utilisation de la fonction past_BDD_elo
 
 
 -----------Critere SEXE
+
+
 
 
 ```{r}
@@ -1069,7 +1054,7 @@ icc(BDD_sexe_score[, c("F", "M","Not mentioned")], model="twoway", type="consist
 
 
 ```{r}
-Corelation = ggplot(BDD_sexe_score, aes(F,M)) +
+Corelation_Sex = ggplot(BDD_sexe_score, aes(F,M)) +
   
   xlim(800,2000)+
   ylim(800,2000)+
@@ -1086,17 +1071,19 @@ Corelation = ggplot(BDD_sexe_score, aes(F,M)) +
   theme(axis.text.x = element_text(color="black", size=14),axis.text.y = element_text(color="black", size=14)) +
   theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))
 
-Corelation
+Corelation_Sex
   
-
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Correlation_Sex.jpg", plot = Corelation_Sex, width = 11, height = 8)
   
 ```
 
 Fonction des correlations croisees entre A1 A2 et A3
 
 ```{r}
-library(PerformanceAnalytics)
-chart.Correlation(BDD_sexe_score[, c("F", "M","Not mentioned")],histogram=TRUE,pch=19)
+
+cor_tot = chart.Correlation(BDD_sexe_score[, c("F", "M","Not mentioned")],histogram=TRUE,pch=19)
+
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Cor_Sex.jpg", plot = cor_tot, width = 11, height = 8)
 ```
 
 
@@ -1143,6 +1130,9 @@ BDD_sexe_complet <- left_join(BDD_sexe_score_all, BDD_sexe_rang_all, by=c("Name"
 
 
 write.csv(BDD_sexe_complet, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/BDD/BDDSex/BDD_sexe_complet.csv"), row.names=F)
+
+BDD_sexe_complet
+
 ```
 
 Ranger le tableaux selon les rang
@@ -1170,168 +1160,610 @@ classement_sexe=ggplot(BDD_sexe_complet, aes(x=EloRank , y =EloScore , col =Sex)
   
   
 classement_sexe
+
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Classement_Sex.jpg", plot = classement_sexe, width = 11, height = 8)
+
 ```
+
+
+Utilisation du tableau Groups pour faire des groupes d'animaux
+Comparaison des moyennes des scores des groupes d'animaux selon le sexe
+
+
+```{r}
+
+BDD_sexe_score_Groups = left_join(BDD_sexe_score,Groups, by=c(name="Name2"))
+
+
+write.csv(BDD_sexe_score_Groups, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/BDD/BDDSex/BDD_sexe_score_Groups.csv"), row.names=F)
+
+```
+
+
+
+```{r}
+
+BDD_sexe_complet_Groups = left_join(BDD_sexe_complet,Groups, by=c(Name="Name2"))
+
+
+write.csv(BDD_sexe_complet_Groups, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/BDD/BDDSex/BDD_sexe_complet_Groups.csv"), row.names=F)
+
+```
+
+
+
+Creation nouveau tableau avec nouvelle colonne interet qui repertorie les groupes que l'on souhaite mettre en evidence dans le graphique
+
+
+```{r}
+BDD_sexe_complet_Groups_Interet =  mutate(BDD_sexe_complet_Groups,
+                    Interet = case_when(
+                    Subgroup == "Felidae" ~ "Felidae",
+                    Subgroup == "Spider"~ "Spider",
+                    Subgroup == "Raptor"~ "Raptor",
+                    Subgroup == "Snake"~ "Snake",
+                    Subgroup == "Crocodile"~ "Crocodile",
+                    Subgroup == "Canidae"~ "Canidae",
+                    Subgroup == "Ursus"~ "Ursus",
+                    Subgroup == "Hyenidae"~"Hyenidae",
+                    Subgroup == "Primate"~ "Primate",
+                     T ~ "Others"))
+
+
+
+write.csv(BDD_sexe_complet_Groups_Interet, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/BDD/BDDSex/BDD_sexe_complet_Groups_Interet.csv"), row.names=T)
+
+```
+
+
+
+Graphique Boxplot
+
+```{r}
+Score_Sex_Boxplot_Interet=ggplot(BDD_sexe_complet_Groups_Interet, aes(x=Interet , y =EloScore , col=Sex)) + 
+  geom_boxplot() +
+  
+  
+ scale_color_manual(name = "Sex", values = c("blue","red","green"), labels = c("Female","Male", "Not mentioned"))+
+  
+  theme(legend.title = element_text(color = "black", size = 15), legend.text = element_text(color = "black",size=12))+
+  
+  
+  ylab("Elo Score")  + 
+  xlab("Group") + 
+  
+  ggtitle("Elo Score") +
+  theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))+
+  
+  theme(axis.line = element_line(colour = "black", size = 1.1, linetype = "solid")) +
+  theme(axis.text.x = element_text(color="black", size=14),axis.text.y = element_text(color="black", size=14)) 
+  
+  
+  
+Score_Sex_Boxplot_Interet
+
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Boxplot_sex.jpg", plot = Score_Sex_Boxplot_Interet, width = 11, height = 8)
+```
+
+
+
+
+
+
+
+
+-----------Critere Age
+
+
+```{r}
+table(gform_tot$Age)
+```
+
+
+Regroupons des categories
+
+```{r}
+gform_tot_age =  mutate(gform_tot,
+                    CatAge = case_when(
+                    Age < 30  ~ "- 30 years old",
+                    
+                     T ~ "+ 30 years old"))
+
+
+gform_tot_age$CatAge = as.factor(gform_tot_age$CatAge)
+
+write.csv(gform_tot_age, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/clean Data/GoogleForm/gform_tot_age.csv"), row.names=T)
+```
+
+
+
+
+
+Tableaux avec les rangs
+
+```{r}
+BDD_age_rang <- past_BDD_elo(Elo_tot, gform_tot_age, "CatAge", type="rank", runs = 100)
+
+write.csv(BDD_age_rang, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/BDD/BDDAge/BDD_age_rang.csv"), row.names=T)
+
+```
+
+Tableaux avec les scores
+
+```{r}
+BDD_age_score <- past_BDD_elo(Elo_tot, gform_tot_age, "CatAge", type="Score", runs = 100) 
+
+
+write.csv(BDD_age_score, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/BDD/BDDage/BDD_age_score.csv"), row.names=F)
+```
+
+
+
+
+```{r}
+kendall(BDD_age_score[, c("- 30 years old","+ 30 years old")])
+```
+
+
+
+
+Coefficient de Correlation Intra-classe
+
+
+
+```{r}
+icc(BDD_age_score[, c("- 30 years old","+ 30 years old")], model="twoway", type="consistency", unit="average")
+```
+
+
+Fonction des correlations croisees entre A1 A2 et A3
+
+```{r}
+
+gg1 = chart.Correlation(BDD_age_score[, c("- 30 years old","+ 30 years old")],histogram=TRUE,pch=19)
+gg1
+
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Cor_Age.jpg", plot = gg1, width = 11, height = 8)
+```
+
+
+==> Faire des graphiques et des analyses plus simples
+
+
+Transformation des tableaux variables en tableaux observations
+
+```{r}
+
+BDD_age_score_all = melt ( BDD_age_score, id.vars = c("name"))
+
+
+BDD_age_rang_all = melt ( BDD_age_rang, id.vars = c("name"))
+
+
+write.csv(BDD_age_score_all, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/BDD/BDDage/BDD_age_score_all.csv"), row.names=F)
+
+
+write.csv(BDD_age_rang_all, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/BDD/BDDage/BDD_age_rang_all.csv"), row.names=F)
+```
+
+
+Renommer les noms des variables
+
+```{r}
+names(BDD_age_score_all) = c("Name","Age","EloScore")
+names(BDD_age_rang_all) = c("Name","Age","EloRank")
+```
+
+Combiner Tableaux rang et score
+```{r}
+BDD_age_complet <- left_join(BDD_age_score_all, BDD_age_rang_all, by=c("Name","Age"))
+
+
+write.csv(BDD_age_complet, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/BDD/BDDAge/BDD_age_complet.csv"), row.names=F)
+
+```
+
+Ranger le tableaux selon les rang
+
+```{r}
+BDD_age_complet<- BDD_age_complet[order(BDD_age_complet$EloRank, decreasing =F),]
+```
+
+Graphique des Scores selon les Sexes
+
+```{r}
+classement_age=ggplot(BDD_age_complet, aes(x=EloRank , y =EloScore , col =Age)) + 
+  geom_point() +
+  scale_color_manual(name = "Age", values = c("blue","red"))+
+  
+  ylab("Elo Score")  + 
+  xlab("Rank") + 
+  ggtitle("Pictures Ranking ") +
+  
+  theme( axis.line = element_line(colour = "black", size = 1.1, linetype = "solid")) +
+  theme(axis.text.x = element_text(color="black", size=14),axis.text.y = element_text(color="black", size=14)) +
+  theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14)) + 
+  theme(legend.title = element_text(color = "black", size = 15), legend.text = element_text(color = "black",size=12))
+ 
+  
+  
+classement_age
+
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Classement_age.jpg", plot = classement_sexe, width = 11, height = 8)
+```
+
+
+Utilisation du tableau Groups pour faire des groupes d'animaux
+Comparaison des moyennes des scores des groupes d'animaux selon le sexe
+
+
+```{r}
+
+BDD_age_score_Groups = left_join(BDD_age_score,Groups, by=c(name="Name2"))
+
+
+write.csv(BDD_age_score_Groups, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/BDD/BDDAge/BDD_age_score_Groups.csv"), row.names=F)
+
+```
+
+
+
+```{r}
+
+BDD_age_complet_Groups = left_join(BDD_age_complet,Groups, by=c(Name="Name2"))
+
+
+write.csv(BDD_age_complet_Groups, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/BDD/BDDAge/BDD_age_complet_Groups.csv"), row.names=F)
+
+```
+
+
+Creation nouveau tableau avec nouvelle colonne interet qui repertorie les groupes que l'on souhaite mettre en evidence dans le graphique
+
+
+```{r}
+BDD_age_complet_Groups_Interet =  mutate(BDD_age_complet_Groups,
+                    Interet = case_when(
+                    Subgroup == "Felidae" ~ "Felidae",
+                    Subgroup == "Spider"~ "Spider",
+                    Subgroup == "Raptor"~ "Raptor",
+                    Subgroup == "Snake"~ "Snake",
+                    Subgroup == "Crocodile"~ "Crocodile",
+                    Subgroup == "Canidae"~ "Canidae",
+                    Subgroup == "Ursus"~ "Ursus",
+                    Subgroup == "Hyenidae"~"Hyenidae",
+                    Subgroup == "Primate"~ "Primate",
+                     T ~ "Others"))
+
+
+
+write.csv(BDD_age_complet_Groups_Interet, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/BDD/BDDAge/BDD_age_complet_Groups_Interet.csv"), row.names=T)
+
+```
+
+
+
+Graphique Boxplot
+
+```{r}
+Score_age_Boxplot_Interet=ggplot(BDD_age_complet_Groups_Interet, aes(x=Interet , y =EloScore , col=Age)) + 
+  geom_boxplot() +
+  
+  
+ scale_color_manual(name = "Age", values = c("blue","red") ,labels=c("under 30\nyears old","over 30\nyears old"))+
+  
+  theme(legend.title = element_text(color = "black", size = 15), legend.text = element_text(color = "black",size=12))+
+  
+  
+  ylab("Elo Score")  + 
+  xlab("Group") + 
+  
+  ggtitle("Elo Score") +
+  theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))+
+  
+  theme(axis.line = element_line(colour = "black", size = 1.1, linetype = "solid")) +
+  theme(axis.text.x = element_text(color="black", size=14),axis.text.y = element_text(color="black", size=14)) 
+  
+  
+  
+Score_age_Boxplot_Interet
+
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Boxplot_Age.jpg", plot = Score_age_Boxplot_Interet, width = 11, height = 8)
+```
+
+
+
 
 
 
 
 -----------Critere ACADEMIE
 
-G1:Maternelle
-G2:Primaire
-G3:College
-G4:Lycee
-G5:Bac
-G6:Bac+1 +2 +3
-G7:Bac+4 +5
-G8:Doctorat et plus
-G9:Autre parcours
-
 
 ```{r}
-table(gform$Academic)
-```
-
-Regroupons des categories G1 et G2 ainsi que G3 et G4
-
-Nouveaux groupes
-
-G2:Maternelle + Primaire
-G4:College + Lycee
-
-```{r}
-gform$cat_academie <- ifelse(gform$Academie=="G1","G2", as.character(gform$Academie))
-gform$cat_academie <- ifelse(gform$cat_academie=="G3","G4", as.character(gform$cat_academie))
-gform$cat_academie <- factor(gform$cat_academie)
-table(gform$cat_academie)
+table(gform_tot$Academic)
 ```
 
 
-Calcul ICC
+Regroupons des categories
 
 ```{r}
-BDD_academie <- past_BDD_elo(data, gform, "cat_academie", 
-                           type="score", runs = 100)
+gform_tot_academic =  mutate(gform_tot,
+                    CatAcademic = case_when(
+                    Academic == "High school"|Academic =="Middle school" ~ "High school + Middle school",
+                    Academic == "Kindergarten" |Academic =="Primary school" ~ "Kindergarten + Primary school",
+                    
+                    Academic == "High school diploma"~ "High school diploma",
+                    Academic == "Master's degree"~ "Master's degree",
+                    Academic == "One/two/three-year technical/university degree"~ "One/two/three-year technical/university degree",
+                    Academic == "PhD and more"~ "PhD and more",
+                   
+                  
+                     T ~ "Other"))
 
-BDD_academie <- BDD_academie[, c("G2",   "G4"   ,"G5" ,  "G6" ,  "G7",   "G8",   "G9")] 
 
-icc(BDD_academie, model="twoway", type="consistency", unit="average")
+gform_tot_academic$CatAcademic = as.factor(gform_tot_academic$CatAcademic)
 
-```
-
-Calcul Kendall
-
-```{r}
-
-rang_BDD_academie <- past_BDD_elo(data, gform, "cat_academie", 
-                                type="rank", runs = 100)
-kendall(rang_BDD_academie[, c("G2",   "G4"   ,"G5" ,  "G6" ,  "G7",   "G8",   "G9")])
-```
-
-```{r}
-library(PerformanceAnalytics)
-chart.Correlation(BDD_academie,histogram=TRUE,method = "kendall")
+write.csv(gform_tot_academic, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/clean Data/GoogleForm/gform_tot_academic.csv"), row.names=T)
 ```
 
 
 
 
 
+Tableaux avec les rangs
+
+```{r}
+BDD_academic_rang <- past_BDD_elo(Elo_tot, gform_tot_academic, "CatAcademic", type="rank", runs = 100)
+
+write.csv(BDD_academic_rang, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/BDD/BDDAcademic/BDD_academic_rang.csv"), row.names=T)
+
+```
+
+Tableaux avec les scores
+
+```{r}
+BDD_academic_score <- past_BDD_elo(Elo_tot, gform_tot_academic, "CatAcademic", type="Score", runs = 100) 
+
+#BDD_sexe_score <- BDD_sexe[, c("A1","A2","A3")]  ==> enlever colonne des especes
+
+write.csv(BDD_academic_score, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/BDD/BDDacademic/BDD_academic_score.csv"), row.names=F)
+```
 
 
 
 
+```{r}
+kendall(BDD_academic_score[, c("High school + Middle school", "High school diploma","Kindergarten + Primary school","Master's degree","One/two/three-year technical/university degree","Other","PhD and more")])
+```
 
 
 
 
+Coefficient de Correlation Intra-classe
 
 
 
+```{r}
+icc(BDD_academic_score[, c("High school + Middle school", "High school diploma","Kindergarten + Primary school","Master's degree","One/two/three-year technical/university degree","Other","PhD and more")], model="twoway", type="consistency", unit="average")
+```
 
 
+Fonction des correlations croisees entre A1 A2 et A3
+
+```{r}
+
+gg2=chart.Correlation(BDD_academic_score[, c("High school + Middle school", "High school diploma","Kindergarten + Primary school","Master's degree","One/two/three-year technical/university degree","Other","PhD and more")],histogram=TRUE,pch=19)
+
+gg2
+
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Cor_Academic.jpg", plot = gg2, width = 11, height = 8)
+```
 
 
+==> Faire des graphiques et des analyses plus simples
 
 
+Transformation des tableaux variables en tableaux observations
+
+```{r}
+
+BDD_academic_score_all = melt ( BDD_academic_score, id.vars = c("name"))
 
 
+BDD_academic_rang_all = melt ( BDD_academic_rang, id.vars = c("name"))
 
 
+write.csv(BDD_academic_score_all, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/BDD/BDDAcademic/BDD_academic_score_all.csv"), row.names=F)
 
 
+write.csv(BDD_academic_rang_all, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/BDD/BDDAcademic/BDD_academic_rang_all.csv"), row.names=F)
+```
 
 
+Renommer les noms des variables
+
+```{r}
+names(BDD_academic_score_all) = c("Name","Academic","EloScore")
+names(BDD_academic_rang_all) = c("Name","Academic","EloRank")
+```
+
+Combiner Tableaux rang et score
+```{r}
+BDD_academic_complet <- left_join(BDD_academic_score_all, BDD_academic_rang_all, by=c("Name","Academic"))
 
 
+write.csv(BDD_academic_complet, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/BDD/BDDAcademic/BDD_academic_complet.csv"), row.names=F)
+
+```
+
+Ranger le tableaux selon les rang
+
+```{r}
+BDD_academic_complet<- BDD_academic_complet[order(BDD_academic_complet$EloRank, decreasing =F),]
+```
+
+Graphique des Scores selon les Sexes
+
+```{r}
+classement_academic=ggplot(BDD_academic_complet, aes(x=EloRank , y =EloScore , col =Academic)) + 
+  geom_point() +
+  scale_color_manual(name = "Academic", values = c("blue","red","green","Black","Brown","Yellow","purple"), labels = c("High school + Middle school", "High school diploma","Kindergarten + Primary school","Master's degree","One/two/three-year technical/university degree","Other","PhD and more"))+
+  
+  ylab("Elo Score")  + 
+  xlab("Rank") + 
+  ggtitle("Pictures Ranking ") +
+  
+  theme( axis.line = element_line(colour = "black", size = 1.1, linetype = "solid")) +
+  theme(axis.text.x = element_text(color="black", size=14),axis.text.y = element_text(color="black", size=14)) +
+  theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14)) + 
+  theme(legend.title = element_text(color = "black", size = 15), legend.text = element_text(color = "black",size=12))
+ 
+  
+  
+classement_academic
+
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Classement_Academic.jpg", plot = classement_academic, width = 11, height = 8)
+```
 
 
------------Test Fonctions pour resoudre Bug
+Utilisation du tableau Groups pour faire des groupes d'animaux
+Comparaison des moyennes des scores des groupes d'animaux selon le sexe
 
 
 ```{r}
 
-type = "rank" 
-dataset_photo <- Elo_tot
-dataset_answers <- gform_tot
-factor <- "Sex"
-level = "M"
+BDD_academic_score_Groups = left_join(BDD_academic_score,Groups, by=c(name="Name2"))
+
+
+write.csv(BDD_academic_score_Groups, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/BDD/BDDAcademic/BDD_academic_score_Groups.csv"), row.names=F)
+
+```
+
+
+
+```{r}
+
+BDD_academic_complet_Groups = left_join(BDD_academic_complet,Groups, by=c(Name="Name2"))
+
+
+write.csv(BDD_academic_complet_Groups, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/BDD/BDDAcademic/BDD_academic_complet_Groups.csv"), row.names=F)
+
+```
+
+
+Creation nouveau tableau avec nouvelle colonne interet qui repertorie les groupes que l'on souhaite mettre en evidence dans le graphique
+
+
+```{r}
+BDD_academic_complet_Groups_Interet =  mutate(BDD_academic_complet_Groups,
+                    Interet = case_when(
+                    Subgroup == "Felidae" ~ "Felidae",
+                    Subgroup == "Spider"~ "Spider",
+                    Subgroup == "Raptor"~ "Raptor",
+                    Subgroup == "Snake"~ "Snake",
+                    Subgroup == "Crocodile"~ "Crocodile",
+                    Subgroup == "Canidae"~ "Canidae",
+                    Subgroup == "Ursus"~ "Ursus",
+                    Subgroup == "Hyenidae"~"Hyenidae",
+                    Subgroup == "Primate"~ "Primate",
+                     T ~ "Others"))
+
+
+
+write.csv(BDD_academic_complet_Groups_Interet, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/BDD/BDDAcademic/BDD_academic_complet_Groups_Interet.csv"), row.names=T)
+
+```
+
+
+
+Graphique Boxplot
+
+```{r}
+Score_academic_Boxplot_Interet=ggplot(BDD_academic_complet_Groups_Interet, aes(x=Interet , y =EloScore , col=Academic)) + 
+  geom_boxplot() +
+  
+  
+ scale_color_manual(name = "Academic level", values = c("blue","red","green","Black","Brown","Yellow","purple"), labels = c("High school + Middle school", "High school diploma","Kindergarten + Primary school","Master's degree","One/two/three-year technical/university degree","Other","PhD and more"))+
+  
+  theme(legend.title = element_text(color = "black", size = 15), legend.text = element_text(color = "black",size=12))+
+  
+  
+  ylab("Elo Score")  + 
+  xlab("Group") + 
+  
+  ggtitle("Elo Score") +
+  theme(plot.title = element_text(size=14),axis.title.x = element_text(size=14),axis.title.y = element_text(size=14))+
+  
+  theme(axis.line = element_line(colour = "black", size = 1.1, linetype = "solid")) +
+  theme(axis.text.x = element_text(color="black", size=14),axis.text.y = element_text(color="black", size=14)) 
+  
+  
+  
+Score_academic_Boxplot_Interet
+
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Boxplot_Academic.jpg", plot = Score_academic_Boxplot_Interet, width = 11, height = 8)
+```
+
+
+
+
+
+=============================TEST pour resoudre Bug
+
+```{r}
+dataset_photo = Elo_tot
+dataset_answers = gform_tot_academic
+factor = "CatAcademic"
+level = "Master's degree"
 startvalue = 1500
 runs = 10
+type= "score" 
+type = "rank" 
+```
 
 
+
+
+
+```{r}
 get_BDD_elo <- function(dataset_photo, dataset_answers, factor, level, type="score", startvalue = 1500, runs = 10) {
   
-  
   col_temp <- dataset_answers[,colnames(dataset_answers)==factor]
-  
   id <- dataset_answers$judge_id[col_temp==level]
-  
   BDD <- dataset_photo[dataset_photo$judge_id %in% id,]
-  
   res <- elochoice(winner = BDD$winner, loser = BDD$loser, startvalue = startvalue, runs = runs)
-  
   temp <- ratings(res, drawplot=F)
-  
   temp2 <- data_frame(name = names(temp), EloScore = temp)
-  
   if (type=="rank") {
-    temp2$Rank <- order(temp2$EloScore, decreasing=T)
+    temp2$Rank <- order(temp2$EloScore, decreasing=F)
     temp2$EloScore <- NULL
   }
-  
   temp3 <- temp2[order(temp2$name), ]
-  
   return(temp3)
 }
 
+```
 
 
 
+```{r}
 
-past_BDD_elo <- function(dataset_photo, dataset_answers, factor, type= "rank", startvalue = 1500, runs = 10) {
+past_BDD_elo <- function(dataset_photo, dataset_answers, factor, type= "score", startvalue = 1500, runs = 10) {
 
   levels_factor <- levels(dataset_answers[,colnames(dataset_answers)==factor])
-
-    n <- length(levels_factor)
-  
-    species <- sort(unique(c(as.character(dataset_photo$challenger_1), as.character(dataset_photo$challenger_2))),decreasing = FALSE)
-  
-    BDD <- data_frame(name = species)
-  
-    for (i in 1:n) {
-    BDD_temp <- get_BDD_elo(dataset_photo, dataset_answers, factor, levels_factor[i], type, startvalue = 1500, runs = 10)
+  n <- length(levels_factor)
+  species <- sort(unique(c(as.character(dataset_photo$challenger_1), as.character(dataset_photo$challenger_2))),decreasing = FALSE)
+  BDD <- data_frame(name = species)
+  for (i in 1:n) {
+    BDD_temp <- get_BDD_elo(dataset_photo, dataset_answers, factor, levels_factor[1], type, startvalue = 1500, runs = 10)
     BDD <- left_join(BDD, BDD_temp, by="name")
-    }
-    
-  
+  }
   colnames(BDD) <-c("name", levels_factor)
-  
   return(BDD)
 }
 
 
-
 ```
 
 
@@ -1339,17 +1771,24 @@ past_BDD_elo <- function(dataset_photo, dataset_answers, factor, type= "rank", s
 
 
 
-Le tableaux ne contient que des chaines de caracteres
-Nous voulons des facteurs
 
-```{r}
-Elo_tot$Language = factor(Elo_tot$Language)
-Elo_tot$judge_id = factor(Elo_tot$judge_id)
-Elo_tot$challenger_1 = factor(Elo_tot$challenger_1)
-Elo_tot$challenger_2 = factor(Elo_tot$challenger_2)
-Elo_tot$winner = factor(Elo_tot$winner)
 
-```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,222 +1,222 @@
 Name2;Species;Group;Subgroup;PredatorPrimates;Predator;Dangerous
-Acinonyx_jubatus ;Acinonyx_jubatus;Mammal;Felidae;Yes;Yes;Yes
-Acinonyx_jubatus2 ;Acinonyx_jubatus;Mammal;Felidae;Yes;Yes;Yes
-Acryllium_vulturinum ;Acryllium_vulturinum;Bird;Bird (not Raptor);No;No;No
-Aepyceros_melampus ;Aepyceros_melampus;Mammal;Ungulate;No;No;No
-Aepyceros_melampus2 ;Aepyceros_melampus;Mammal;Ungulate;No;No;No
-Agalychnis_callidryas ;Agalychnis_callidryas;Squamata;Amphibia;No;Yes;No
-Ailuropoda_melanoleuca ;Ailuropoda_melanoleuca;Mammal;Ursus;No;No;No
-Ailurops_ursinus ;Ailurops_ursinus;Mammal;Marsupial;No;No;No
-Ailurus_fulgens ;Ailurus_fulgens;Mammal;Ursus;No;No;No
-Alligator_mississippiensis ;Alligator_mississippiensis;Squamata;Crocodile;Yes;Yes;Yes
-Amblyrhynchus_cristatus ;Amblyrhynchus_cristatus;Squamata;Lizard;No;No;No
-Aonyx_cinereus ;Aonyx_cinereus;Mammal;Mustelidae;No;Yes;No
-Aonyx_cinereus2 ;Aonyx_cinereus;Mammal;Mustelidae;No;Yes;No
-Aquila_chrysaetos ;Aquila_chrysaetos;Bird;Raptor;No;No;No
-Ara_ararauna ;Ara_ararauna;Bird;Bird (not Raptor);No;No;No
-Ara_chloropterus ;Ara_chloropterus;Bird;Bird (not Raptor);No;No;No
-Arctocephalus forsteri ;Arctocephalus_forsteri;Mammal;Sea lion;No;Yes;No
-Arctocephalus_forsteri2 ;Arctocephalus_forsteri;Mammal;Sea lion;No;Yes;No
-Artibeus_planirostris ;Artibeus_planirostris;Mammal;Chiroptera;No;No;No
-Asio_flammeus ;Asio_flammeus;Bird;Raptor;No;Yes;No
-Ateles_hybridus ;Ateles_hybridus;Mammal;Primate;No;No;No
-Ateles_paniscus ;Ateles_paniscus;Mammal;Primate;No;No;No
-Athene_noctua ;Athene_noctua;Bird;Bird (not Raptor);No;Yes;No
-Athene_noctua2 ;Athene_noctua;Bird;Bird (not Raptor);No;Yes;No
-Athene_noctua3 ;Athene_noctua;Bird;Bird (not Raptor);No;Yes;No
-Balaeniceps_rex ;Balaeniceps_rex;Bird;Bird (not Raptor);No;No;No
-Bison_bonasus ;Bison_bonasus;Mammal;Ungulate;No;No;No
-Bison_bonasus2 ;Bison_bonasus;Mammal;Ungulate;No;No;No
-Boa_constrictor ;Boa_constrictor;Squamata;Snake;Yes;Yes;No
-Bubo_bubo ;Bubo_bubo;Bird;Raptor;No;Yes;No
-Bubo_bubo2 ;Bubo_bubo;Bird;Raptor;No;Yes;No
-Bubo_scandiacus ;Bubo_scandiacus;Bird;Raptor;No;No;No
-Bufonidae ;Bufonidae;Squamata;Amphibia;No;Yes;No
-Buprestidae ;Buprestidae;Insect;Coleoptera;No;No;No
-Buteo_galapagoensis ;Buteo_galapagoensis;Bird;Raptor;No;Yes;No
-Cairina_moschata ;Cairina_moschata;Bird;Bird (not Raptor);No;Yes;No
-Calliphora_vomitoria ;Calliphora_vomitoria;Insect;Diptera;No;No;No
-Callithrix_argentata ;Callithrix_argentata;Mammal;Primate;No;No;No
-Callithrix_penicillata ;Callithrix_penicillata;Mammal;Primate;No;No;No
-Calloselasma rhodostoma ;Calloselasma_rhodostoma;Squamata;Snake;No;Yes;Yes
-Canis_lupus ;Canis_lupus_;Mammal;Canidae;Yes;Yes;Yes
-Canis_lupus_familiaris ;Canis_lupus_familiaris;Mammal;Canidae;No;Yes;Yes
-Canis_lupus_familiaris2 ;Canis_lupus_familiaris;Mammal;Canidae;No;Yes;Yes
-Carlito_syrichta ;Carlito_syrichta;Mammal;Primate;No;Yes;No
-Centurio_senex ;Centurio_senex;Mammal;Chiroptera;No;No;No
-Cerdocyon_thous ;Cerdocyon_thous;Mammal;Canidae;Yes;Yes;No
-Chelonoidis_porteri ;Chelonoidis_porteri;Squamata;Tortoise  ;No;No;No
-Choloepus_didactylus ;Choloepus_didactylus;Mammal;Xenarthra;No;No;No
-Choloepus_didactylus2 ;Choloepus_didactylus;Mammal;Xenarthra;No;No;No
-Choloepus_didactylus3 ;Choloepus_didactylus;Mammal;Xenarthra;No;No;No
-Chroicocephalus_scopulinus ;Chroicocephalus_scopulinus;Bird;Bird (not Raptor);No;Yes;No
-Columba_livia ;Columba_livia;Bird;Bird (not Raptor);No;No;No
-Conolophus_pallidus ;Conolophus_pallidus;Squamata;Lizard;No;No;No
-Corvus ;Corvus;Bird;Bird (not Raptor);No;No;No
-Corvus2 ;Corvus;Bird;Bird (not Raptor);No;No;No
-Crocodylus_porosus ;Crocodylus_porosus;Squamata;Crocodile;Yes;Yes;Yes
-Crocuta_crocuta ;Crocuta_crocuta;Mammal;Hyenidae;Yes;No;Yes
-Crotalus_atrox ;Crotalus_atrox;Squamata;Snake;No;Yes;Yes
-Crotalus2 ;Crotalus_atrox;Squamata;Snake;No;Yes;Yes
-Cryptoprocto _ferox ;Cryptoprocto_ferox;Mammal;Felidae;Yes;No;No
-Cynictis_penicillata ;Cynictis_penicillata;Mammal;Mongoose;No;Yes;No
-Dasypus_novemcinctus ;Dasypus_novemcinctus;Mammal;Xenarthra;No;No;No
-Daubentonia_madagascariensis ;Daubentonia_madagascariensis;Mammal;Primate;No;No;No
-Dendroaspis_angusticeps ;Dendroaspis_angusticeps;Squamata;Snake;No;Yes;Yes
-Desmodus_rotondus ;Desmodus_rotundus;Mammal;Chiroptera;No;Yes;No
-Didelphis_virginiana ;Didelphis_virginiana;Mammal;Marsupial;No;No;No
-Equus_caballus ;Equus_caballus;Mammal;Ungulate;No;No;No
-Eudyptes chrysolophus ;Eudyptes_chrysolophus;Bird;Bird (not Raptor);No;Yes;No
-Eudyptes_chrysocome ;Eudyptes_chrysocome;Bird;Bird (not Raptor);No;Yes;No
-Eulemur _coronatus ;Eulemur_coronatus;Mammal;Primate;No;No;No
-Eulemur _coronatus2 ;Eulemur_coronatus;Mammal;Primate;No;No;No
-Euphractus _sexcinctus ;Euphractus_sexcinctus;Mammal;Xenarthra;No;No;No
-Evarcha_arcuata ;Evarcha_arcuata;Spider;Spider;No;Yes;No
-Felis_catus ;Felis_catus;Mammal;Felidae;No;Yes;No
-Felis_silvestris ;Felis_silvestris_;Mammal;Felidae;No;No;No
-Geronticus_eremita ;Geronticus_eremita;Bird;Bird (not Raptor);No;Yes;No
-Giraffa_camelopardalis_reticulata ;Giraffa_camelopardalis_reticulata;Mammal;Ungulate;No;No;No
-Gorilla_Gorilla_Beringei ;Gorilla_Gorilla_Beringei;Mammal;Primate;No;No;Yes
-Gorilla_gorilla_gorilla ;Gorilla_Gorilla_Gorilla;Mammal;Primate;No;No;Yes
-Gulo_gulo ;Gulo_gulo;Mammal;Mustelidae;No;Yes;No
-Gulo_gulo2 ;Gulo_gulo;Mammal;Mustelidae;No;Yes;No
-Gymnogyps_californianus ;Gymnogyps_californianus;Bird;Raptor;No;No;No
-Gypaetus_barbatus ;Gypaetus_barbatus;Bird;Raptor;No;Yes;No
-Gypaetus_barbatus2 ;Gypaetus_barbatus;Bird;Raptor;No;Yes;No
-Gyps_rueppelli ;Gyps_rueppelli;Bird;Raptor;No;No;No
-Haematopus_ater ;Haematopus_ater;Bird;Bird (not Raptor);No;Yes;No
-Harpia_Harpyja ;Harpia_Harpyja;Bird;Raptor;Yes;No;No
-Helarctos_malayanus ;Helarctos_malayanus;Mammal;Ursus;No;No;No
-Hemicentetes_semispinosus ;Hemicentetes_semispinosus;Mammal;Tenrecidae;No;No;No
-Heterocephalus_glaber ;Heterocephalus_glaber;Mammal;Rodent;No;No;No
-Hippopotamus_amphibius ;Hippopotamus_amphibius;Mammal;Ungulate;No;No;Yes
-Hyaena_hyaena ;Hyaena_hyaena;Mammal;Hyenidae;Yes;No;Yes
-Hyles_euphorbiae ;Hyles_euphorbiae;Insect;Lepidoptera;No;No;No
-Hylobates_agilis ;Hylobates_agilis;Mammal;Primate;No;No;No
-Hypsignathus_monstrosus ;Hypsignathus_monstrosu;Mammal;Chiroptera;No;No;No
-Iguana_iguana ;Iguana_iguana;Squamata;Lizard;No;No;No
-Iguana_iguana2 ;Iguana_iguana;Squamata;Lizard;No;No;No
-Incilius_alvarius ;Incilius_alvarius;Squamata;Amphibia;No;Yes;No
-Incilius_alvarius2 ;Incilius_alvarius;Squamata;Amphibia;No;Yes;No
-Intellagama_lesueurii ;Intellagama_lesueurii;Squamata;Lizard;No;Yes;No
-Laticauda_laticaudata ;Laticauda_laticaudata;Squamata;Snake;No;Yes;No
-Laticauda_saintgironsi ;Laticauda_saintgironsi;Squamata;Snake;No;Yes;No
-Lemur_catta ;Lemur_catta;Mammal;Primate;No;Yes;No
-Lemur_catta2 ;Lemur_catta;Mammal;Primate;No;Yes;No
-Leopardus_wiedii ;Leopardus_wiedii;Mammal;Felidae;No;No;No
-Leptailurus_serval ;Leptailurus_serval;Mammal;Felidae;No;Yes;No
-Leptoptilos_crumenifer ;Leptoptilos_crumenifer;Bird;Bird (not Raptor);No;No;No
-Libellula_quadrimaculata ;Libellula_quadrimaculata;Insect;Odonata;No;Yes;No
-Litoria_infrafrenata ;Litoria_infrafrenata;Squamata;Amphibia;No;Yes;No
-Loris_tardigradus ;Loris_tardigradus;Mammal;Primate;No;No;No
-Loxodonta_africana ;Loxodonta_africana;Mammal;Ungulate;No;No;Yes
-Lycaon_pictus ;Lycaon_pictus;Mammal;Canidae;Yes;Yes;Yes
-Lycaon_pictus2 ;Lycaon_pictus;Mammal;Canidae;Yes;Yes;Yes
-Lynx_rufus ;Lynx_rufus;Mammal;Felidae;No;Yes;No
-Lynx_rufus2 ;Lynx_rufus;Mammal;Felidae;No;Yes;No
-Macaca_fuscata ;Macaca_fuscata;Mammal;Primate;No;Yes;No
-Macaca_silenus ;Macaca_silenus;Mammal;Primate;No;Yes;No
-Macronectes_halli ;Macronectes_halli;Bird;Bird (not Raptor);No;No;No
-Macropus_rufogriseus ;Macropus_rufogriseus;Mammal;Marsupial;No;No;No
-Malayopython_reticulatus ;Malayopython_reticulatus;Squamata;Snake;Yes;Yes;Yes
-Malpolon_monspessulanus ;Malpolon_monspessulanus;Squamata;Snake;No;Yes;No
-Mandrillus_sphinx ;Mandrillus_sphinx;Mammal;Primate;No;No;Yes
-Mandrillus_sphinx2 ;Mandrillus_sphinx;Mammal;Primate;No;No;Yes
-Miopithecus_ogouensis ;Miopithecus_ogouensis;Mammal;Primate;No;No;No
-Morelia_spilota ;Morelia_spilota;Squamata;Snake;No;Yes;No
-Mungos_mungo ;Mungos_mungo;Mammal;Mongoose;No;Yes;No
-Muscardinus_avellanarius ;Muscardinus_avellanarius;Mammal;Rodent;No;No;No
-Mygale ;Mygale;Spider;Spider;No;Yes;No
-Myocastor_coypus ;Myocastor_coypus;Mammal;Rodent;No;No;No
-Naja_naja ;Naja_naja;Squamata;Snake;No;Yes;Yes
-Nasua_narica ;Nasua_narica;Mammal;Procyonide;No;No;No
-Nasua_nasua ;Nasua_nasua;Mammal;Procyonide;No;No;No
-Necrosyrtes_monachus ;Necrosyrtes_monachus;Bird;Raptor;No;No;No
-Neofelis_nebulosa ;Neofelis_nebulosa;Mammal;Felidae;Yes;No;Yes
-Nestor_meridionalis ;Nestor_meridionalis;Bird;Bird (not Raptor);No;No;No
-Notechis_scutatus ;Notechis_scutatus;Squamata;Snake;No;Yes;Yes
-Numida_meleagris ;Numida_meleagris;Bird;Bird (not Raptor);No;No;No
-Nyctereutes_procyonoides ;Nyctereutes_procyonoides;Mammal;Canidae;No;Yes;No
-Odonata ;Odonata;Insect;Odonata;No;Yes;No
-Odonata2 ;Odonata;Insect;Odonata;No;Yes;No
-Oryctolagus_cuniculus ;Oryctolagus_cuniculus;Mammal;Lagomorpha;No;No;No
-Oryctolagus_cuniculus2 ;Oryctolagus_cuniculus;Mammal;Lagomorpha;No;No;No
-Otocolobus_manul ;Otocolobus_manul;Mammal;Felidae;No;Yes;No
-Pamphagidae ;Pamphagidae;Insect;Orthoptere;No;No;No
-Pan_paniscus ;Pan_panisucs;Mammal;Primate;No;Yes;No
-Pan_paniscus2 ;Pan_panisucs;Mammal;Primate;No;Yes;No
-Pan_paniscus3 ;Pan_panisucs;Mammal;Primate;No;Yes;No
-Pan_paniscus4 ;Pan_panisucs;Mammal;Primate;No;Yes;No
-Pan_troglodytes ;Pan_troglodytes;Mammal;Primate;Yes;No;Yes
-Pan_troglodytes2 ;Pan_troglodytes;Mammal;Primate;Yes;No;Yes
-Panthera_leo ;Panthera_leo;Mammal;Felidae;Yes;No;Yes
-Panthera_leo2 ;Panthera_leo;Mammal;Felidae;Yes;No;Yes
-Panthera_leo3 ;Panthera_leo;Mammal;Felidae;Yes;No;Yes
-Panthera_onca ;Panthera_onca;Mammal;Felidae;Yes;No;Yes
-Panthera_onca_2 ;Panthera_onca;Mammal;Felidae;Yes;No;Yes
-Panthera_onca3 ;Panthera_onca;Mammal;Felidae;Yes;No;Yes
-Panthera_pardus ;Panthera_pardus;Mammal;Felidae;Yes;No;Yes
-Panthera_pardus_3 ;Panthera_pardus;Mammal;Felidae;Yes;No;Yes
-Panthera_pardus2 ;Panthera_pardus;Mammal;Felidae;Yes;No;Yes
-Panthera_tigris2 ;Panthera_tigris;Mammal;Felidae;Yes;No;Yes
-Panthera_uncia ;Panthera_uncia;Mammal;Felidae;Yes;No;Yes
-Papillon ;Papillon;Insect;Lepidoptera;No;No;No
-Papio_hamadryas ;Papio_hamadryas;Mammal;Primate;No;No;No
-Pardofelis_temminckii ;Pardofelis_temminckii;Mammal;Felidae;Yes;Yes;No
-Petroica_macrocephala ;Petroica_macrocephala;Bird;Bird (not Raptor);No;No;No
-Phacochoerus_africanus ;Phacochoerus_africanus;Mammal;Ungulate;No;No;No
-Phascolarctos_cinereus ;Phascolarctos_cinereus;Mammal;Marsupial;No;No;No
-Phascolarctos_cinereus2 ;Phascolarctos_cinereus;Mammal;Marsupial;No;No;No
-Pholcus_phalangioides ;Pholcus_phalangioides;Spider;Spider;No;Yes;No
-Pithecia pithecia ;Pithecia_pithecia;Mammal;Primate;No;No;No
-Pithecia pithecia2 ;Pithecia_pithecia;Mammal;Primate;No;No;No
-Plathyrrhinus_fusciventris ;Platyrrhinus_fusciventris;Mammal;Chiroptera;No;No;No
-Podarcis_muralis ;Podarcis_muralis;Squamata;Lizard;No;Yes;No
-Pogona_vitticeps ;Pogona_vitticeps;Squamata;Lizard;No;Yes;No
-Porphyrio_hochstetteri ;Porphyrio_hochstetteri;Bird;Bird (not Raptor);No;No;No
-Procyon_lotor ;Procyon_lotor;Mammal;Procyonide;No;Yes;No
-Propithecus_coquereli ;Propithecus_coquereli;Mammal;Primate;No;No;No
-Propithecus_verreauxi ;Propithecus_verreauxi;Mammal;Primate;No;No;No
-Psittacus_erithacus ;Psittacus_erithacus;Bird;Bird (not Raptor);No;No;No
-Pteropus_conspicillatus ;Pteropus_conspicillatus;Mammal;Chiroptera;No;No;No
-Puma_concolor ;Puma_concolor;Mammal;Felidae;Yes;No;Yes
-Python_bivittatus ;Python_bivittatus;Squamata;Snake;Yes;Yes;Yes
-Python_regius ;Python_regius;Squamata;Snake;No;Yes;No
-Rattus_norvegicus ;Rattus_norvegicus;Mammal;Rodent;No;No;No
-Rhinopithecus_roxellana ;Rhinopithecus_roxellana;Mammal;Primate;No;No;No
-Rhyticeros_cassidix ;Rhyticeros_cassidix;Bird;Bird (not Raptor);No;No;No
-Romalea_microptera ;Romalea_microptera;Insect;Orthoptere;No;No;No
-Saiga_tatarica ;Saiga_tatarica;Mammal;Ungulate;No;No;No
-Sarcophilus_harrisii ;Sarcophilus_harrisii;Mammal;Marsupial;No;Yes;No
-Spalax ;Spalax;Mammal;Rodent;No;No;No
-Spheniscus_humboldti ;Spheniscus_humboldti;Bird;Bird (not Raptor);No;Yes;No
-Stephanoaetus_coronatus ;Stephanoaetus_coronatus;Bird;Raptor;Yes;No;No
-Strophurus ;Strophurus_;Squamata;Lizard;No;Yes;No
-Struthio_camelus ;Struthio_camelus;Bird;Bird (not Raptor);No;No;No
-Sula_nebouxii ;Sula_nebouxii;Bird;Bird (not Raptor);No;Yes;No
-Sula_sula ;Sula_sula;Bird;Bird (not Raptor);No;Yes;No
-Suricata_suricatta ;Suricata_suricatta;Mammal;Mongoose;No;Yes;No
-Sus_scrofa ;Sus_scrofa;Mammal;Ungulate;No;No;Yes
-Tapirus_indicus ;Tapirus_indicus;Mammal;Ungulate;No;No;No
-Taricha_torosa ;Taricha_torosa;Squamata;Amphibia;No;Yes;No
-Tauraco_leucotis ;Tauraco_leucotis;Bird;Bird (not Raptor);No;No;No
-Testudo_hermanni ;Testudo_hermanni;Squamata;Tortoise  ;No;No;No
-Thalassarche_cauta ;Thalassarche_cauta;Bird;Bird (not Raptor);No;No;No
-Theropithecus_gelada ;Theropithecus_gelada;Mammal;Primate;No;No;No
-Thomisus_onustus ;Thomisus_onustus;Spider;Spider;No;Yes;No
-Tockus_flavirostris ;Tockus_flavirostris;Bird;Bird (not Raptor);No;No;No
-Trichosurus_vulpecula ;Trichosurus_vulpecula;Mammal;Marsupial;No;No;No
-Ursus_arctos_horribilis ;Ursus_arctos_horribilis;Mammal;Ursus;Yes;No;Yes
-Ursus_maritimus ;Ursus_maritimus;Mammal;Ursus;Yes;No;Yes
-Ursus_thibetanus ;Ursus_thibetanus;Mammal;Ursus;No;Yes;Yes
-Varecia_rubra ;Varecia_rubra;Mammal;Primate;No;No;No
-Varecia_variegata ;Varecia_variegata;Mammal;Primate;No;No;No
-Vespula_germanica ;Vespula_germanica;Insect;Hymenoptera;No;Yes;Yes
-Vicugna_pacos ;Vicugna_pacos;Mammal;Ungulate;No;No;No
-Vicugna_pacos2 ;Vicugna_pacos;Mammal;Ungulate;No;No;No
-Vicugna_vicugna ;Vicugna_vicugna;Mammal;Ungulate;No;No;No
-Vipera_ammodytes ;Vipera_ammodytes;Squamata;Snake;No;Yes;Yes
-Vipera_aspis ;Vipera_aspis;Squamata;Snake;No;Yes;Yes
-Vulpes_zerda ;Vulpes_zerda;Mammal;Canidae;No;Yes;No
-Zamenis_longissimus ;Zamenis_longissimus;Squamata;Snake;No;Yes;No
-Zoropsis_spinimana ;Zoropsis_spinimana;Spider;Spider;No;Yes;No
+Acinonyx_jubatus;Acinonyx_jubatus;Mammal;Felidae;Yes;Yes;Yes
+Acinonyx_jubatus2;Acinonyx_jubatus;Mammal;Felidae;Yes;Yes;Yes
+Acryllium_vulturinum;Acryllium_vulturinum;Bird;Bird(notRaptor);No;No;No
+Aepyceros_melampus;Aepyceros_melampus;Mammal;Ungulate;No;No;No
+Aepyceros_melampus2;Aepyceros_melampus;Mammal;Ungulate;No;No;No
+Agalychnis_callidryas;Agalychnis_callidryas;Squamata;Amphibia;No;Yes;No
+Ailuropoda_melanoleuca;Ailuropoda_melanoleuca;Mammal;Ursus;No;No;No
+Ailurops_ursinus;Ailurops_ursinus;Mammal;Marsupial;No;No;No
+Ailurus_fulgens;Ailurus_fulgens;Mammal;Ursus;No;No;No
+Alligator_mississippiensis;Alligator_mississippiensis;Squamata;Crocodile;Yes;Yes;Yes
+Amblyrhynchus_cristatus;Amblyrhynchus_cristatus;Squamata;Lizard;No;No;No
+Aonyx_cinereus;Aonyx_cinereus;Mammal;Mustelidae;No;Yes;No
+Aonyx_cinereus2;Aonyx_cinereus;Mammal;Mustelidae;No;Yes;No
+Aquila_chrysaetos;Aquila_chrysaetos;Bird;Raptor;No;No;No
+Ara_ararauna;Ara_ararauna;Bird;Bird(notRaptor);No;No;No
+Ara_chloropterus;Ara_chloropterus;Bird;Bird(notRaptor);No;No;No
+Arctocephalus forsteri;Arctocephalus_forsteri;Mammal;Sealion;No;Yes;No
+Arctocephalus_forsteri2;Arctocephalus_forsteri;Mammal;Sealion;No;Yes;No
+Artibeus_planirostris;Artibeus_planirostris;Mammal;Chiroptera;No;No;No
+Asio_flammeus;Asio_flammeus;Bird;Raptor;No;Yes;No
+Ateles_hybridus;Ateles_hybridus;Mammal;Primate;No;No;No
+Ateles_paniscus;Ateles_paniscus;Mammal;Primate;No;No;No
+Athene_noctua;Athene_noctua;Bird;Bird(notRaptor);No;Yes;No
+Athene_noctua2;Athene_noctua;Bird;Bird(notRaptor);No;Yes;No
+Athene_noctua3;Athene_noctua;Bird;Bird(notRaptor);No;Yes;No
+Balaeniceps_rex;Balaeniceps_rex;Bird;Bird(notRaptor);No;No;No
+Bison_bonasus;Bison_bonasus;Mammal;Ungulate;No;No;No
+Bison_bonasus2;Bison_bonasus;Mammal;Ungulate;No;No;No
+Boa_constrictor;Boa_constrictor;Squamata;Snake;Yes;Yes;No
+Bubo_bubo;Bubo_bubo;Bird;Raptor;No;Yes;No
+Bubo_bubo2;Bubo_bubo;Bird;Raptor;No;Yes;No
+Bubo_scandiacus;Bubo_scandiacus;Bird;Raptor;No;No;No
+Bufonidae;Bufonidae;Squamata;Amphibia;No;Yes;No
+Buprestidae;Buprestidae;Insect;Coleoptera;No;No;No
+Buteo_galapagoensis;Buteo_galapagoensis;Bird;Raptor;No;Yes;No
+Cairina_moschata;Cairina_moschata;Bird;Bird(notRaptor);No;Yes;No
+Calliphora_vomitoria;Calliphora_vomitoria;Insect;Diptera;No;No;No
+Callithrix_argentata;Callithrix_argentata;Mammal;Primate;No;No;No
+Callithrix_penicillata;Callithrix_penicillata;Mammal;Primate;No;No;No
+Calloselasma rhodostoma;Calloselasma_rhodostoma;Squamata;Snake;No;Yes;Yes
+Canis_lupus;Canis_lupus_;Mammal;Canidae;Yes;Yes;Yes
+Canis_lupus_familiaris;Canis_lupus_familiaris;Mammal;Canidae;No;Yes;Yes
+Canis_lupus_familiaris2;Canis_lupus_familiaris;Mammal;Canidae;No;Yes;Yes
+Carlito_syrichta;Carlito_syrichta;Mammal;Primate;No;Yes;No
+Centurio_senex;Centurio_senex;Mammal;Chiroptera;No;No;No
+Cerdocyon_thous;Cerdocyon_thous;Mammal;Canidae;Yes;Yes;No
+Chelonoidis_porteri;Chelonoidis_porteri;Squamata;Tortoise;No;No;No
+Choloepus_didactylus;Choloepus_didactylus;Mammal;Xenarthra;No;No;No
+Choloepus_didactylus2;Choloepus_didactylus;Mammal;Xenarthra;No;No;No
+Choloepus_didactylus3;Choloepus_didactylus;Mammal;Xenarthra;No;No;No
+Chroicocephalus_scopulinus;Chroicocephalus_scopulinus;Bird;Bird(notRaptor);No;Yes;No
+Columba_livia;Columba_livia;Bird;Bird(notRaptor);No;No;No
+Conolophus_pallidus;Conolophus_pallidus;Squamata;Lizard;No;No;No
+Corvus;Corvus;Bird;Bird(notRaptor);No;No;No
+Corvus2;Corvus;Bird;Bird(notRaptor);No;No;No
+Crocodylus_porosus;Crocodylus_porosus;Squamata;Crocodile;Yes;Yes;Yes
+Crocuta_crocuta;Crocuta_crocuta;Mammal;Hyenidae;Yes;No;Yes
+Crotalus_atrox;Crotalus_atrox;Squamata;Snake;No;Yes;Yes
+Crotalus2;Crotalus_atrox;Squamata;Snake;No;Yes;Yes
+Cryptoprocto _ferox;Cryptoprocto_ferox;Mammal;Felidae;Yes;No;No
+Cynictis_penicillata;Cynictis_penicillata;Mammal;Mongoose;No;Yes;No
+Dasypus_novemcinctus;Dasypus_novemcinctus;Mammal;Xenarthra;No;No;No
+Daubentonia_madagascariensis;Daubentonia_madagascariensis;Mammal;Primate;No;No;No
+Dendroaspis_angusticeps;Dendroaspis_angusticeps;Squamata;Snake;No;Yes;Yes
+Desmodus_rotondus;Desmodus_rotundus;Mammal;Chiroptera;No;Yes;No
+Didelphis_virginiana;Didelphis_virginiana;Mammal;Marsupial;No;No;No
+Equus_caballus;Equus_caballus;Mammal;Ungulate;No;No;No
+Eudyptes chrysolophus;Eudyptes_chrysolophus;Bird;Bird(notRaptor);No;Yes;No
+Eudyptes_chrysocome;Eudyptes_chrysocome;Bird;Bird(notRaptor);No;Yes;No
+Eulemur _coronatus;Eulemur_coronatus;Mammal;Primate;No;No;No
+Eulemur _coronatus2;Eulemur_coronatus;Mammal;Primate;No;No;No
+Euphractus _sexcinctus;Euphractus_sexcinctus;Mammal;Xenarthra;No;No;No
+Evarcha_arcuata;Evarcha_arcuata;Spider;Spider;No;Yes;No
+Felis_catus;Felis_catus;Mammal;Felidae;No;Yes;No
+Felis_silvestris;Felis_silvestris_;Mammal;Felidae;No;No;No
+Geronticus_eremita;Geronticus_eremita;Bird;Bird(notRaptor);No;Yes;No
+Giraffa_camelopardalis_reticulata;Giraffa_camelopardalis_reticulata;Mammal;Ungulate;No;No;No
+Gorilla_Gorilla_Beringei;Gorilla_Gorilla_Beringei;Mammal;Primate;No;No;Yes
+Gorilla_gorilla_gorilla;Gorilla_Gorilla_Gorilla;Mammal;Primate;No;No;Yes
+Gulo_gulo;Gulo_gulo;Mammal;Mustelidae;No;Yes;No
+Gulo_gulo2;Gulo_gulo;Mammal;Mustelidae;No;Yes;No
+Gymnogyps_californianus;Gymnogyps_californianus;Bird;Raptor;No;No;No
+Gypaetus_barbatus;Gypaetus_barbatus;Bird;Raptor;No;Yes;No
+Gypaetus_barbatus2;Gypaetus_barbatus;Bird;Raptor;No;Yes;No
+Gyps_rueppelli;Gyps_rueppelli;Bird;Raptor;No;No;No
+Haematopus_ater;Haematopus_ater;Bird;Bird(notRaptor);No;Yes;No
+Harpia_Harpyja;Harpia_Harpyja;Bird;Raptor;Yes;No;No
+Helarctos_malayanus;Helarctos_malayanus;Mammal;Ursus;No;No;No
+Hemicentetes_semispinosus;Hemicentetes_semispinosus;Mammal;Tenrecidae;No;No;No
+Heterocephalus_glaber;Heterocephalus_glaber;Mammal;Rodent;No;No;No
+Hippopotamus_amphibius;Hippopotamus_amphibius;Mammal;Ungulate;No;No;Yes
+Hyaena_hyaena;Hyaena_hyaena;Mammal;Hyenidae;Yes;No;Yes
+Hyles_euphorbiae;Hyles_euphorbiae;Insect;Lepidoptera;No;No;No
+Hylobates_agilis;Hylobates_agilis;Mammal;Primate;No;No;No
+Hypsignathus_monstrosus;Hypsignathus_monstrosu;Mammal;Chiroptera;No;No;No
+Iguana_iguana;Iguana_iguana;Squamata;Lizard;No;No;No
+Iguana_iguana2;Iguana_iguana;Squamata;Lizard;No;No;No
+Incilius_alvarius;Incilius_alvarius;Squamata;Amphibia;No;Yes;No
+Incilius_alvarius2;Incilius_alvarius;Squamata;Amphibia;No;Yes;No
+Intellagama_lesueurii;Intellagama_lesueurii;Squamata;Lizard;No;Yes;No
+Laticauda_laticaudata;Laticauda_laticaudata;Squamata;Snake;No;Yes;No
+Laticauda_saintgironsi;Laticauda_saintgironsi;Squamata;Snake;No;Yes;No
+Lemur_catta;Lemur_catta;Mammal;Primate;No;Yes;No
+Lemur_catta2;Lemur_catta;Mammal;Primate;No;Yes;No
+Leopardus_wiedii;Leopardus_wiedii;Mammal;Felidae;No;No;No
+Leptailurus_serval;Leptailurus_serval;Mammal;Felidae;No;Yes;No
+Leptoptilos_crumenifer;Leptoptilos_crumenifer;Bird;Bird(notRaptor);No;No;No
+Libellula_quadrimaculata;Libellula_quadrimaculata;Insect;Odonata;No;Yes;No
+Litoria_infrafrenata;Litoria_infrafrenata;Squamata;Amphibia;No;Yes;No
+Loris_tardigradus;Loris_tardigradus;Mammal;Primate;No;No;No
+Loxodonta_africana;Loxodonta_africana;Mammal;Ungulate;No;No;Yes
+Lycaon_pictus;Lycaon_pictus;Mammal;Canidae;Yes;Yes;Yes
+Lycaon_pictus2;Lycaon_pictus;Mammal;Canidae;Yes;Yes;Yes
+Lynx_rufus;Lynx_rufus;Mammal;Felidae;No;Yes;No
+Lynx_rufus2;Lynx_rufus;Mammal;Felidae;No;Yes;No
+Macaca_fuscata;Macaca_fuscata;Mammal;Primate;No;Yes;No
+Macaca_silenus;Macaca_silenus;Mammal;Primate;No;Yes;No
+Macronectes_halli;Macronectes_halli;Bird;Bird(notRaptor);No;No;No
+Macropus_rufogriseus;Macropus_rufogriseus;Mammal;Marsupial;No;No;No
+Malayopython_reticulatus;Malayopython_reticulatus;Squamata;Snake;Yes;Yes;Yes
+Malpolon_monspessulanus;Malpolon_monspessulanus;Squamata;Snake;No;Yes;No
+Mandrillus_sphinx;Mandrillus_sphinx;Mammal;Primate;No;No;Yes
+Mandrillus_sphinx2;Mandrillus_sphinx;Mammal;Primate;No;No;Yes
+Miopithecus_ogouensis;Miopithecus_ogouensis;Mammal;Primate;No;No;No
+Morelia_spilota;Morelia_spilota;Squamata;Snake;No;Yes;No
+Mungos_mungo;Mungos_mungo;Mammal;Mongoose;No;Yes;No
+Muscardinus_avellanarius;Muscardinus_avellanarius;Mammal;Rodent;No;No;No
+Mygale;Mygale;Spider;Spider;No;Yes;No
+Myocastor_coypus;Myocastor_coypus;Mammal;Rodent;No;No;No
+Naja_naja;Naja_naja;Squamata;Snake;No;Yes;Yes
+Nasua_narica;Nasua_narica;Mammal;Procyonide;No;No;No
+Nasua_nasua;Nasua_nasua;Mammal;Procyonide;No;No;No
+Necrosyrtes_monachus;Necrosyrtes_monachus;Bird;Raptor;No;No;No
+Neofelis_nebulosa;Neofelis_nebulosa;Mammal;Felidae;Yes;No;Yes
+Nestor_meridionalis;Nestor_meridionalis;Bird;Bird(notRaptor);No;No;No
+Notechis_scutatus;Notechis_scutatus;Squamata;Snake;No;Yes;Yes
+Numida_meleagris;Numida_meleagris;Bird;Bird(notRaptor);No;No;No
+Nyctereutes_procyonoides;Nyctereutes_procyonoides;Mammal;Canidae;No;Yes;No
+Odonata;Odonata;Insect;Odonata;No;Yes;No
+Odonata2;Odonata;Insect;Odonata;No;Yes;No
+Oryctolagus_cuniculus;Oryctolagus_cuniculus;Mammal;Lagomorpha;No;No;No
+Oryctolagus_cuniculus2;Oryctolagus_cuniculus;Mammal;Lagomorpha;No;No;No
+Otocolobus_manul;Otocolobus_manul;Mammal;Felidae;No;Yes;No
+Pamphagidae;Pamphagidae;Insect;Orthoptere;No;No;No
+Pan_paniscus;Pan_panisucs;Mammal;Primate;No;Yes;No
+Pan_paniscus2;Pan_panisucs;Mammal;Primate;No;Yes;No
+Pan_paniscus3;Pan_panisucs;Mammal;Primate;No;Yes;No
+Pan_paniscus4;Pan_panisucs;Mammal;Primate;No;Yes;No
+Pan_troglodytes;Pan_troglodytes;Mammal;Primate;Yes;No;Yes
+Pan_troglodytes2;Pan_troglodytes;Mammal;Primate;Yes;No;Yes
+Panthera_leo;Panthera_leo;Mammal;Felidae;Yes;No;Yes
+Panthera_leo2;Panthera_leo;Mammal;Felidae;Yes;No;Yes
+Panthera_leo3;Panthera_leo;Mammal;Felidae;Yes;No;Yes
+Panthera_onca;Panthera_onca;Mammal;Felidae;Yes;No;Yes
+Panthera_onca_2;Panthera_onca;Mammal;Felidae;Yes;No;Yes
+Panthera_onca3;Panthera_onca;Mammal;Felidae;Yes;No;Yes
+Panthera_pardus;Panthera_pardus;Mammal;Felidae;Yes;No;Yes
+Panthera_pardus_3;Panthera_pardus;Mammal;Felidae;Yes;No;Yes
+Panthera_pardus2;Panthera_pardus;Mammal;Felidae;Yes;No;Yes
+Panthera_tigris2;Panthera_tigris;Mammal;Felidae;Yes;No;Yes
+Panthera_uncia;Panthera_uncia;Mammal;Felidae;Yes;No;Yes
+Papillon;Papillon;Insect;Lepidoptera;No;No;No
+Papio_hamadryas;Papio_hamadryas;Mammal;Primate;No;No;No
+Pardofelis_temminckii;Pardofelis_temminckii;Mammal;Felidae;Yes;Yes;No
+Petroica_macrocephala;Petroica_macrocephala;Bird;Bird(notRaptor);No;No;No
+Phacochoerus_africanus;Phacochoerus_africanus;Mammal;Ungulate;No;No;No
+Phascolarctos_cinereus;Phascolarctos_cinereus;Mammal;Marsupial;No;No;No
+Phascolarctos_cinereus2;Phascolarctos_cinereus;Mammal;Marsupial;No;No;No
+Pholcus_phalangioides;Pholcus_phalangioides;Spider;Spider;No;Yes;No
+Pithecia pithecia;Pithecia_pithecia;Mammal;Primate;No;No;No
+Pithecia pithecia2;Pithecia_pithecia;Mammal;Primate;No;No;No
+Plathyrrhinus_fusciventris;Platyrrhinus_fusciventris;Mammal;Chiroptera;No;No;No
+Podarcis_muralis;Podarcis_muralis;Squamata;Lizard;No;Yes;No
+Pogona_vitticeps;Pogona_vitticeps;Squamata;Lizard;No;Yes;No
+Porphyrio_hochstetteri;Porphyrio_hochstetteri;Bird;Bird(notRaptor);No;No;No
+Procyon_lotor;Procyon_lotor;Mammal;Procyonide;No;Yes;No
+Propithecus_coquereli;Propithecus_coquereli;Mammal;Primate;No;No;No
+Propithecus_verreauxi;Propithecus_verreauxi;Mammal;Primate;No;No;No
+Psittacus_erithacus;Psittacus_erithacus;Bird;Bird(notRaptor);No;No;No
+Pteropus_conspicillatus;Pteropus_conspicillatus;Mammal;Chiroptera;No;No;No
+Puma_concolor;Puma_concolor;Mammal;Felidae;Yes;No;Yes
+Python_bivittatus;Python_bivittatus;Squamata;Snake;Yes;Yes;Yes
+Python_regius;Python_regius;Squamata;Snake;No;Yes;No
+Rattus_norvegicus;Rattus_norvegicus;Mammal;Rodent;No;No;No
+Rhinopithecus_roxellana;Rhinopithecus_roxellana;Mammal;Primate;No;No;No
+Rhyticeros_cassidix;Rhyticeros_cassidix;Bird;Bird(notRaptor);No;No;No
+Romalea_microptera;Romalea_microptera;Insect;Orthoptere;No;No;No
+Saiga_tatarica;Saiga_tatarica;Mammal;Ungulate;No;No;No
+Sarcophilus_harrisii;Sarcophilus_harrisii;Mammal;Marsupial;No;Yes;No
+Spalax;Spalax;Mammal;Rodent;No;No;No
+Spheniscus_humboldti;Spheniscus_humboldti;Bird;Bird(notRaptor);No;Yes;No
+Stephanoaetus_coronatus;Stephanoaetus_coronatus;Bird;Raptor;Yes;No;No
+Strophurus;Strophurus_;Squamata;Lizard;No;Yes;No
+Struthio_camelus;Struthio_camelus;Bird;Bird(notRaptor);No;No;No
+Sula_nebouxii;Sula_nebouxii;Bird;Bird(notRaptor);No;Yes;No
+Sula_sula;Sula_sula;Bird;Bird(notRaptor);No;Yes;No
+Suricata_suricatta;Suricata_suricatta;Mammal;Mongoose;No;Yes;No
+Sus_scrofa;Sus_scrofa;Mammal;Ungulate;No;No;Yes
+Tapirus_indicus;Tapirus_indicus;Mammal;Ungulate;No;No;No
+Taricha_torosa;Taricha_torosa;Squamata;Amphibia;No;Yes;No
+Tauraco_leucotis;Tauraco_leucotis;Bird;Bird(notRaptor);No;No;No
+Testudo_hermanni;Testudo_hermanni;Squamata;Tortoise;No;No;No
+Thalassarche_cauta;Thalassarche_cauta;Bird;Bird(notRaptor);No;No;No
+Theropithecus_gelada;Theropithecus_gelada;Mammal;Primate;No;No;No
+Thomisus_onustus;Thomisus_onustus;Spider;Spider;No;Yes;No
+Tockus_flavirostris;Tockus_flavirostris;Bird;Bird(notRaptor);No;No;No
+Trichosurus_vulpecula;Trichosurus_vulpecula;Mammal;Marsupial;No;No;No
+Ursus_arctos_horribilis;Ursus_arctos_horribilis;Mammal;Ursus;Yes;No;Yes
+Ursus_maritimus;Ursus_maritimus;Mammal;Ursus;Yes;No;Yes
+Ursus_thibetanus;Ursus_thibetanus;Mammal;Ursus;No;Yes;Yes
+Varecia_rubra;Varecia_rubra;Mammal;Primate;No;No;No
+Varecia_variegata;Varecia_variegata;Mammal;Primate;No;No;No
+Vespula_germanica;Vespula_germanica;Insect;Hymenoptera;No;Yes;Yes
+Vicugna_pacos;Vicugna_pacos;Mammal;Ungulate;No;No;No
+Vicugna_pacos2;Vicugna_pacos;Mammal;Ungulate;No;No;No
+Vicugna_vicugna;Vicugna_vicugna;Mammal;Ungulate;No;No;No
+Vipera_ammodytes;Vipera_ammodytes;Squamata;Snake;No;Yes;Yes
+Vipera_aspis;Vipera_aspis;Squamata;Snake;No;Yes;Yes
+Vulpes_zerda;Vulpes_zerda;Mammal;Canidae;No;Yes;No
+Zamenis_longissimus;Zamenis_longissimus;Squamata;Snake;No;Yes;No
+Zoropsis_spinimana;Zoropsis_spinimana;Spider;Spider;No;Yes;No
