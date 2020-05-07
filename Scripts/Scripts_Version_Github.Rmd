@@ -698,7 +698,7 @@ Elo_all_Groups = left_join(Elo_all,Groups, by=c(Name="Name2"))
 Elo_all_Groups
 
 
-write.csv(Elo_all_Groups, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/EloScore/Elo_all_Groups.csv.csv"), row.names=T)
+write.csv(Elo_all_Groups, file = file.path("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/EloScore/Elo_all_Groups.csv"), row.names=T)
 
 
 ```
@@ -1389,7 +1389,7 @@ classement_age=ggplot(BDD_age_complet, aes(x=EloRank , y =EloScore , col =Age)) 
   
 classement_age
 
-ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Classement_age.jpg", plot = classement_sexe, width = 11, height = 8)
+ggsave("F:/Stage M2/Questionnaire/Project/Lost-in-Wilderness/Result/Graphs/Classement_age.jpg", plot = classement_age, width = 11, height = 8)
 ```
 
 
